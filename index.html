@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jogo/css/jogo.css">
+    <link rel="stylesheet" href="jogo/css/animacoes.css">
+    <link rel="icon" href="jogo/css/imagens/favicon.png" type="image/x-icon">
+    <title>Cidade dos Anjos</title>
+<body>
+<div class="jogo">
+    <div id="modal-importar" class="layer modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            <h2>Importar Backup</h2>
+            <input type="file" class="input-backup" id="arquivo-backup" accept=".txt">
+            <div class="botao-aceitar"><span>Aceitar</span></div>
+            <div class="botao-cancelar"><span>Cancelar</span></div>
+        </div>
+    </div>
+    <div class ="layer separadorEsquerda"></div>
+    <div class="layer areaEsquerda">
+        <div class="pontuacao"></div>
+        <div class="pontuacaoPorSegundo"></div>
+        <div class="caraAncora">
+        <div class="caraGrande"></div>
+        </div>
+    </div>
+    <div class="layer areaMeio">
+        <div class="botao-cidade"></div>
+        <div class="areaMeioSuperior">
+        <div class="botao-seguidores"></div>
+        <div class="botao-salvar"></div>
+        <div class="botao-importar"></div>
+        <div class="separadorBaixo"></div>
+        </div>
+        <div class="areaMeioInferior">
+            <div class="acampamento">
+                <div class="protagonista"></div>
+                <div class="policial"></div>
+                <div class="luvas"></div>
+                <div class="cachorro"></div>
+                <div class="maromba"></div>
+                <div class="ratos"></div>
+                <div class="quadrado"></div>
+                <div class="mane"></div>
+                <div class="carro"></div>
+            </div>
+            <div class="areaMeioInferiorCopia">
+                <div class="elementoDireita"></div>
+                <div class="elementoEsquerda"></div>
+            </div>    
+            <div class="elementoAbaixo"></div>
+        </div>
+    </div>
+    <div class="layer areaDireita">
+        <div class ="texturaAreaDireita"></div>
+        <div class ="separadorDireita"></div>
+        <div class ="tituloLoja"><span>Gangue</span></div>
+        <div class="upgrades"></div>
+        <div class="loja">
+            <div class="configLoja"></div>
+        </div>
+    </div>
+<!-- O conteúdo do seu site vem aqui -->
+<script type="module">import JogoController from './jogo/jogoController.js';</script>
+
+</body>
+</html>

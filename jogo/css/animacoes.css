@@ -1,0 +1,166 @@
+@keyframes descerKeyframes {
+    0% {
+        transform: translateY(-1000px);
+        opacity: 1;
+    }
+    20% {
+        transform: translateY(-300px);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(+10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes subirKeyframes {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    5% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    10% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-200px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-1000px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+.subir {
+    animation: subirKeyframes 4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-iteration-count: 1; 
+}
+.descer {
+    animation: descerKeyframes 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-iteration-count: 1; 
+}
+@keyframes balancadaKeyframes {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    30%, 50%, 90% {
+        transform: translateX(-10px);
+    }
+    40%,80% {
+        transform: translateX(10px);
+    }
+}
+.balancada {
+    animation: balancadaKeyframes 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-iteration-count: 1; 
+}
+.crescer {
+    animation: crescerKeyframes 1s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-iteration-count: 1;
+}
+@keyframes crescerKeyframes {
+    0% {
+        transform: scale(0.1) rotate(30deg);
+      }
+  
+      35% {
+        transform: scale(1.1) rotate(-30deg);
+      }
+      65% {
+        transform: scale(1)  rotate(10deg);    
+    }
+    100% {
+        transform: scale(1)  rotate(0deg);    
+    }
+}
+.encolher {
+    animation: encolherKeyframes 3s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-iteration-count: 1;
+}
+@keyframes encolherKeyframes {
+    0% {
+        transform: scale(1) rotate(-30deg);
+      }
+  
+      35% {
+        transform: scale(0.2) rotate(30deg);
+      }
+      65% {
+        transform: scale(0.25)  rotate(-10deg);    
+        }
+        100% {
+            transform: scale(0.0)  rotate(0deg);    
+        }
+}
+.encolherBalao {
+    animation: encolherBalaoKeyframes 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-iteration-count: 1;
+}
+
+@keyframes encolherBalaoKeyframes {
+    0% {
+        transform: scale(1) rotate(0deg);
+        left: 0;
+        top: 0;
+    }
+
+    100% {
+        transform: scale(0.1) rotate(45deg);
+        left: -250px;
+        top: 50px;
+    }
+}
+
+.crescerBalao {
+    animation: crescerBalaoKeyframes 1s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-iteration-count: 1;
+}
+@keyframes crescerBalaoKeyframes {
+    0% {
+        transform: scale(0.1) rotate(30deg);
+      }
+    75% {
+        transform: scale(1)  rotate(0deg);    
+    }
+    100% {
+        transform: scale(1)  rotate(0deg);    
+    }
+}
+
+@keyframes particula-sangue {
+    0% {
+      offset-distance: 0%;
+      opacity: 1;
+    }
+    40% {
+      offset-distance: 40%;
+      opacity: 0;
+    }
+    100% {
+      offset-distance: 100%;
+      opacity: 0;
+    }
+  }
