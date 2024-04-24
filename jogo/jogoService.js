@@ -42,7 +42,7 @@ class JogoService {
     }
     static caraClicada() {     
         let storage = JogoService.getStorage();
-        let novaPontuacao = 999999999999999999999999999999999;
+        let novaPontuacao = 1;
         let pontuacaoValor = storage.dinheiro;
         if (storage.upgrades.includes("upgrade-click")) {
             let multiplicador = storage.upgrades.filter(upgrade => upgrade == "upgrade-clique").length;
@@ -128,8 +128,6 @@ class JogoService {
                         localStorage.setItem(chave, localStorageBackup[chave]);
                     }
                 }
-                // Agora você pode atualizar sua aplicação conforme necessário
-                // por exemplo, recarregando a página
                 window.location.reload();
             };
             leitor.readAsText(arquivoBackup);

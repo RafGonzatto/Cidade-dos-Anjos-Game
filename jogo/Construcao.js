@@ -55,10 +55,10 @@ class Construcao {
         let construcoesLocalStorage = JSON.parse(localStorage.getItem('construcoes'));
         if (construcoesLocalStorage && construcoesLocalStorage[id]) {
             let construcao = construcoesLocalStorage[id]; 
-            construcao.quantidade = quantidade; // Incrementa a quantidade
+            construcao.quantidade = quantidade; 
             construcao.status = 3;
             construcao.valor = Math.floor(construcao.valor * 1.2);
-            construcao.producao = producao; // Atualiza a produção
+            construcao.producao = producao; 
             construcoesLocalStorage[id] = construcao;
             if (quantidade === 1 && id !=7) {
                 let novoId = ++id;
@@ -112,14 +112,10 @@ class Construcao {
     static criarParticula(mouseX, mouseY) {
         const particula = document.createElement("div");
         particula.classList.add("correntesBloqueadorParticulas");
-
-        // Posição da partícula na posição atual do mouse
         particula.style.left = (mouseX - 40) + "px";
         particula.style.top = (mouseY - 60 )+ "px";
 
-        document.body.appendChild(particula); // Adiciona a partícula ao corpo do documento
-
-        // Remover a partícula após um certo tempo
+        document.body.appendChild(particula); 
         setTimeout(() => {
             particula.remove();
         }, 1000);

@@ -65,7 +65,7 @@ class Upgrade {
         imgElement.style.height = '100%';
         imgElement.style.objectFit = 'cover';
         imgElement.style.display = 'block';
-        imgElement.style.imageRendering = 'crisp-edges';
+        imgElement.style.imageRendering = 'pixelated';
         upgradeElement.appendChild(imgElement);
         return upgradeElement;
     }

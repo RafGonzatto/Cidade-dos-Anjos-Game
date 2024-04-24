@@ -18,7 +18,7 @@
     background: url(imagens/textura-roxa.png) ; 
     background-size: 100% 100%; 
     background-position: left; 
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 .areaMeio {
     position: absolute;
@@ -27,7 +27,7 @@
     left: 0;
     width: 35%;
     background-position: left; 
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 } 
 .areaMeioSuperior {
     position: absolute;
@@ -37,7 +37,7 @@
     background-image: url(imagens/textura-amarela.png);
     background-size: auto 100%; 
     background-position: left; 
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 
 }
 .areaMeioInferior {
@@ -67,7 +67,7 @@
     transform: translate(-50%);
     background-image: url(imagens/fundo-acampamento.png);
     background-size:contain;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 } 
 .cachorro {
     position: absolute;
@@ -172,7 +172,7 @@
 .elementoAbaixo {
     height: 100vh; 
     position: absolute;/* Para garantir que os elementos ocupem toda a altura */
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
     
 }
 /* Adicione estilos específicos para cada elemento conforme necessário */
@@ -268,7 +268,7 @@
     height: 256px;
     background: url(imagens/cabeca-1.png);
     background-size: cover;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
     cursor: url(imagens/icone-luva.png), auto;
     z-index: 10000;
 }
@@ -291,6 +291,7 @@
 .upgrade{
     height:60px;
     position:relative;
+    image-rendering: pixelated;
     width:60px;
     background-size: cover;
     background-position: center;
@@ -323,7 +324,7 @@
     height: 100px;
     background-repeat: no-repeat;
     background-size:contain;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 .informacoes {
     display:inline-block;
@@ -468,7 +469,7 @@
                 url(imagens/barra-desbloqueio4.png) no-repeat right,
                 url(imagens/barra-desbloqueio2.png) no-repeat center;   
     background-size: 33% 100%, 20% 100%, 60% 100%; 
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
     z-index: 999;
 }
 .valorBloqueador {
@@ -477,7 +478,7 @@
     height: 64.34px;
     background: url(imagens/valor-desbloqueio.png);
     background-size: cover;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -540,7 +541,7 @@
     transform: translate(-50%, -50%) scale(0); /* Começa invisível (escala 0) */
     height: 300px;
     width: 625px;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
     z-index: 999999999;
     transition: transform 1s ease; /* Adiciona uma transição suave */
 }
