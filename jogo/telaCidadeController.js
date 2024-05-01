@@ -1,9 +1,24 @@
+import { configurarCidade, configurarPredios } from "./eventosCidade.js";
 
-class telaCidadeController {
-    constructor() { 
-    }
-    
+class TelaCidadeController {
+  constructor() {
+    configurarCidade();
+    this.configuraBotaoVoltar();
+    const predioGangues = document.querySelector(".predio-gangues");
+    const predioPolicia = document.querySelector(".predio-policia");
+    const predioIgreja = document.querySelector(".predio-igreja");
+    configurarPredios(predioGangues);
+    configurarPredios(predioPolicia);
+    configurarPredios(predioIgreja);
+  }
+
+  configuraBotaoVoltar() {
+    const botaoVoltar = document.querySelector(".botao-voltar");
+    botaoVoltar.addEventListener("click", (event) => {
+      window.history.back();
+    });
+  }
 }
 
-window.telaCidadeController = new telaCidadeController;
-export default telaCidadeController;
+window.TelaCidadeController = new TelaCidadeController();
+export default TelaCidadeController;

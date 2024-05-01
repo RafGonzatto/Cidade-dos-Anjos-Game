@@ -10,7 +10,6 @@ export function configurarEventosConstrucoes() {
             if (target.classList.contains('bloqueadorConstrucao2')) {
                 return;
             }
-
             if (construcaoElemento.parentElement) {
                 let identificacao = parseInt(construcaoElemento.parentElement.getAttribute('id'));
                 let construcaoObjeto = Construcao.carregarConstrucoesDoLocalStorage().find(construcao => {

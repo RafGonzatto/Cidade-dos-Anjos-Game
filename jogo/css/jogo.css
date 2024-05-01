@@ -1,243 +1,245 @@
 .jogo {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    opacity: 1;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  opacity: 1;
 }
 .layer {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 .areaEsquerda {
-    position: absolute;
-    height: 100vh;
-    left: 0;
-    width: 30%; 
-    background: url(imagens/textura-roxa.png) ; 
-    background-size: 100% 100%; 
-    background-position: left; 
-    image-rendering: pixelated;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  width: 30%;
+  background: url(imagens/textura-roxa.png);
+  background-size: 100% 100%;
+  background-position: left;
+  image-rendering: pixelated;
 }
 .areaMeio {
-    position: absolute;
-    background: #282828;
-    margin-left: 30%;
-    left: 0;
-    width: 35%;
-    background-position: left; 
-    image-rendering: pixelated;
-} 
+  position: absolute;
+  background: #282828;
+  margin-left: 30%;
+  left: 0;
+  width: 35%;
+  background-position: left;
+  image-rendering: pixelated;
+}
 .areaMeioSuperior {
-    position: absolute;
-    height: 25vh;
-    left: 0;
-    width: 100%;
-    background-image: url(imagens/textura-amarela.png);
-    background-size: auto 100%; 
-    background-position: left; 
-    image-rendering: pixelated;
-
+  position: absolute;
+  height: 25vh;
+  left: 0;
+  width: 100%;
+  background-image: url(imagens/textura-amarela.png);
+  background-size: auto 100%;
+  background-position: left;
+  image-rendering: pixelated;
 }
 .areaMeioInferior {
-    position: absolute;
-    height: 75vh;
-    width: 100%;
-    background-image: url(imagens/fundo-acampamento-inferior.png);
-    bottom: 0;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden
-} 
+  position: absolute;
+  height: 75vh;
+  width: 100%;
+  background-image: url(imagens/fundo-acampamento-inferior.png);
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
 .areaMeioInferiorCopia {
-    position: absolute;
-    width: 100%; /* Ajuste o tamanho conforme necessário */
-    height: 1200px; /* Ajuste o tamanho conforme necessário */
-    top: 0;
-    display: flex;
-    justify-content: space-between; /* Os elementos filhos se espaçarão igualmente */
+  position: absolute;
+  width: 100%; 
+  height: 1200px; 
+  top: 0;
+  display: flex;
+  justify-content: space-between; /* Os elementos filhos se espaçarão igualmente */
 }
 .acampamento {
-    position: absolute;
-    height: 600px;
-    width: 529.4px;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    background-image: url(imagens/fundo-acampamento.png);
-    background-size:contain;
-    image-rendering: pixelated;
-} 
+  position: absolute;
+  height: 600px;
+  width: 529.4px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  background-image: url(imagens/fundo-acampamento.png);
+  background-size: contain;
+  image-rendering: pixelated;
+}
 .cachorro {
-    position: absolute;
-    top: 26%;
-    left: 40%;
-    width: 50px;
-    height: 40px;
-    opacity: 0;
-    background-size: 100% 100%;
-} 
+  position: absolute;
+  top: 26%;
+  left: 40%;
+  width: 50px;
+  height: 40px;
+  opacity: 0;
+  background-size: 100% 100%;
+}
 .botao-cidade {
-    position: absolute;
-    top: 29%;
-    left: 30%;
-    width: 250px;
-    height: 120px;
-    opacity: 0;
-    z-index: 99999999999;
-    background-color: greenyellow;
-} 
+  position: absolute;
+  top: 29%;
+  left: 30%;
+  width: 250px;
+  height: 120px;
+  opacity: 0;
+  z-index: 99999999999;
+  background-color: greenyellow;
+}
 .protagonista {
-    position: absolute;
-    top: 19%;
-    background-image: url(imagens/eu.png);
-    left: 26%;
-    width: 38px;
-    height: 50px;
-    background-size: 100% 100%;
+  position: absolute;
+  top: 19%;
+  background-image: url(imagens/eu.png);
+  left: 26%;
+  width: 38px;
+  height: 50px;
+  background-size: 100% 100%;
 }
 .maromba {
-    position: absolute;
-    top: 30%;
-    background-image: url(imagens/maromba.png);
-    left: 8%;
-    width: 50px;
-    opacity: 0;
-    height: 64px;
-    background-size: 100% 100%;
+  position: absolute;
+  top: 30%;
+  background-image: url(imagens/maromba.png);
+  left: 8%;
+  width: 50px;
+  opacity: 0;
+  height: 64px;
+  background-size: 100% 100%;
 }
 .ratos {
-    position: absolute;
-    top: 42%;
-    background-image: url(imagens/ratos.png);
-    left: 17%;
-    width: 62px;
-    height: 64px;
-    opacity: 0;
-    background-size: 100% 100%;
+  position: absolute;
+  top: 42%;
+  background-image: url(imagens/ratos.png);
+  left: 17%;
+  width: 62px;
+  height: 64px;
+  opacity: 0;
+  background-size: 100% 100%;
 }
 .quadrado {
-    position: absolute;
-    top: 45%;
-    background-image: url(imagens/quadrado.png);
-    left: 60%;
-    width: 38px;
-    opacity: 0;
-    height: 58px;
-    background-size: 100% 100%;
+  position: absolute;
+  top: 45%;
+  background-image: url(imagens/quadrado.png);
+  left: 60%;
+  width: 38px;
+  opacity: 0;
+  height: 58px;
+  background-size: 100% 100%;
 }
 .mane {
-    position: absolute;
-    top: 77%;
-    background-image: url(imagens/mane.png);
-    left: 66%;
-    width: 30px;
-    opacity: 0;
-    height: 40px;
-    background-size: 100% 100%;
+  position: absolute;
+  top: 77%;
+  background-image: url(imagens/mane.png);
+  left: 66%;
+  width: 30px;
+  opacity: 0;
+  height: 40px;
+  background-size: 100% 100%;
 }
 .policial {
-    position: absolute;
-    top: 19%;
-    background-image: url(imagens/policial.png);
-    left: 65%;
-    opacity: 0;
-    width: 28px;
-    height: 55px;
-    background-size: 100% 100%;
+  position: absolute;
+  top: 19%;
+  background-image: url(imagens/policial.png);
+  left: 65%;
+  opacity: 0;
+  width: 28px;
+  height: 55px;
+  background-size: 100% 100%;
 }
 .luvas {
-    position: absolute;
-    opacity: 0;
-    top: 24%;
-    background-image: url(imagens/luvas.png);
-    left: 62%;
-    width: 180px;
-    height: 125px;
-    background-size: 100% 100%;
+  position: absolute;
+  opacity: 0;
+  top: 24%;
+  background-image: url(imagens/luvas.png);
+  left: 62%;
+  width: 180px;
+  height: 125px;
+  background-size: 100% 100%;
 }
 .carro {
-    position: absolute;
-    top: 52%;
-    background-image: url(imagens/carro.png);
-    left: 2%;
-    width: 140px;
-    opacity: 0;
-    height: 100px;
-    background-size: 100% 100%;
+  position: absolute;
+  top: 52%;
+  background-image: url(imagens/carro.png);
+  left: 2%;
+  width: 140px;
+  opacity: 0;
+  height: 100px;
+  background-size: 100% 100%;
 }
 .elementoDireita,
 .elementoEsquerda,
 .elementoAbaixo {
-    height: 100vh; 
-    position: absolute;/* Para garantir que os elementos ocupem toda a altura */
-    image-rendering: pixelated;
-    
+  height: 100vh;
+  position: absolute;
+  image-rendering: pixelated;
 }
-/* Adicione estilos específicos para cada elemento conforme necessário */
 .elementoDireita {
-    width: calc(50% - 265px);
-    right: 0;
-    background-image: url(imagens/fundo-acampamento-predios-direita.png);
-    background-size: 100% 100%; 
+  width: calc(50% - 265px);
+  right: 0;
+  background-image: url(imagens/fundo-acampamento-predios-direita.png);
+  background-size: 100% 100%;
 }
 
 .elementoEsquerda {
-    background-image: url(imagens/fundo-acampamento-predios-esquerda.png);
-    left: 0;
-    width: calc(50% - 265px);
-    background-size: 100% 100%; 
+  background-image: url(imagens/fundo-acampamento-predios-esquerda.png);
+  left: 0;
+  width: calc(50% - 265px);
+  background-size: 100% 100%;
 }
 
 .areaDireita {
-    position: absolute;
-    overflow-y: auto;
-    height: 100vh; 
-    margin-left: 60%;
-    right: 0;
-    width: 35%;
-    background-size: 100% 100%;
-    background-image: url(imagens/fundo-vermelho2.png);
+  position: absolute;
+  overflow-y: auto;
+  height: 100vh;
+  margin-left: 60%;
+  right: 0;
+  width: 35%;
+  background-size: 100% 100%;
+  background-image: url(imagens/fundo-vermelho2.png);
 }
 .texturaAreaDireita {
-    position: absolute;
-    background-size: 100% 100%;
-    background: url(imagens/fundo-vermelho2.png);
-} 
+  position: absolute;
+  background-size: 100% 100%;
+  background: url(imagens/fundo-vermelho2.png);
+}
 
-.separadorEsquerda{
-    margin-left: 30%;
+.separadorEsquerda {
+  margin-left: 30%;
 }
-.separadorDireita{
-    left: 0;
+.separadorDireita {
+  left: 0;
 }
-.separadorEsquerda, .separadorDireita {
-    width: 16px;
-    height: 100vh;
-    background: url(imagens/barra.png?v=2) repeat-y;
-    background: url(imagens/panelGradientTop.png) no-repeat top left,url(imagens/panelGradientBottom.png) no-repeat bottom left,url(imagens/barra.png?v=2) repeat-y;
-    position: absolute;
-    z-index: 9999999;
-    top: 0px;
-    bottom: 0px;
-    z-index: 100;
+.separadorEsquerda,
+.separadorDireita {
+  width: 16px;
+  height: 100vh;
+  background: url(imagens/barra.png?v=2) repeat-y;
+  background: url(imagens/panelGradientTop.png) no-repeat top left,
+    url(imagens/panelGradientBottom.png) no-repeat bottom left,
+    url(imagens/barra.png?v=2) repeat-y;
+  position: absolute;
+  z-index: 9999999;
+  top: 0px;
+  bottom: 0px;
+  z-index: 100;
 }
 .separadorBaixo {
-    margin-top: 212px;
-    width:100%;
-	height:16px;
-	background:url(imagens/panelHorizontal.png?v=2) repeat-x;
-	background:url(imagens/panelGradientLeft.png) no-repeat top left,url(imagens/panelGradientRight.png) no-repeat top right,url(imagens/panelHorizontal.png?v=2) repeat-x;
-	position:absolute;
-	left:0px;
-	bottom:0px;
+  margin-top: 212px;
+  width: 100%;
+  height: 16px;
+  background: url(imagens/panelHorizontal.png?v=2) repeat-x;
+  background: url(imagens/panelGradientLeft.png) no-repeat top left,
+    url(imagens/panelGradientRight.png) no-repeat top right,
+    url(imagens/panelHorizontal.png?v=2) repeat-x;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
 }
 .caraAncora {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .pontuacao {
   position: absolute;
@@ -252,346 +254,266 @@
   pointer-events: none;
 }
 .pontuacaoPorSegundo {
-    position: absolute;
-    left: 0;
-    margin-top: 75px;
-    top: 10%;
-    width: 100%;
-    text-align: center;
-    z-index: 200;
-    background: rgba(204, 202, 202, 0.4);
-    padding: 2px 0px;
-    pointer-events: none;
-  }
-  .caraGrande {
-    width: 290px;
-    height: 256px;
-    background: url(imagens/cabeca-1.png);
-    background-size: cover;
-    image-rendering: pixelated;
-    cursor: url(imagens/icone-luva.png), auto;
-    z-index: 10000;
+  position: absolute;
+  left: 0;
+  margin-top: 75px;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 200;
+  background: rgba(204, 202, 202, 0.4);
+  padding: 2px 0px;
+  pointer-events: none;
+}
+.caraGrande {
+  width: 290px;
+  height: 256px;
+  background: url(imagens/cabeca-1.png);
+  background-size: cover;
+  image-rendering: pixelated;
+  cursor: url(imagens/icone-luva.png), auto;
+  z-index: 10000;
 }
 .tituloLoja {
-    margin-top: 50px;
-    position: relative;
-    text-align: center;
+  margin-top: 50px;
+  position: relative;
+  text-align: center;
 }
 
 .upgrades {
-    margin-left: 16px;
-    height: auto; /* Altere a altura para automática para acomodar vários upgrades */
-    display: flex; /* Use flexbox para posicionar os upgrades */
-    flex-wrap: wrap; /* Permita que os upgrades quebrem para a linha seguinte */
-    justify-content: flex-start;
-	background:url(imagens/panelHorizontal.png?v=2) repeat-x top;
-	background:url(imagens/panelGradientLeft.png) no-repeat top left,url(imagens/panelGradientRight.png) no-repeat top right,url(imagens/panelHorizontal.png?v=2) repeat-x;
-	padding-top:16px;
+  margin-left: 16px;
+  height: auto; /* Altera a altura para automática para acomodar vários upgrades */
+  display: flex; /* Use flexbox para posicionar os upgrades */
+  flex-wrap: wrap; /* Permita que os upgrades quebrem para a linha seguinte */
+  justify-content: flex-start;
+  background: url(imagens/panelHorizontal.png?v=2) repeat-x top;
+  background: url(imagens/panelGradientLeft.png) no-repeat top left,
+    url(imagens/panelGradientRight.png) no-repeat top right,
+    url(imagens/panelHorizontal.png?v=2) repeat-x;
+  padding-top: 16px;
 }
-.upgrade{
-    height:60px;
-    position:relative;
-    image-rendering: pixelated;
-    width:60px;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
+.upgrade {
+  height: 60px;
+  position: relative;
+  image-rendering: pixelated;
+  width: 60px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
 }
 .loja {
-	background:url(imagens/panelHorizontal.png?v=2) repeat-x top;
-	background:url(imagens/panelGradientLeft.png) no-repeat top left,url(imagens/panelGradientRight.png) no-repeat top right,url(imagens/panelHorizontal.png?v=2) repeat-x;
-	padding-top:16px;
+  background: url(imagens/panelHorizontal.png?v=2) repeat-x top;
+  background: url(imagens/panelGradientLeft.png) no-repeat top left,
+    url(imagens/panelGradientRight.png) no-repeat top right,
+    url(imagens/panelHorizontal.png?v=2) repeat-x;
+  padding-top: 16px;
 }
 .configLoja {
-    height: 60px;
-    background-color: rgb(36, 36, 36);
+  height: 60px;
+  background-color: rgb(36, 36, 36);
 }
 .construcao > div {
-    user-select: none;
+  user-select: none;
 }
 .construcao > .no-select {
-    user-select: none;
+  user-select: none;
 }
 .construcao {
-    margin-left: 16px;
-    height: 100px;
-    background-size: 30px 30px;
-    background: url(imagens/barra-compra.png) no-repeat left, url(imagens/barra-compra2.png) repeat right;
-    position:relative;
-    cursor: pointer;
+  margin-left: 16px;
+  height: 100px;
+  background-size: 30px 30px;
+  background: url(imagens/barra-compra.png) no-repeat left,
+    url(imagens/barra-compra2.png) repeat right;
+  position: relative;
+  cursor: pointer;
 }
 .construcao-imagem {
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size:contain;
-    image-rendering: pixelated;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  image-rendering: pixelated;
 }
 .informacoes {
-    display:inline-block;
-	position:absolute;
-	left:150px;
-	top:6px;
-	right:0px;
-	bottom:6px;
-	padding:4px;
-	text-shadow:0px 2px 6px #000,0px 1px 1px #000;
+  display: inline-block;
+  position: absolute;
+  left: 150px;
+  top: 6px;
+  right: 0px;
+  bottom: 6px;
+  padding: 4px;
+  text-shadow: 0px 2px 6px #000, 0px 1px 1px #000;
 }
 .nomeConstrucao {
-    position: absolute;
-    font-size: 25px;
+  position: absolute;
+  font-size: 25px;
 }
 .valorConstrucao {
-    position: absolute;
-    margin-top: 40px;
-    font-size: 18px;
+  position: absolute;
+  margin-top: 40px;
+  font-size: 18px;
 }
 .valorConstrucao span {
-    
-    color: rgb(214, 179, 63); /* Cor desejada para o texto dentro do span */
+  color: rgb(214, 179, 63); 
 }
 .quantidadeConstrucao {
-    position: absolute;
-    right:0;
-    top: 50%; /* Move o elemento para 50% da altura do contêiner pai */
-    transform: translateY(-50%); 
-    margin-right: 15px;
-    font-size: 90px;
+  position: absolute;
+  right: 0;
+  top: 50%; 
+  transform: translateY(-50%);
+  margin-right: 15px;
+  font-size: 90px;
 }
 .quantidadeConstrucao span {
-    opacity: 0.3;
-    color: #000;
-    text-shadow: 0px 0px 8px #fff;
+  opacity: 0.3;
+  color: #000;
+  text-shadow: 0px 0px 8px #fff;
 }
 
 .particula-sangue {
-    width: 30px;
-    position: absolute;
-    top: 30px;
-    left: -30px;
-    pointer-events: none;
-    offset-path: path("M10, 20 C50,10 100,10 30,500");
-    animation: particula-sangue 3s infinite alternate ease-in-out; /* Aplicar a animação move com duração de 3s */
+  width: 30px;
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  pointer-events: none;
+  offset-path: path("M10, 20 C50,10 100,10 30,500");
+  animation: particula-sangue 3s infinite alternate ease-in-out; 
 }
-.botao-salvar {
-    left: 16px;
-    bottom: 18px;
-    width: 170px;
-    height: 90px;
-    position: absolute;
-    z-index: 99;
-    background: url(imagens/save-botao.png);
-    background-size: 100% 100%; /* Ajusta a imagem para preencher o tamanho do botão */
-    cursor: pointer;
-}
-.botao-seguidores {
-    left: 16px;
-    bottom: 120px;
-    width: 170px;
-    height: 90px;
-    position: absolute;
-    z-index: 99;
-    background-color: red;
-    background-size: 100% 100%; /* Ajusta a imagem para preencher o tamanho do botão */
-    cursor: pointer;
-}
-
-.botao-importar {
-    right: 0;
-    bottom: 18px;
-    width: 170px;
-    height: 90px;
-    position: absolute;
-    z-index: 99;
-    background-color: rgb(127, 88, 33);
-    cursor: pointer;
-}
-/* Estilos para o modal */
-.modal {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999999;
-  }
-  .modal-conteudo {
-    position: absolute;
-    background-color: #fefefe;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 400px;
-    width: 400px;
-    padding: 20px;
-    border: 1px solid #888;
-    display: flex;
-    flex-direction: column;
-}
-.botao-aceitar,
-.botao-cancelar {
-    width: 45%;
-    height: 40px;
-    cursor: pointer;
-}
-.botao-aceitar {
-    margin-top: 130px;
-    background-color: #aaa;
-    margin-right: auto; 
-}
-.botao-cancelar {
-    margin-top: -40px;
-    background-color: #aaa;
-    margin-left: auto; 
-}
-.fechar-modal {
-    margin-left: auto; 
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-.fechar-modal:hover,
-.fechar-modal:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-.input-backup {
-    margin-top: 100px;
-}
-.bloqueadorConstrucao{
-    background: url(imagens/barra-desbloqueio.png) no-repeat left,  url(imagens/barra-desbloqueio3.png) no-repeat right, url(imagens/barra-desbloqueio2.png) repeat right;
+.bloqueadorConstrucao {
+  background: url(imagens/barra-desbloqueio.png) no-repeat left,
+    url(imagens/barra-desbloqueio3.png) no-repeat right,
+    url(imagens/barra-desbloqueio2.png) repeat right;
 }
 .bloqueadorConstrucao2 {
-    background: url(imagens/barra-desbloqueio.png) no-repeat left,
-                url(imagens/barra-desbloqueio4.png) no-repeat right,
-                url(imagens/barra-desbloqueio2.png) no-repeat center;   
-    background-size: 33% 100%, 20% 100%, 60% 100%; 
-    image-rendering: pixelated;
-    z-index: 999;
+  background: url(imagens/barra-desbloqueio.png) no-repeat left,
+    url(imagens/barra-desbloqueio4.png) no-repeat right,
+    url(imagens/barra-desbloqueio2.png) no-repeat center;
+  background-size: 33% 100%, 20% 100%, 60% 100%;
+  image-rendering: pixelated;
+  z-index: 999;
 }
 .valorBloqueador {
-    position: absolute;
-    width: 149px;
-    height: 64.34px;
-    background: url(imagens/valor-desbloqueio.png);
-    background-size: cover;
-    image-rendering: pixelated;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+  position: absolute;
+  width: 149px;
+  height: 64.34px;
+  background: url(imagens/valor-desbloqueio.png);
+  background-size: cover;
+  image-rendering: pixelated;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .valorBloqueador span {
-    font-size: 30px; /* Define o tamanho da fonte como 30 pixels */
-    color: rgb(225, 179, 29);
+  font-size: 30px; 
+  color: rgb(225, 179, 29);
 }
 
-.correntesBloqueador{
-    background: url(imagens/correntes-desbloqueio.png) repeat right;
-    width: 100%;
-    height: 100%;
+.correntesBloqueador {
+  background: url(imagens/correntes-desbloqueio.png) repeat right;
+  width: 100%;
+  height: 100%;
 }
 .correntesBloqueador2 {
-    background: url(imagens/correntes-desbloqueio2.png) repeat right;
-    width: 100%;
-    height: 100%;
+  background: url(imagens/correntes-desbloqueio2.png) repeat right;
+  width: 100%;
+  height: 100%;
 }
 .correntesBloqueadorParticulas {
-    width: 100px;
-    height: 100px;
-    background: url(imagens/correntes-desbloqueio-particulas2.png) top;
-    background-size: cover;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 99999;
-    animation: fadeOut 1s ease forwards;
+  width: 100px;
+  height: 100px;
+  background: url(imagens/correntes-desbloqueio-particulas2.png) top;
+  background-size: cover;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 99999;
+  animation: fadeOut 1s ease forwards;
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes animarParaLado {
-    0% { transform: translateX(0); } /* Começa a animação sem deslocamento */
-    100% { transform: translateX(-1000px); } /* Termina a animação com deslocamento de 100px para a direita */
-  }
-  
-  /* Aplica a animação à classe */
-  .animarParaLado {
-    animation: animarParaLado 2s linear infinite alternate; /* Animação durante 2 segundos, linearmente, repetida infinitamente e alternando entre a posição inicial e a final */
-  }
-  
-  .unlockFrente,
+  0% {
+    transform: translateX(0);
+  } 
+  100% {
+    transform: translateX(-1000px);
+  } 
+}
+
+/* Aplica a animação à classe */
+.animarParaLado {
+  animation: animarParaLado 2s linear infinite alternate; 
+}
+
+.unlockFrente,
 .unlockTras,
 .unlockConstrucao {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0); /* Começa invisível (escala 0) */
-    height: 300px;
-    width: 625px;
-    image-rendering: pixelated;
-    z-index: 999999999;
-    transition: transform 1s ease; /* Adiciona uma transição suave */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  height: 300px;
+  width: 625px;
+  image-rendering: pixelated;
+  z-index: 999999999;
+  transition: transform 1s ease;
 }
 
 .unlockFrente {
-    margin-top: -240px;
-    background: url(imagens/unlocked.png);
-    background-size: cover;
+  margin-top: -240px;
+  background: url(imagens/unlocked.png);
+  background-size: cover;
 }
 
 .unlockTras {
-    background: url(imagens/unlocked2.png);
-    background-size: cover;
+  background: url(imagens/unlocked2.png);
+  background-size: cover;
 }
 
 .unlockConstrucao {
-    height: 250px;
-    width: 380px;
-    top: 30%;
-    background-size: cover;
+  height: 250px;
+  width: 380px;
+  top: 30%;
+  background-size: cover;
 }
 @keyframes fadeOut {
-    0% {
-      opacity: 1; /* Início com opacidade total */
-    }
-    100% {
-      opacity: 0; /* Final com opacidade zero */
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0; 
+  }
 }
-/* Aplica a escala de crescimento quando a classe de visibilidade é adicionada */
 .unlockFrente.visible,
 .unlockTras.visible,
 .unlockConstrucao.visible {
-    transform: translate(-50%, -50%) scale(1); /* Escala para 1 para mostrar */
-    animation: fadeIn 1s ease;
+  transform: translate(-50%, -50%) scale(1); 
+  animation: fadeIn 1s ease;
 }
 .unlockFrente:not(.visible),
 .unlockTras:not(.visible),
 .unlockConstrucao:not(.visible) {
-    animation: fadeOut 1s ease; /* Aplica a animação de saída */
+  animation: fadeOut 1s ease;
 }
 .unlockFrente.balancar,
 .unlockTras.balancar,
 .unlockConstrucao.balancar {
-    animation: swing 2s infinite alternate; 
+  animation: swing 2s infinite alternate;
 }
 @keyframes swing {
   0% {
     transform: rotate(0deg) translate(-50%, -50%) scale(1);
-    transform-origin: right center; /* Define o ponto de origem na extremidade direita */
+    transform-origin: right center; 
   }
   25% {
     transform: rotate(1deg) translate(-50%, -50%) scale(1);
@@ -603,7 +525,7 @@
   }
   75% {
     transform: rotate(2deg) translate(-50%, -50%) scale(1);
-    transform-origin: left center; /* Define o ponto de origem na extremidade esquerda */
+    transform-origin: left center; 
   }
   100% {
     transform: rotate(0deg) translate(-50%, -50%) scale(1);
@@ -614,26 +536,176 @@
 .unlockFrente.invisible,
 .unlockTras.invisible,
 .unlockConstrucao.invisible {
-    animation: fadeOutUnlock 1s ease; 
+  animation: fadeOutUnlock 1s ease;
 }
 @keyframes fadeOutUnlock {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.4;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(0.01);
-      opacity: 0;
-    }
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
   }
-  @font-face {
-    font-family: myFont;
-    src: url(fontes/Merriweather-Bold.ttf);
+  100% {
+    transform: translate(-50%, -50%) scale(0.01);
+    opacity: 0;
+  }
+}
+@font-face {
+  font-family: myFont;
+  src: url(fontes/Merriweather-Bold.ttf);
 }
 
-
 * {
-    font-family: myFont;
-    color:white;
-    text-shadow: 1px 0px 0px #000,-1px 0px 0px #000,0px 1px 0px #000,0px -1px 0px #000,0px 1px 4px #000;
+  font-family: myFont;
+  color: white;
+  text-shadow: 1px 0px 0px #000, -1px 0px 0px #000, 0px 1px 0px #000,
+    0px -1px 0px #000, 0px 1px 4px #000;
+}
+
+.botao-salvar {
+  left: 16px;
+  bottom: 18px;
+  width: 170px;
+  height: 90px;
+  position: absolute;
+  z-index: 99;
+  background: url(imagens/save-botao.png);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.botao-seguidores {
+  left: 16px;
+  bottom: 120px;
+  width: 170px;
+  height: 90px;
+  position: absolute;
+  z-index: 99;
+  background-color: red;
+  background-size: 100% 100%; 
+  cursor: pointer;
+}
+
+.botao-importar {
+  right: 0;
+  bottom: 18px;
+  width: 170px;
+  height: 90px;
+  position: absolute;
+  z-index: 99;
+  background-color: rgb(127, 88, 33);
+  cursor: pointer;
+}
+/* Estilos para o modal */
+.modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999999;
+}
+.modal-conteudo {
+  position: absolute;
+  background-color: #fefefe;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #888;
+  display: flex;
+  flex-direction: column;
+}
+.botao-aceitar,
+.botao-cancelar {
+  width: 45%;
+  height: 40px;
+  cursor: pointer;
+}
+.botao-aceitar {
+  margin-top: 130px;
+  background-color: #aaa;
+  margin-right: auto;
+}
+.botao-cancelar {
+  margin-top: -40px;
+  background-color: #aaa;
+  margin-left: auto;
+}
+.fechar-modal {
+  margin-left: auto;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.fechar-modal:hover,
+.fechar-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.input-backup {
+  margin-top: 100px;
+}
+
+.modal-predio {
+  position: absolute;
+  background-color: #fefefe;
+  bottom: -200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 90%;
+  padding: 20px;
+  border: 1px solid #888;
+  display: flex;
+  flex-direction: column;
+  z-index: 999999999;
+}
+.cidade {
+  height: 2000px;
+  width: 4000px;
+  position: absolute;
+  background: url(imagens/cidade.png);
+}
+.regiao {
+  position: absolute;
+  background: url(imagens/regiao.png);
+}
+.predio-igreja {
+  position: absolute;
+  top: 100px;
+  left: 1000px;
+  height: 120px;
+  width: 130px;
+  background: url(imagens/predio-igreja.png);
+  background-size: contain;
+}
+.predio-gangues {
+  position: absolute;
+  top: 600px;
+  left: 250px;
+  height: 70px;
+  width: 70px;
+  background: url(imagens/predio-gangues.png);
+  background-size: contain;
+}
+.predio-policia {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  height: 120px;
+  width: 100px;
+  background: url(imagens/predio-policia.png);
+  background-size: contain;
+}
+.botao-voltar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 50px;
+  z-index: 99999;
+  background-color: rgb(47, 189, 255);
+  cursor: pointer;
 }
