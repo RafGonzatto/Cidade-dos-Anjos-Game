@@ -383,7 +383,7 @@ class InicializacaoClasses {
         return movimentosRestantes;
     }
 
-    static carregarPersonagensAcampamento(){ debugger
+    static carregarPersonagensAcampamento(){ 
         let construcoes = Construcao.carregarConstrucoesDoLocalStorage().filter(construcao => {
             return construcao.quantidade > 0;
         });;
@@ -419,7 +419,7 @@ class InicializacaoClasses {
         return;
     }
     
-    static configurarCidade(){ 
+    static inicializarCidade(){ 
         let botao_cidade = document.querySelector(".botao-cidade");
         let acampamento = document.querySelector(".acampamento");
       
