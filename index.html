@@ -10,12 +10,15 @@
 <body>
 <div class="jogo">
     <div id="modal-importar" class="layer modal">
-        <div class="modal-conteudo">
-            <span class="fechar-modal">&times;</span>
-            <h2>Importar Backup</h2>
-            <input type="file" class="input-backup" id="arquivo-backup" accept=".txt">
-            <div class="botao-aceitar"><span>Aceitar</span></div>
-            <div class="botao-cancelar"><span>Cancelar</span></div>
+        <div class="modal-importar">
+            <h2 style="position: absolute; top: -1px; left: 20px;">Importar Backup</h2>
+            <label for="arquivo-backup" class="custom-file-upload">
+                <span id="input-import"style="position: absolute; top: 10px; left: 20px;">Selecionar Arquivo</span>
+                <input type="file" class="input-backup" id="arquivo-backup" accept=".txt">
+            </label>
+            <div class="botao-aceitar"></div>
+            <div class="botao-cancelar"></div>
+            <div class="fechar-modal"></div>
         </div>
     </div>
     <div class ="layer separadorEsquerda"></div>
@@ -27,14 +30,16 @@
         </div>
     </div>
     <div class="layer areaMeio">
-        <div class="botao-cidade"></div>
         <div class="areaMeioSuperior">
+        <div class="botao-config"></div>
+        <div class="botao-conquistas"></div>
         <div class="botao-seguidores"></div>
         <div class="botao-salvar"></div>
         <div class="botao-importar"></div>
         <div class="separadorBaixo"></div>
         </div>
         <div class="areaMeioInferior">
+        <div class="botao-cidade"></div>
             <div class="acampamento">
                 <div class="protagonista"></div>
                 <div class="policial"></div>
@@ -54,7 +59,6 @@
         </div>
     </div>
     <div class="layer areaDireita">
-        <div class ="texturaAreaDireita"></div>
         <div class ="separadorDireita"></div>
         <div class ="tituloLoja"><span>Gangue</span></div>
         <div class="upgrades"></div>

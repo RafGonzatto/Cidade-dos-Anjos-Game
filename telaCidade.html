@@ -10,10 +10,30 @@
   <body>
     <div class="jogo">
       <div id="modal-predio" class="layer modal">
-        <div class="modal-predio">
-          <span class="fechar-modal">&times;</span>
-        </div>
+          <div class="modal-predio">
+            
+            <div class="modal-conteudo">
+              <div class="modal-abas">
+                <button class="aba ativa" data-alvo="informacoes">Informações</button>
+                <button class="aba" data-alvo="missoes">Missões</button>
+              </div>
+           
+            </div>
+            <div class="modal-conteudo">
+              <div class="imagem-predio"></div>   
+              <div class="imagem-predio-tab"></div>
+            </div>
+            <div class="modal-conteudo">
+              <div class="conteudo-abas">
+                <div id="informacoes" class="conteudo-aba ativo">Teste
+                </div>
+                  <div id="missoes" class="conteudo-aba">Missões                </div>
+              </div>    
+            </div>
+            <div class="fechar-modal" style="top: 73px;"></div>  
+          </div>
       </div>
+
       <div class="layer botao-voltar">Voltar</div>
       <div class="layer regiao">
         <div class="cidade"></div>

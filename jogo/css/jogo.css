@@ -31,7 +31,7 @@
 }
 .areaMeioSuperior {
   position: absolute;
-  height: 25vh;
+  height: 40vh;
   left: 0;
   width: 100%;
   background-image: url(imagens/textura-amarela.png);
@@ -41,7 +41,7 @@
 }
 .areaMeioInferior {
   position: absolute;
-  height: 75vh;
+  height: 60vh;
   width: 100%;
   background-image: url(imagens/fundo-acampamento-inferior.png);
   bottom: 0;
@@ -79,12 +79,14 @@
 }
 .botao-cidade {
   position: absolute;
-  top: 29%;
-  left: 30%;
-  width: 250px;
-  height: 120px;
+  top: 3%;
+  left:50%;
+  width: 180px;
+  height: 140px;
   opacity: 0;
-  z-index: 99999999999;
+  overflow: hidden;
+  transform: translate(-50%, 0%);
+  z-index: 9999999;
   background-color: greenyellow;
 }
 .protagonista {
@@ -194,14 +196,9 @@
   margin-left: 60%;
   right: 0;
   width: 35%;
-  background-size: 100% 100%;
   background-image: url(imagens/fundo-vermelho2.png);
 }
-.texturaAreaDireita {
-  position: absolute;
-  background-size: 100% 100%;
-  background: url(imagens/fundo-vermelho2.png);
-}
+
 
 .separadorEsquerda {
   margin-left: 30%;
@@ -550,7 +547,7 @@
 }
 @font-face {
   font-family: myFont;
-  src: url(fontes/Merriweather-Bold.ttf);
+  src: url(imagens/fontes/Merriweather-Bold.ttf);
 }
 
 * {
@@ -559,114 +556,223 @@
   text-shadow: 1px 0px 0px #000, -1px 0px 0px #000, 0px 1px 0px #000,
     0px -1px 0px #000, 0px 1px 4px #000;
 }
+.botao-salvar,
+.botao-seguidores,
+.botao-conquistas,
+.botao-config,
+.botao-importar,
+.botao-conquistas {
+  width: 170px;
+  height: 90px;
+  position: absolute;
+  z-index: 99;
+  cursor: pointer;  
+  image-rendering: pixelated;
+}
+
+.botao-salvar,
+.botao-seguidores,
+.botao-conquistas {
+  left: 16px;
+}
+
+.botao-config,
+.botao-importar {
+  right: 0;
+}
 
 .botao-salvar {
-  left: 16px;
   bottom: 18px;
-  width: 170px;
-  height: 90px;
-  position: absolute;
-  z-index: 99;
-  background: url(imagens/save-botao.png);
+  background: url(imagens/botoes/save-botao.png);
   background-size: 100% 100%;
-  cursor: pointer;
 }
+
 .botao-seguidores {
-  left: 16px;
-  bottom: 120px;
-  width: 170px;
-  height: 90px;
-  position: absolute;
-  z-index: 99;
-  background-color: red;
-  background-size: 100% 100%; 
-  cursor: pointer;
+  bottom: 111px;
+  background: url(imagens/botoes/follower-botao.png);
+  background-size: 100% 100%;
+}
+
+.botao-conquistas {
+  bottom: 204px;
+  background: url(imagens/botoes/trophy-botao.png);
+  background-size: 100% 100%;
+}
+
+.botao-config {
+  bottom: 111px;
+  background: url(imagens/botoes/config-botao.png);
+  background-size: 100% 100%;
 }
 
 .botao-importar {
-  right: 0;
   bottom: 18px;
-  width: 170px;
-  height: 90px;
+  background: url(imagens/botoes/import-botao.png);
+  background-size: 100% 100%;
+}
+
+.custom-file-upload {
+  display: inline-block;
   position: absolute;
-  z-index: 99;
-  background-color: rgb(127, 88, 33);
+  top: 140px;
+  height: 40px;
+  width: 92%;
+  background: url(imagens/botoes/input-botao.png);
+  background-size: 100% 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.custom-file-upload span {
+  margin-right: 10px;
+}
+
+.custom-file-upload input[type="file"] {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
   cursor: pointer;
 }
-/* Estilos para o modal */
 .modal {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999999;
+  z-index: 99999999;
 }
-.modal-conteudo {
+.modal-importar {
   position: absolute;
-  background-color: #fefefe;
+  background: url(imagens/botoes/import-tab.png);
+  image-rendering: pixelated;
+  background-size: 100% 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 400px;
   width: 400px;
   padding: 20px;
-  border: 1px solid #888;
   display: flex;
   flex-direction: column;
 }
 .botao-aceitar,
 .botao-cancelar {
   width: 45%;
-  height: 40px;
+  height: 140px;
   cursor: pointer;
 }
 .botao-aceitar {
-  margin-top: 130px;
-  background-color: #aaa;
+  margin-top: 190px;
+  background: url(imagens/botoes/ok-botao.png);
+  background-size: 100% 100%;
   margin-right: auto;
 }
 .botao-cancelar {
-  margin-top: -40px;
-  background-color: #aaa;
+  margin-top: -140px;
+  background: url(imagens/botoes/cancel-botao.png);
+  background-size: 100% 100%;
   margin-left: auto;
 }
 .fechar-modal {
-  margin-left: auto;
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.fechar-modal:hover,
-.fechar-modal:focus {
-  color: black;
-  text-decoration: none;
+  position: absolute;
+  right: 35px;
+  background: url(imagens/botoes/close-botao.png);
+  height: 25px;
+  width: 23px;
+  background-size: 100% 100%;
   cursor: pointer;
+  float: right;
+  font-weight: bold;  
+  z-index: 999999;
 }
-.input-backup {
-  margin-top: 100px;
+.imagem-predio-tab{
+  position: absolute;
+  image-rendering: pixelated;
+  height: 283.38px;
+  width: 1000px;
+  background: url(imagens/botoes/predio-tab.png);
+  background-size: 100% 100%;
 }
 
 .modal-predio {
   position: absolute;
-  background-color: #fefefe;
-  bottom: -200px;
+  image-rendering: pixelated;
+  background-size: 100% 100%;
+  bottom: -130px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  height: 400px;
-  width: 90%;
+  transform: translate(-50%, -60%);
+  height: 283.38px;
+  width: 1000px;
   padding: 20px;
-  border: 1px solid #888;
   display: flex;
   flex-direction: column;
-  z-index: 999999999;
 }
+.modal-conteudo {
+  display: flex;
+}
+
+.imagem-predio {
+  position: absolute;
+  background: url(imagens/predio-arquebispo.png);
+  image-rendering: pixelated;
+  height: 250px;
+  width: 370px;
+  transform: translate(23%, 3%);
+  background-size: 100% 100%;
+}
+
+.personalizacao {
+
+}
+
+.modal-abas {
+  z-index: 99999;
+  width: 700px;
+  transform: translate(62%, 110%);
+  left: 0;
+}
+
+.aba {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background: url(imagens/botoes/predio-tab-aba.png);
+  background-size: 100% 100%;
+}
+
+.aba.ativa {
+}
+
+.conteudo-abas {
+  position: absolute;
+  z-index: 99999999;
+  top: 120px;
+  left: 460px;
+  height: 160px;
+  width: 505px;
+  border: 1px solid #000; 
+  padding: 20px;
+}
+
+.conteudo-aba {
+  display: none;
+}
+
+.conteudo-aba.ativo {
+  display: block;
+}
+
 .cidade {
+  position: absolute;
   height: 2000px;
   width: 4000px;
-  position: absolute;
   background: url(imagens/cidade.png);
+  image-rendering: pixelated;
+  background-size: 100% 100%;;
 }
 .regiao {
   position: absolute;
@@ -674,30 +780,36 @@
 }
 .predio-igreja {
   position: absolute;
-  top: 100px;
-  left: 1000px;
-  height: 120px;
-  width: 130px;
+  top: 76px;
+  left: 924px;
+  height: 296px;
+  width: 338px;
   background: url(imagens/predio-igreja.png);
-  background-size: contain;
+  opacity: 0;
+  image-rendering: pixelated;
+  background-size: 100% 100%;;
 }
 .predio-gangues {
   position: absolute;
-  top: 600px;
-  left: 250px;
-  height: 70px;
-  width: 70px;
+  top: 489px;
+  left: 48px;
+  height: 201px;
+  width: 385px;
   background: url(imagens/predio-gangues.png);
-  background-size: contain;
+  opacity: 0;
+  image-rendering: pixelated;
+  background-size: 100% 100%;;
 }
 .predio-policia {
   position: absolute;
-  top: 300px;
-  left: 300px;
-  height: 120px;
-  width: 100px;
+  top: 131px;
+  left: 40px;
+  height: 352px;
+  width: 401px;
+  opacity: 0;
   background: url(imagens/predio-policia.png);
-  background-size: contain;
+  image-rendering: pixelated;
+  background-size: 100% 100%;;
 }
 .botao-voltar {
   position: absolute;

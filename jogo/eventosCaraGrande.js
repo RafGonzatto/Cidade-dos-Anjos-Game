@@ -1,9 +1,5 @@
-import {
-  particulaCaraClicada,
-  caraClicada,
-  trocarImagem,
-  trocarImagemFerido,
-} from "./caraGrandeService.js";
+import {particulaCaraClicada, caraClicada, trocarImagem, trocarImagemFerido} from "./caraGrandeService.js";
+import InicializacaoClasses from "./inicializacaoClasses.js";
 
 export function configurarEventosCaraGrande() {
   const caraGrande = document.querySelector(".caraGrande");
@@ -44,10 +40,10 @@ export function configurarEventosCaraGrande() {
   caraGrande.addEventListener("mouseup", () => {
     mousedownAtivado = false;
   });
-
+ const currentUrlsArray = InicializacaoClasses.imagensCara();
   setInterval(() => {
     if (!mousedownAtivado) {
-      trocarImagem(caraGrande);
+      trocarImagem(caraGrande, currentUrlsArray);
     }
   }, 500);
 }

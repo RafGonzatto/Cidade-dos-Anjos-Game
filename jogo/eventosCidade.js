@@ -48,16 +48,41 @@ export function configurarCidade() {
     isMouseDown = false;
   });
 }
+
 export function configurarPredios(elemento) {
   elemento.addEventListener("mouseenter", () => {
-   //Implementar
+    elemento.style.opacity = "1";
   });
 
   elemento.addEventListener("mouseleave", () => {
-   //Implementar
+    elemento.style.opacity = "0";
   });
 
   const modal = document.getElementById("modal-predio");
+  const abas = document.querySelectorAll(".aba");
+  const conteudosAbas = document.querySelectorAll(".conteudo-aba");
+
+  function exibirConteudoAba(alvo) {
+    conteudosAbas.forEach(conteudo => {
+      if (conteudo.id === alvo) {
+        conteudo.classList.add("ativo");
+      } else {
+        conteudo.classList.remove("ativo");
+      }
+    });
+  }
+
+  abas.forEach(aba => {
+    aba.addEventListener("click", () => {
+      abas.forEach(aba => {
+        aba.classList.remove("ativa");
+      });
+      aba.classList.add("ativa");
+      const alvo = aba.getAttribute("data-alvo");
+      exibirConteudoAba(alvo);
+    });
+  });
+
   elemento.addEventListener("click", () => {
     modal.style.display = "block";
   });
