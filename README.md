@@ -1,51 +1,43 @@
 # Cidade dos Anjos 
+ ![Image](jogo/css/imagens/construcao-cao-brabo.png) ![Image](jogo/css/imagens/construcao-luva.png) ![Image](jogo/css/imagens/construcao-maromba.png) ![Image](jogo/css/imagens/construcao-policial.png) <br>
+Hi, my name is Rafael. This is a personal project inspired by a comic book I'm writing and illustrating. I plan to release it someday. The inspiration for this project came from the fascinating game Cookie Clicker 🍪, created by Orteil.
 
-<div style="display: flex; justify-content: space-between; width: 100%;">
-  <div style="width: 70%;">
-    Oi, meu nome é Rafael. Este é um projeto pessoal inspirado em uma história em quadrinhos que estou escrevendo e ilustrando. Planejo lançá-lo algum dia. A inspiração para este projeto veio do fascinante jogo Cookie Clicker 🍪, criado por Orteil.<br><br>
-    Aos meus 10 anos, fui cativado pela mecânica e pelas artes dele, e me pegava pensando, e se eu criasse meu próprio "Cookie Clicker".<br><br>
-    Por circunstâncias inesperadas, acabei me tornando um estudante de ciência da computação aos 18 anos e agora aos 20 anos queria me desafiar a tornar real aquela ideia antiga. Obviamente que não pretendo simplesmente copiar o trabalho de Orteil com uma nova roupagem.
-  </div>
-  <div style="width: 30%;">
-    <img src="jogo/css/imagens/cabeca-virada3grande.png" alt="Descrição da imagem" width="100%" />
-  </div>
-</div>
+At the age of 10, I was captivated by its mechanics and artwork, and I found myself thinking, what if I created my own "Cookie Clicker".
 
-## Como Rodar o Projeto
+Due to unexpected circumstances, I ended up becoming a computer science student at 18 and now at 20 I wanted to challenge myself to make that old idea come true. Obviously, I don't intend to simply copy Orteil's work with a new look.
 
-<div style="display: flex; justify-content: space-between; width: 100%;">
-  <div style="width: 37.5%;">
-    <img src="jogo/css/imagens/ratosgrande.png" alt="Descrição da imagem" width="100%" />
-  </div>
-  <div style="width: 5%;">
-  </div>
-  <div style="width: 57.5%;">
-    Como é um projeto feito apenas com Javascript, HTML e CSS puro, basta clonar o repositório e executar o arquivo index.html.<br><br>
-    <span style="color: green;"><strong>Estou disponibilizando o projeto para que as pessoas possam ver o processo de desenvolvimento e entender o funcionamento do código e a lógica por trás dele. No entanto, vale ressaltar que qualquer pessoa com habilidades básicas de programação pode obter o código-fonte facilmente através de web scraping se o site for ao ar.</strong></span><br><br>
-    <strong>Além disso, gostaria muito de receber feedback sobre o projeto e seria ótimo se você pudesse deixar algumas estrelas aqui no GitHub!</strong>
-  </div>
-</div>
 
-## Ideias para o projeto
+## How to Run the Project
+![Image](jogo/css/imagens/dog-walk-right1.png) ![Image](jogo/css/imagens/dog-walk-right2.png) ![Image](jogo/css/imagens/dog-walk-right3.png) ![Image](jogo/css/imagens/dog-walk-right4.png)
+![Image](jogo/css/imagens/dog-walk-right1.png) ![Image](jogo/css/imagens/dog-walk-right2.png) ![Image](jogo/css/imagens/dog-walk-right3.png) ![Image](jogo/css/imagens/dog-walk-right4.png)
+![Image](jogo/css/imagens/dog-walk-right1.png) ![Image](jogo/css/imagens/dog-walk-right2.png) ![Image](jogo/css/imagens/dog-walk-right3.png) ![Image](jogo/css/imagens/dog-walk-right4.png)
+<br>
+As it's a project made only with pure Javascript, HTML, and CSS, simply clone the repository and run the index.html file.
 
-<div style="display: flex; justify-content: space-between; width: 100%;">
-  <div style="width: 70%;">
-    <span style="font-weight: bold;">
-      1. Implementar a navegação pelo mapa da cidade<br>
-      2. Implementar as interações com estruturas da cidade<br>
-      3. Implementar a mecânica de seguidores da sua gangue<br>
-      4. Modificar a UI/UX da página principal, corrigindo principalmente os botões de Save e Import<br>
-      5. Otimizar o código e incluir mais observadores, fortalecer o uso de orientação a objetos<br>
-      6. Implementar criptografia no save do jogo<br>
-    </span>
-  </div>
-  <div style="width: 30%;">
-    <img src="jogo/css/imagens/construcao-luvagrande.png" alt="Descrição da imagem" width="100%" />
-  </div>
-</div>
+**I'm making the project available for people to see the development process and understand the code's functioning and logic behind it. However, it's worth noting that anyone with basic programming skills can easily obtain the source code through web scraping if the site goes live.**
 
-# Obrigado a todos que gostaram do projeto! Se puderem deixar sua estrela e seguir o projeto, seria ótimo!
+**Also, I would greatly appreciate feedback on the project, and it would be great if you could leave some stars here on GitHub!**
 
-<div style="display: flex; justify-content: space-between; width: 100%;">
-    <img src="jogo/css/imagens/cabeca-soco-3grande.png" alt="Descrição da imagem" width="100%" />
-</div>
+## Project Ideas
+
+ - [x] Implement city map navigation
+ - [x] Implement interactions with city structures
+ - [ ] Implement follower mechanic for your gang
+ - [x] Modify the UI/UX of the main page, mainly fixing the Save and Import buttons
+ - [ ] Optimize the code and include more observers, strengthen the use of object-oriented programming
+ - [ ] Implement encryption in the game save
+
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+![Image](jogo/css/imagens/icone-luva.png)
+
+# Thanks to everyone who liked the project! If you could leave your star and follow the project, it would be great!
+
+![Image](jogo/css/imagens/cabeca-soco-3grande.png)
