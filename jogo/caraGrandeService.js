@@ -1,5 +1,12 @@
 import InicializacaoClasses from "./inicializacaoClasses.js";
 import JogoService from "./jogoService.js";
+
+const imagensCara = InicializacaoClasses.imagensCara().map(url => {
+  const img = new Image();
+  img.src = url;
+  return img;
+});
+
 let indiceImagem = 0;
 
 export function particulaCaraClicada(x, y, offsetConfig) {
@@ -43,10 +50,8 @@ export function caraClicada() {
 }
 
 export function trocarImagem(caraGrande) {
-  indiceImagem = (indiceImagem + 1) % InicializacaoClasses.imagensCara().length;
-  caraGrande.style.backgroundImage = `url(${
-    InicializacaoClasses.imagensCara()[indiceImagem]
-  })`;
+  indiceImagem = (indiceImagem + 1) % imagensCara.length;
+  caraGrande.style.backgroundImage = `url(${imagensCara[indiceImagem].src})`;
 }
 
 export function trocarImagemFerido(caraGrande) {

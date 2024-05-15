@@ -1,5 +1,5 @@
 {
-  "name": "Cidade dos Anjos",
+  "name": "cidadedosanjos",
   "version": "1.0.0",
   "description": "![Image](jogo/css/imagens/construcao-cao-brabo.png) ![Image](jogo/css/imagens/construcao-luva.png) ![Image](jogo/css/imagens/construcao-maromba.png) ![Image](jogo/css/imagens/construcao-policial.png) <br>\r Hi, my name is Rafael. This is a personal project inspired by a comic book I'm writing and illustrating. I plan to release it someday. The inspiration for this project came from the fascinating game Cookie Clicker 🍪, created by Orteil.",
   "main": "electron/index.js",

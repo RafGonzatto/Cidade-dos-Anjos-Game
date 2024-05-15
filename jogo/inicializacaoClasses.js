@@ -304,83 +304,102 @@ class InicializacaoClasses {
         });
     }
 
-    static iniciarMovimento() { 
-        let personagem = document.querySelector('.cachorro');
-        let direcaoAtual = Math.random() < 0.5 ? 'vertical' : 'horizontal'; 
-        let movimentosRestantes = 10; 
+    static async iniciarMovimento() {
+        const personagem = document.querySelector('.cachorro');
+        let direcaoAtual = Math.random() < 0.5 ? 'vertical' : 'horizontal';
+        let movimentosRestantes = 10;
         let incremento = 1;
-        let indicePasso = 1; 
+        let indicePasso = 1;
+        async function preloadImages(images) {
+            const promises = images.map(url => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.onerror = () => reject(new Error(`Failed to load image ${url}`));
+                    img.src = url;
+                });
+            });
+            return await Promise.all(promises);
+        }
+        const imageUrls = [
+            'jogo/css/imagens/dog-walk-up.png',
+            'jogo/css/imagens/dog-walk-down.png',
+            'jogo/css/imagens/dog-walk-left1.png',
+            'jogo/css/imagens/dog-walk-left2.png',
+            'jogo/css/imagens/dog-walk-left3.png',
+            'jogo/css/imagens/dog-walk-left4.png',
+            'jogo/css/imagens/dog-walk-right1.png',
+            'jogo/css/imagens/dog-walk-right2.png',
+            'jogo/css/imagens/dog-walk-right3.png',
+            'jogo/css/imagens/dog-walk-right4.png'
+        ];
     
-        const interval = setInterval(() => {
-            if (movimentosRestantes > 0) { 
-                if (direcaoAtual === 'vertical') {
-                    movimentosRestantes = this.movimentarVerticalmente(personagem, movimentosRestantes, incremento);
+        try {
+            const preloadedImages = await preloadImages(imageUrls);
+            const interval = setInterval(() => {
+                if (movimentosRestantes > 0) {
+                    if (direcaoAtual === 'vertical') {
+                        movimentosRestantes = this.movimentarVerticalmente(personagem, movimentosRestantes, incremento, preloadedImages);
+                    } else {
+                        movimentosRestantes = this.movimentarHorizontalmente(personagem, movimentosRestantes, incremento, indicePasso, preloadedImages);
+                    }
+                    movimentosRestantes = movimentosRestantes === 0 ? 0 : movimentosRestantes - 1;
+                    indicePasso = indicePasso < 4 ? indicePasso + 1 : 1;
                 } else {
-                    movimentosRestantes = this.movimentarHorizontalmente(personagem, movimentosRestantes, incremento, indicePasso);
+                    incremento *= -1;
+                    direcaoAtual = Math.random() < 0.5 ? 'vertical' : 'horizontal';
+                    movimentosRestantes = Math.floor(Math.random() * 20) + 20;
                 }
-                movimentosRestantes = movimentosRestantes === 0 ? 0 : movimentosRestantes - 1; 
-                indicePasso = indicePasso < 4 ? indicePasso + 1 : 1;
-            } else {
-                incremento *= -1;
-                direcaoAtual = Math.random() < 0.5 ? 'vertical' : 'horizontal'
-                movimentosRestantes = Math.floor(Math.random() * 20) + 20; 
-
-            }
-        }, 50);
+            }, 50);
     
-        return interval;
+            return interval;
+        } catch (error) {
+            console.error(error);
+        }
     }
-    
     static pararMovimento(interval) {
         clearInterval(interval);
     }
 
-    static movimentarVerticalmente(personagem, movimentosRestantes, incremento) { 
-        let novoLeft = parseInt(personagem.style.left) || 50; 
-        let novoTop = parseInt(personagem.style.top) || 50; 
+    static movimentarVerticalmente(personagem, movimentosRestantes, incremento) {
+        let novoTop = parseInt(personagem.style.top) || 50;
 
         personagem.style.width = "20px";
         personagem.style.height = "44px";
-        if(incremento<0){
+        if (incremento < 0) {
             personagem.style.backgroundImage = "url(jogo/css/imagens/dog-walk-up.png)";
-        }
-        else{
+        } else {
             personagem.style.backgroundImage = "url(jogo/css/imagens/dog-walk-down.png)";
         }
-        
-        if (((novoTop+incremento) === 26 || (novoTop+incremento) === 89)|| 
-        ((novoLeft+incremento) >= 0 && (novoLeft+incremento) <= 27 && (novoTop+incremento) <= 72 && (novoTop+incremento) >= 52) ||
-        ((novoLeft+incremento) >= 60 && (novoLeft+incremento) <= 100 && (novoTop+incremento) <= 78 && (novoTop+incremento) >= 47))  
-        {
+        if (((novoTop + incremento) === 26 || (novoTop + incremento) === 89) ||
+            ((novoTop + incremento) >= 52 && (novoTop + incremento) <= 72)) {
             incremento *= -1;
-            movimentosRestantes = 0; 
+            movimentosRestantes = 0;
         }
-        personagem.style.top = `${novoTop + incremento}%`; 
+        personagem.style.top = `${novoTop + incremento}%`;
         return movimentosRestantes;
     }
 
-  
-    static movimentarHorizontalmente(personagem, movimentosRestantes, incremento, indicePasso) { 
-        let novoLeft = parseInt(personagem.style.left) || 50; 
-        let novoTop = parseInt(personagem.style.top) || 50; 
+    static movimentarHorizontalmente(personagem, movimentosRestantes, incremento, indicePasso) {
+        let novoLeft = parseInt(personagem.style.left) || 50;
+
         personagem.style.width = "50px";
         personagem.style.height = "40px";
-        if(incremento<0){
+        if (incremento < 0) {
             personagem.style.backgroundImage = `url(jogo/css/imagens/dog-walk-left${indicePasso}.png)`;
-        }
-        else{
+        } else {
             personagem.style.backgroundImage = `url(jogo/css/imagens/dog-walk-right${indicePasso}.png)`;
         }
-        if (((novoLeft+incremento) === 3 || (novoLeft+incremento) === 90) || 
-        ((novoLeft+incremento) >= 0 && (novoLeft+incremento) <= 27 && (novoTop+incremento) <= 72 && (novoTop+incremento) >= 52) ||
-        ((novoLeft+incremento) >= 60 && (novoLeft+incremento) <= 100 && (novoTop+incremento) <= 78 && (novoTop+incremento) >= 47))  
-        {
-            incremento *= -1; 
-            movimentosRestantes = 0; 
+        if (((novoLeft + incremento) === 3 || (novoLeft + incremento) === 90) ||
+            ((novoLeft + incremento) >= 0 && (novoLeft + incremento) <= 27) ||
+            ((novoLeft + incremento) >= 60 && (novoLeft + incremento) <= 100)) {
+            incremento *= -1;
+            movimentosRestantes = 0;
         }
-        personagem.style.left = `${novoLeft + incremento}%`; 
+        personagem.style.left = `${novoLeft + incremento}%`;
         return movimentosRestantes;
     }
+
 
     static carregarPersonagensAcampamento(){ 
         let construcoes = Construcao.carregarConstrucoesDoLocalStorage().filter(construcao => {

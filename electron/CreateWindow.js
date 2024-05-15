@@ -6,7 +6,6 @@ function createWindow() {
         width: width,
         height: height,
         frame: false,
-        resizable: false,
         icon: './jogo/css/imagens/icone.ico',
     });
 

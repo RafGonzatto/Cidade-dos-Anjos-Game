@@ -40,10 +40,9 @@ export function configurarEventosCaraGrande() {
   caraGrande.addEventListener("mouseup", () => {
     mousedownAtivado = false;
   });
- const currentUrlsArray = InicializacaoClasses.imagensCara();
   setInterval(() => {
     if (!mousedownAtivado) {
-      trocarImagem(caraGrande, currentUrlsArray);
+      trocarImagem(caraGrande);
     }
   }, 500);
 }
