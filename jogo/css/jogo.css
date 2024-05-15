@@ -724,9 +724,9 @@
   background-size: 100% 100%;
 }
 
-.personalizacao {
+/* .personalizacao {
 
-}
+} */
 
 .modal-abas {
   z-index: 99999;
@@ -744,8 +744,8 @@
   background-size: 100% 100%;
 }
 
-.aba.ativa {
-}
+/* .aba.ativa {
+} */
 
 .conteudo-abas {
   position: absolute;

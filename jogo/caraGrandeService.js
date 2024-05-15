@@ -7,7 +7,14 @@ const imagensCara = InicializacaoClasses.imagensCara().map(url => {
   return img;
 });
 
+const imagensCaraFerido = InicializacaoClasses.imagensCaraFerido().map(url => {
+  const img = new Image();
+  img.src = url;
+  return img;
+});
+
 let indiceImagem = 0;
+let indiceImagemFerido = 0;
 
 export function particulaCaraClicada(x, y, offsetConfig) {
   let caraClicada = document.querySelector(".areaEsquerda");
@@ -55,9 +62,6 @@ export function trocarImagem(caraGrande) {
 }
 
 export function trocarImagemFerido(caraGrande) {
-  indiceImagem =
-    (indiceImagem + 1) % InicializacaoClasses.imagensCaraFerido().length;
-  caraGrande.style.backgroundImage = `url(${
-    InicializacaoClasses.imagensCaraFerido()[indiceImagem]
-  })`;
+  indiceImagemFerido = (indiceImagemFerido + 1) % imagensCaraFerido.length;
+  caraGrande.style.backgroundImage = `url(${imagensCaraFerido[indiceImagemFerido].src})`;
 }
