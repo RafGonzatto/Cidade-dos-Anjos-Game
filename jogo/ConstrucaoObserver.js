@@ -1,4 +1,4 @@
-import Observer from './Observer.js'; // Corrigindo a importação da classe Observer
+import Observer from './Observer.js'; 
 import Construcao from './Construcao.js';
 import InicializacaoClasses from './inicializacaoClasses.js';
 

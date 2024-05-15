@@ -83,7 +83,7 @@ export function configurarPredios(elemento) {
     });
   });
 
-  elemento.addEventListener("click", (elemento) => {debugger
+  elemento.addEventListener("click", (elemento) => {
     let target = elemento.currentTarget;
     let imagem = document.querySelector('.imagem-predio');
     if (target.classList.contains('predio-policia')) {

@@ -55,7 +55,7 @@
   height: 1200px; 
   top: 0;
   display: flex;
-  justify-content: space-between; /* Os elementos filhos se espaçarão igualmente */
+  justify-content: space-between;
 }
 .acampamento {
   position: absolute;
@@ -820,4 +820,7 @@
   z-index: 99999;
   background-color: rgb(47, 189, 255);
   cursor: pointer;
+}
+body {
+  user-select: none;
 }
