@@ -718,9 +718,9 @@
   position: absolute;
   background: url(imagens/predio-arquebispo.png);
   image-rendering: pixelated;
-  height: 250px;
-  width: 370px;
-  transform: translate(23%, 3%);
+  height: 231.07px;
+  width: 350px;
+  transform: translate(26%, 10%);
   background-size: 100% 100%;
 }
 

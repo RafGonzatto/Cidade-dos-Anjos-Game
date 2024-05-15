@@ -138,7 +138,6 @@ class InicializacaoClasses {
         const imagensCara = [
             'jogo/css/imagens/cabeca-1.png', 
             'jogo/css/imagens/cabeca-2.png',
-            'jogo/css/imagens/cabeca-3.png',
             'jogo/css/imagens/cabeca-32.png',
             'jogo/css/imagens/cabeca-virada1.png', 
             'jogo/css/imagens/cabeca-virada2.png', 

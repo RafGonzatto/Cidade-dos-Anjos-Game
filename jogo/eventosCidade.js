@@ -83,7 +83,19 @@ export function configurarPredios(elemento) {
     });
   });
 
-  elemento.addEventListener("click", () => {
+  elemento.addEventListener("click", (elemento) => {debugger
+    let target = elemento.currentTarget;
+    let imagem = document.querySelector('.imagem-predio');
+    if (target.classList.contains('predio-policia')) {
+      imagem.style.backgroundImage = 'url(jogo/css/imagens/predio-capitao.png'
+    }
+    if (target.classList.contains('predio-igreja')) {
+      imagem.style.backgroundImage = 'url(jogo/css/imagens/predio-arquebispo.png'
+    } 
+    if (target.classList.contains('predio-gangues')) {
+      imagem.style.backgroundImage = 'url(jogo/css/imagens/predio-gangster.png'
+    }
+   
     modal.style.display = "block";
   });
   const fecharModal = document.querySelector(".fechar-modal");
