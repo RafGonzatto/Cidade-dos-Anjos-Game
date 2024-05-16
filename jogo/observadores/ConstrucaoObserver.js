@@ -1,6 +1,6 @@
 import Observer from './Observer.js'; 
-import Construcao from './Construcao.js';
-import InicializacaoClasses from './inicializacaoClasses.js';
+import Construcao from '../models/Construcao.js';
+import InicializacaoClasses from '../inicializacaoClasses.js';
 
 class ConstrucaoObserver extends Observer {
     updateProducao() {

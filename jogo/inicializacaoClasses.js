@@ -1,8 +1,8 @@
-import Construcao from "./Construcao.js";
-import Seguidores from "./Seguidores.js";
-import Upgrade from "./Upgrade.js";
-import JogoService from "./jogoService.js";
-import ConstrucaoObserver from "./ConstrucaoObserver.js";
+import Construcao from "./models/Construcao.js";
+import Seguidores from "./models/Seguidores.js";
+import Upgrade from "./models/Upgrade.js";
+import JogoService from "./services/jogoService.js";
+import ConstrucaoObserver from "./observadores/ConstrucaoObserver.js";
 
 class InicializacaoClasses {
     static inicializarConstrucoesPadrao() {  

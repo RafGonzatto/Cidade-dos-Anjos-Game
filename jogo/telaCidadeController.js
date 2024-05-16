@@ -1,4 +1,4 @@
-import { configurarCidade, configurarPredios } from "./eventosCidade.js";
+import { configurarCidade, configurarPredios } from "./eventosTelaCidade/eventosCidade.js";
 
 class TelaCidadeController {
   constructor() {

@@ -1,4 +1,4 @@
-import Construcao from "./Construcao.js";
+import Construcao from "../models/Construcao.js";
 class JogoService {
   static atualizarHTMLElemento(construcaoElemento, valor, quantidade) {
     if (construcaoElemento) {
@@ -24,7 +24,9 @@ class JogoService {
       );
     }
   }
-
+  static abrirConfiguracao(){
+    
+  }
   static atualizarHTML() {
     let construcoes = Construcao.carregarConstrucoesDoLocalStorage();
     construcoes.forEach((construcao) => {

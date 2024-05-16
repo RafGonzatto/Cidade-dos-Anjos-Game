@@ -33,12 +33,23 @@
         <div class="areaMeioSuperior">
         <div class="botao-config"></div>
         <div class="botao-conquistas"></div>
-        <div class="botao-seguidores"></div>
+        <div class="botao-seguidores"></div> 
         <div class="botao-salvar"></div>
         <div class="botao-importar"></div>
         <div class="separadorBaixo"></div>
         </div>
         <div class="areaMeioInferior">
+            <div class="areaConfig">
+                <div class="botao-voltar">Voltar</div>
+                <label for="resolution-select">Escolha a resolução:</label>
+                <select id="resolution-select">
+                </select>
+                <button class="button" id="botao-aplicar">Aplicar</button>
+                <div>
+                    <input type="checkbox" id="fullscreen-checkbox">
+                    <label for="fullscreen-checkbox">Fullscreen</label>
+                </div>
+            </div>
         <div class="botao-cidade"></div>
             <div class="acampamento">
                 <div class="protagonista"></div>
@@ -52,10 +63,11 @@
                 <div class="carro"></div>
             </div>
             <div class="areaMeioInferiorCopia">
-                <div class="elementoDireita"></div>
-                <div class="elementoEsquerda"></div>
+                <div class="predioDireita"></div>
+                <div class="predioEsquerda"></div>
             </div>    
-            <div class="elementoAbaixo"></div>
+            <div class="predioAbaixo"></div>
+            
         </div>
     </div>
     <div class="layer areaDireita">
@@ -68,6 +80,5 @@
     </div>
 <!-- O conteúdo do seu site vem aqui -->
 <script type="module">import JogoController from './jogo/jogoController.js';</script>
-
 </body>
 </html>

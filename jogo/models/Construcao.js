@@ -1,6 +1,6 @@
-import ConstrucaoObserver from "./ConstrucaoObserver.js";
+import ConstrucaoObserver from "../observadores/ConstrucaoObserver.js";
 import Upgrade from "./Upgrade.js";
-import InicializacaoClasses from "./inicializacaoClasses.js";
+import InicializacaoClasses from "../inicializacaoClasses.js";
 
 class Construcao {
     constructor(id, nome, valor, producaoOriginal, producao, quantidade, status) {

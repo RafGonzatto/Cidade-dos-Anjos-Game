@@ -1,10 +1,10 @@
-import JogoService from "./jogoService.js";
-import Upgrade from "./Upgrade.js";
-import { configurarEventosCaraGrande } from "./eventosCaraGrande.js";
-import { configurarEventosConstrucoes } from "./eventosConstrucoes.js";
-import { configurarEventosBotoesPagina } from "./eventosJogo.js";
+import JogoService from "./services/jogoService.js";
+import Upgrade from "./models/Upgrade.js";
+import { configurarEventosCaraGrande } from "./eventosTelaPrincipal/eventosCaraGrande.js";
+import { configurarEventosConstrucoes } from "./eventosTelaPrincipal/eventosConstrucoes.js";
+import { configurarEventosBotoesPagina } from "./eventosTelaPrincipal/eventosJogo.js";
 import InicializacaoClasses from "./inicializacaoClasses.js";
-import ConstrucaoObserver from "./ConstrucaoObserver.js";
+import ConstrucaoObserver from "./observadores/ConstrucaoObserver.js";
 
 class JogoController {
   constructor() {

@@ -1,6 +1,6 @@
-import Construcao from './Construcao.js';
-import JogoService from './jogoService.js';
-import Upgrade from './Upgrade.js';
+import Construcao from '../models/Construcao.js';
+import JogoService from '../services/jogoService.js';
+import Upgrade from '../models/Upgrade.js';
 
 export function configurarEventosConstrucoes() {
     let construcaoElements = document.querySelectorAll('.construcao > div');

@@ -1,5 +1,5 @@
-import InicializacaoClasses from "./inicializacaoClasses.js";
-import { configurarEventosUpgrade} from "./eventosUpgrades.js";
+import InicializacaoClasses from "../inicializacaoClasses.js";
+import { configurarEventosUpgrade} from "../eventosTelaPrincipal/eventosUpgrades.js";
 
 class Upgrade {
     constructor(id, quantidadeDesbloqueio, vinculo, valor, descricao, tipoBuff, status) {

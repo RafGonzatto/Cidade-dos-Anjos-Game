@@ -1,4 +1,5 @@
-import JogoService from "./jogoService.js";
+import JogoService from "../services/jogoService.js";
+import { configurarEventosConfiguracao } from "./eventosConfiguracao.js";
 
 export function configurarEventosBotoesPagina() {
   /////////////////////////SAVE
@@ -21,6 +22,23 @@ export function configurarEventosBotoesPagina() {
   ////////////////////////CONFIG
   const botaoConfig = document.querySelector(".botao-config");
   botaoConfig.addEventListener("mousedown", () => {
+    
+  const areaConfig = document.querySelector(".areaConfig");
+    const resolutionSelect = document.getElementById('resolution-select');
+    const resolutions = [
+      { width: 800, height: 600 },
+      { width: 1024, height: 768 },
+      { width: 1280, height: 720 },
+  ];
+  resolutions.forEach(resolution => {
+    const option = document.createElement('option');
+    option.text = `${resolution.width}x${resolution.height}`;
+    option.value = JSON.stringify(resolution); 
+    resolutionSelect.add(option);
+    areaConfig.style.display = "block";
+
+});
+    configurarEventosConfiguracao();
     botaoConfig.style.backgroundImage = "url(jogo/css/imagens/botoes/config-botao-clicado.png)";
   });
   botaoConfig.addEventListener("mouseup", () => {

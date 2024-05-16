@@ -1,4 +1,4 @@
-import InicializacaoClasses from "./inicializacaoClasses.js";
+import InicializacaoClasses from "../inicializacaoClasses.js";
 import JogoService from "./jogoService.js";
 
 const imagensCara = InicializacaoClasses.imagensCara().map(url => {

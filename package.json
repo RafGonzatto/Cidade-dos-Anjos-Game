@@ -1,20 +1,20 @@
-{
-  "name": "cidadedosanjos",
-  "version": "1.0.0",
-  "description": "![Image](jogo/css/imagens/construcao-cao-brabo.png) ![Image](jogo/css/imagens/construcao-luva.png) ![Image](jogo/css/imagens/construcao-maromba.png) ![Image](jogo/css/imagens/construcao-policial.png) <br>\r Hi, my name is Rafael. This is a personal project inspired by a comic book I'm writing and illustrating. I plan to release it someday. The inspiration for this project came from the fascinating game Cookie Clicker 🍪, created by Orteil.",
-  "main": "electron/index.js",
-  "scripts": {    
-    "start": "electron .",
-    "build": "node electron/build.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RafGonzatto/CidadeDosAnjosJogo"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "electron": "^30.0.5"
+  {
+    "name": "cidadedosanjos",
+    "version": "1.0.0",
+    "description": "![Image](jogo/css/imagens/construcao-cao-brabo.png) ![Image](jogo/css/imagens/construcao-luva.png) ![Image](jogo/css/imagens/construcao-maromba.png) ![Image](jogo/css/imagens/construcao-policial.png) <br>\r Hi, my name is Rafael. This is a personal project inspired by a comic book I'm writing and illustrating. I plan to release it someday. The inspiration for this project came from the fascinating game Cookie Clicker 🍪, created by Orteil.",
+    "main": "electron/index.js",
+    "scripts": {    
+      "start": "electron .",
+      "build": "node electron/build.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/RafGonzatto/CidadeDosAnjosJogo"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "electron": "^30.0.5"
+    }
   }
-}

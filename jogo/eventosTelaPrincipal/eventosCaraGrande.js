@@ -1,5 +1,5 @@
-import {particulaCaraClicada, caraClicada, trocarImagem, trocarImagemFerido} from "./caraGrandeService.js";
-import InicializacaoClasses from "./inicializacaoClasses.js";
+import {particulaCaraClicada, caraClicada, trocarImagem, trocarImagemFerido} from "../services/caraGrandeService.js";
+import InicializacaoClasses from "../inicializacaoClasses.js";
 
 export function configurarEventosCaraGrande() {
   const caraGrande = document.querySelector(".caraGrande");

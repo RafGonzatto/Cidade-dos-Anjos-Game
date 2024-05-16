@@ -1,5 +1,5 @@
-import Upgrade from "./Upgrade.js";
-import Construcao from "./Construcao.js";
+import Upgrade from "../models/Upgrade.js";
+import Construcao from "../models/Construcao.js";
 
 const configurarEventosUpgrade = (upgradeElement, upgrade) => {
     upgradeElement.addEventListener('mouseenter', () => {
