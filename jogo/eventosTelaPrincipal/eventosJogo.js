@@ -1,3 +1,4 @@
+import InicializacaoClasses from "../inicializacaoClasses.js";
 import JogoService from "../services/jogoService.js";
 import { configurarEventosConfiguracao } from "./eventosConfiguracao.js";
 
@@ -22,22 +23,28 @@ export function configurarEventosBotoesPagina() {
   ////////////////////////CONFIG
   const botaoConfig = document.querySelector(".botao-config");
   botaoConfig.addEventListener("mousedown", () => {
-    
   const areaConfig = document.querySelector(".areaConfig");
+  if (areaConfig.style.display === "block"){
+    areaConfig.style.display = "none";
+  }
+  else{
+    
     const resolutionSelect = document.getElementById('resolution-select');
-    const resolutions = [
-      { width: 800, height: 600 },
-      { width: 1024, height: 768 },
-      { width: 1280, height: 720 },
-  ];
-  resolutions.forEach(resolution => {
-    const option = document.createElement('option');
-    option.text = `${resolution.width}x${resolution.height}`;
-    option.value = JSON.stringify(resolution); 
-    resolutionSelect.add(option);
+    const resolutions = InicializacaoClasses.inicializarResolucoes();
+    const addedResolutions = new Set();
+  
+    resolutions.forEach(resolution => {
+        const key = `${resolution.width}x${resolution.height}`;
+        if (!addedResolutions.has(key)) {
+            const option = document.createElement('option');
+            option.text = `${resolution.width}x${resolution.height}`;
+            option.value = JSON.stringify(resolution);
+            resolutionSelect.add(option);
+            addedResolutions.add(key);
+        }
+    });
     areaConfig.style.display = "block";
-
-});
+  }
     configurarEventosConfiguracao();
     botaoConfig.style.backgroundImage = "url(jogo/css/imagens/botoes/config-botao-clicado.png)";
   });

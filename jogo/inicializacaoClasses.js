@@ -2,9 +2,39 @@ import Construcao from "./models/Construcao.js";
 import Seguidores from "./models/Seguidores.js";
 import Upgrade from "./models/Upgrade.js";
 import JogoService from "./services/jogoService.js";
-import ConstrucaoObserver from "./observadores/ConstrucaoObserver.js";
+import { configurarEventosDesbloqueio } from "./eventosTelaPrincipal/eventosDesbloqueio.js";
 
+const imagemPortaoAberto = (() => {
+    const img = new Image();
+    img.src = "jogo/css/imagens/fundo-acampamento-aberto.png";
+    return img;
+  })();
+  
+  const imagemPortaoFechado = (() => {
+    const img = new Image();
+    img.src = "jogo/css/imagens/fundo-acampamento.png";
+    return img;
+  })();
+  
+    
 class InicializacaoClasses {
+    static inicializarResolucoes(){
+        const resolutions = [
+            { "width": 800, "height": 600 },
+            { "width": 1024, "height": 768 },
+            { "width": 1280, "height": 720 },
+            { "width": 1280, "height": 800 },
+            { "width": 1366, "height": 768 },
+            { "width": 1440, "height": 900 },
+            { "width": 1600, "height": 900 },
+            { "width": 1680, "height": 1050 },
+            { "width": 1920, "height": 1080 },
+            { "width": 1920, "height": 1200 },
+            { "width": 2560, "height": 1080 },
+            { "width": 2560, "height": 1440 }
+        ];
+        return resolutions;
+    }
     static inicializarConstrucoesPadrao() {  
         const construcoes = [ 
             new Construcao(1, "Luvas de Qualidade", 15, 0.1, 0, 0, 2),
@@ -26,52 +56,52 @@ class InicializacaoClasses {
     }
     
     static inicializarListaUpgrades() {
-        const quantidade1 = 1;
-        const quantidade2 = 2;
-        const quantidade3 = 3;
-        const quantidade4 = 4;
-        const quantidade5 = 5;
+        const q1 = 1;
+        const q2 = 2;
+        const q3 = 3;
+        const q4 = 4;
+        const q5 = 5;
         const upgrades = [
-            new Upgrade(1, quantidade1, 1, 100, "LuvaBoxe", 1, 0),
-            new Upgrade(2, quantidade2, 1, 1000, "LuvaBoxe2", 1, 0),
-            new Upgrade(3, quantidade3, 1, 10000, "LuvaBoxe3", 1, 0),
-            new Upgrade(4, quantidade4, 1, 25000, "LuvaBoxe4", 1, 0),
-            new Upgrade(5, quantidade5, 1, 70000, "LuvaBoxe5", 1, 0),
-            new Upgrade(6, quantidade1, 2, 100, "Mane", 1, 0),
-            new Upgrade(7, quantidade2, 2, 1000, "Mane2", 1, 0),
-            new Upgrade(8, quantidade3, 2, 10000, "Mane3", 1, 0),
-            new Upgrade(9, quantidade4, 2, 25000, "Mane4", 1, 0),
-            new Upgrade(10, quantidade5, 2, 70000, "Mane5", 2, 0),
-            new Upgrade(11, quantidade1, 3, 100, "Cao-Brabo", 1, 0),
-            new Upgrade(12, quantidade2, 3, 1000, "Cao-Brabo2", 1, 0),
-            new Upgrade(13, quantidade3, 3, 10000, "Cao-Brabo3", 1, 0),
-            new Upgrade(14, quantidade4, 3, 25000, "Cao-Brabo4", 1, 0),
-            new Upgrade(15, quantidade5, 3, 25000, "Cao-Brabo5", 1, 0),
-            new Upgrade(16, quantidade1, 4, 100, "Maromba", 1, 0),
-            new Upgrade(17, quantidade2, 4, 1000, "Maromba2", 1, 0),
-            new Upgrade(18, quantidade3, 4, 10000, "Maromba3", 1, 0),
-            new Upgrade(19, quantidade4, 4, 25000, "Maromba4", 1, 0),
-            new Upgrade(20, quantidade5, 4, 70000, "Maromba5", 2, 0),
-            new Upgrade(21, quantidade1, 5, 100, "Carro", 1, 0),
-            new Upgrade(22, quantidade2, 5, 1000, "Carro2", 1, 0),
-            new Upgrade(23, quantidade3, 5, 10000, "Carro3", 1, 0),
-            new Upgrade(24, quantidade4, 5, 25000, "Carro4", 1, 0),
-            new Upgrade(25, quantidade5, 5, 70000, "Carro5", 2, 0),
-            new Upgrade(26, quantidade1, 6, 100, "Rato", 1, 0),
-            new Upgrade(27, quantidade2, 6, 1000, "Rato2", 1, 0),
-            new Upgrade(28, quantidade3, 6, 10000, "Rato3", 1, 0),
-            new Upgrade(29, quantidade4, 6, 25000, "Rato4", 1, 0),
-            new Upgrade(30, quantidade5, 6, 70000, "Rato5", 2, 0),
-            new Upgrade(31, quantidade1, 7, 100, "Policial", 1, 0),
-            new Upgrade(32, quantidade2, 7, 1000, "Policial2", 1, 0),
-            new Upgrade(33, quantidade3, 7, 10000, "Policial3", 1, 0),
-            new Upgrade(34, quantidade4, 7, 25000, "Policial4", 1, 0),
-            new Upgrade(35, quantidade5, 7, 70000, "Policial5", 2, 0),
-            new Upgrade(36, quantidade1, 8, 100, "Quadrado", 1, 0),
-            new Upgrade(37, quantidade2, 8, 1000, "Quadrado2", 1, 0),
-            new Upgrade(38, quantidade3, 8, 10000, "Quadrado3", 1, 0),
-            new Upgrade(39, quantidade4, 8, 25000, "Quadrado4", 1, 0),
-            new Upgrade(40, quantidade5, 8, 70000, "Quadrado5", 2, 0),
+            new Upgrade(1, q1, 1, 100, "Remendos de couro", "A fricção será sanguinolenta", "Suas luvas são duas vezes mais resistentes", 1, 0),
+            new Upgrade(2, q2, 1, 1000, "Laços apertados", "-10 pontos de circulação","Suas luvas são duas vezes mais resistentes",  1, 0),
+            new Upgrade(3, q3, 1, 10000, "Adesivos de marca", "Drip até mesmo nas brigas","Suas luvas são duas vezes mais resistentes", 1, 0),
+            new Upgrade(4, q4, 1, 25000, "LuvaBoxe4", "Implementar","Implementar", 1, 0),
+            new Upgrade(5, q5, 1, 70000, "LuvaBoxe5", "Implementar","Implementar", 1, 0),
+            new Upgrade(6, q1, 2, 100, "Mane", "Implementar","Implementar", 1, 0),
+            new Upgrade(7, q2, 2, 1000, "Mane2", "Implementar","Implementar", 1, 0),
+            new Upgrade(8, q3, 2, 10000, "Mane3", "Implementar","Implementar", 1, 0),
+            new Upgrade(9, q4, 2, 25000, "Mane4"," Implementar","Implementar", 1, 0),
+            new Upgrade(10, q5, 2, 70000, "Mane5", "Implementar","Implementar", 2, 0),
+            new Upgrade(11, q1, 3, 100, "Banho e tosa", "Rufus ficara limpo e charmoso para as cachorras","Seu cão é duas vezes mais resistente", 1, 0),
+            new Upgrade(12, q2, 3, 1000, "Adestramento para combate", "Rufus virara o dono do canil","Seu cão é duas vezes mais resistente", 1, 0),
+            new Upgrade(13, q3, 3, 10000, "Vernifugo potente", "Rufus não tera mais problema com o Mané","Seu cão é duas vezes mais resistente", 1, 0),
+            new Upgrade(14, q4, 3, 25000, "Biscoitos de Qualidade", "Rufus não será mais bafento","Seu cão é duas vezes mais resistente", 1, 0),
+            new Upgrade(15, q5, 3, 25000, "Cao-Brabo5", "Implementar","Seu cão é duas vezes mais resistente", 1, 0),
+            new Upgrade(16, q1, 4, 100, "Maromba", "Implementar","Implementar", 1, 0),
+            new Upgrade(17, q2, 4, 1000, "Maromba2", "Implementar","Implementar", 1, 0),
+            new Upgrade(18, q3, 4, 10000, "Maromba3", "Implementar","Implementar", 1, 0),
+            new Upgrade(19, q4, 4, 25000, "Maromba4", "Implementar","Implementar", 1, 0),
+            new Upgrade(20, q5, 4, 70000, "Maromba5", "Implementar","Implementar", 2, 0),
+            new Upgrade(21, q1, 5, 100, "Carro", "Implementar","Implementar", 1, 0),
+            new Upgrade(22, q2, 5, 1000, "Carro2", "Implementar","Implementar", 1, 0),
+            new Upgrade(23, q3, 5, 10000, "Carro3", "Implementar","Implementar", 1, 0),
+            new Upgrade(24, q4, 5, 25000, "Carro4", "Implementar","Implementar", 1, 0),
+            new Upgrade(25, q5, 5, 70000, "Carro5", "Implementar","Implementar", 2, 0),
+            new Upgrade(26, q1, 6, 100, "Rato", "Implementar","Implementar", 1, 0),
+            new Upgrade(27, q2, 6, 1000, "Rato2", "Implementar","Implementar", 1, 0),
+            new Upgrade(28, q3, 6, 10000, "Rato3", "Implementar","Implementar", 1, 0),
+            new Upgrade(29, q4, 6, 25000, "Rato4", "Implementar","Implementar", 1, 0),
+            new Upgrade(30, q5, 6, 70000, "Rato5", "Implementar","Implementar", 2, 0),
+            new Upgrade(31, q1, 7, 100, "Policial", "Implementar","Implementar", 1, 0),
+            new Upgrade(32, q2, 7, 1000, "Policial2", "Implementar","Implementar", 1, 0),
+            new Upgrade(33, q3, 7, 10000, "Policial3", "Implementar","Implementar", 1, 0),
+            new Upgrade(34, q4, 7, 25000, "Policial4", "Implementar","Implementar", 1, 0),
+            new Upgrade(35, q5, 7, 70000, "Policial5", "Implementar","Implementar", 2, 0),
+            new Upgrade(36, q1, 8, 100, "Quadrado", "Implementar","Implementar", 1, 0),
+            new Upgrade(37, q2, 8, 1000, "Quadrado2", "Implementar","Implementar", 1, 0),
+            new Upgrade(38, q3, 8, 10000, "Quadrado3", "Implementar","Implementar", 1, 0),
+            new Upgrade(39, q4, 8, 25000, "Quadrado4", "Implementar","Implementar", 1, 0),
+            new Upgrade(40, q5, 8, 70000, "Quadrado5", "Implementar","Implementar", 2, 0),
         ];
         return upgrades;
     }
@@ -213,7 +243,6 @@ class InicializacaoClasses {
     static criarElementoBloqueado(construcaoElemento, construcao) {
         let valor = construcao.valor * 9;
         let altura = construcaoElemento.offsetHeight;
-    
         let bloqueadorElemento = document.createElement("div");
         bloqueadorElemento.classList.add("bloqueadorConstrucao");
         bloqueadorElemento.id = "bloqueador" + construcao.id;
@@ -226,73 +255,15 @@ class InicializacaoClasses {
         let bloqueadorElementoValor = document.createElement("div");
         bloqueadorElementoValor.classList.add("valorBloqueador");
         bloqueadorElementoValor.innerHTML = `<span>${valor}</span>`;
-        
+    
         let bloqueadorCorrentes = document.createElement("div");
         bloqueadorCorrentes.classList.add("correntesBloqueador");
     
         bloqueadorElemento.appendChild(bloqueadorCorrentes);
         bloqueadorElemento.appendChild(bloqueadorElementoValor);
         construcaoElemento.appendChild(bloqueadorElemento);
-
-
-        bloqueadorElemento.addEventListener("click", (event) => { 
-        let dinheiro = JogoService.carregarDinheiroLocalStorage();
-        if (dinheiro >= valor){
-            const producaoObserver = new ConstrucaoObserver();
-            let novaPontuacao = dinheiro - valor;
-            JogoService.atualizarPontuacao(novaPontuacao); 
-            let construcoes = Construcao.carregarConstrucoesDoLocalStorage();
-            let id = construcao.id -1;
-            let idDois = construcao.id ;
-            construcoes[id].status = 2;
-            if(id !=7){
-            construcoes[idDois].status = 1;
-            }
-            Construcao.salvarNoLocalStorage(construcoes);
-             producaoObserver.updateConfiguracaoAparencia
-            Construcao.criarParticula(event.clientX, event.clientY);
-            bloqueadorElemento.classList.replace("bloqueadorConstrucao", "bloqueadorConstrucao2");
-            bloqueadorElementoValor.remove();
-            bloqueadorCorrentes.classList.replace("correntesBloqueador", "correntesBloqueador2");
-            bloqueadorElemento.classList.add("animarParaLado");
-            setTimeout(function(){
-                bloqueadorElemento.remove();
-            },1400)
-            const jogo = document.querySelector(".jogo");
-            const unlockElementoFrente = document.createElement("div");
-            unlockElementoFrente.classList.add("unlockFrente");
-            
-            const unlockElementoTras = document.createElement("div");
-            unlockElementoTras.classList.add("unlockTras");
-            
-            const unlockElementoConstrucao = document.createElement("div");
-            unlockElementoConstrucao.classList.add("unlockConstrucao");
-            unlockElementoConstrucao.style.backgroundImage = `url(${this.getImagemConstrucaoPorId(construcao.id)})`;
-            
-            jogo.appendChild(unlockElementoTras);
-            unlockElementoTras.appendChild(unlockElementoConstrucao);
-            unlockElementoTras.appendChild(unlockElementoFrente);
-            setTimeout(function() {
-                unlockElementoFrente.classList.add("visible");
-                unlockElementoTras.classList.add("visible");
-                unlockElementoConstrucao.classList.add("visible");
-            }, 100);
-            setTimeout(function(){
-                unlockElementoFrente.classList.add("balancar");
-                unlockElementoTras.classList.add("balancar");
-                unlockElementoConstrucao.classList.add("balancar");
-            },1000)
-            unlockElementoTras.addEventListener("click", () => { 
-
-                unlockElementoFrente.classList.add("invisible");
-                unlockElementoTras.classList.add("invisible");
-                unlockElementoConstrucao.classList.add("invisible");
-                setTimeout(function(){     
-                unlockElementoTras.remove();
-                },900)
-            })
-        }
-        });
+    
+        configurarEventosDesbloqueio(bloqueadorElemento, bloqueadorElementoValor, bloqueadorCorrentes, construcao, valor);
     }
     
     static inicializarConstrucoesHTML() { 
@@ -446,13 +417,13 @@ class InicializacaoClasses {
                 window.location.href = telaCidade;
          });
        
-        botao_cidade.addEventListener('mouseenter', () => { 
-            acampamento.style.backgroundImage = 'url(jogo/css/imagens/fundo-acampamento-aberto.png)'
-        });
-
-        botao_cidade.addEventListener('mouseleave', () => {
-            acampamento.style.backgroundImage = 'url(jogo/css/imagens/fundo-acampamento.png)'
-        });
+         botao_cidade.addEventListener('mouseenter', () => {
+            acampamento.style.backgroundImage = `url(${imagemPortaoAberto.src})`;
+          });
+          
+          botao_cidade.addEventListener('mouseleave', () => {
+            acampamento.style.backgroundImage = `url(${imagemPortaoFechado.src})`;
+          });
 
     }
     
