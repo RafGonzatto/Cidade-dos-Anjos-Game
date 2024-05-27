@@ -5,8 +5,6 @@ app.whenReady().then(() => {
     win = require('./CreateWindow.js');
     const tray = require('./Tray.js');
 
-    config(win);
-
     
 });
 
