@@ -5,27 +5,24 @@ import { configurarEventosConstrucoes } from "./eventosTelaPrincipal/eventosCons
 import { configurarEventosBotoesPagina } from "./eventosTelaPrincipal/eventosJogo.js";
 import InicializacaoClasses from "./inicializacaoClasses.js";
 import ConstrucaoObserver from "./observadores/ConstrucaoObserver.js";
-
 class JogoController {
   constructor() {
+    JogoService.setarConfiguracoesTela();
     JogoService.atualizarHTML();
     JogoService.iniciarAtualizacaoDinheiro();
     InicializacaoClasses.inicializarConstrucoesHTML();
     Upgrade.carregarTodosUpgradesDesbloqueados();
     this.producaoObserver = new ConstrucaoObserver();
-    this.update();
+    this.producaoObserver.updateProducao();
+    this.producaoObserver.updateConfiguracaoAparencia();
     configurarEventosBotoesPagina();
     configurarEventosCaraGrande();
     configurarEventosConstrucoes();
     InicializacaoClasses.calcularTempoForaDaPagina();
     InicializacaoClasses.carregarPersonagensAcampamento();
     InicializacaoClasses.inicializarCidade();
-  }
-  update() {
-    this.producaoObserver.updateProducao();
-    this.producaoObserver.updateConfiguracaoAparencia();
+    
   }
 }
-
 window.JogoController = new JogoController();
 export default JogoController;
