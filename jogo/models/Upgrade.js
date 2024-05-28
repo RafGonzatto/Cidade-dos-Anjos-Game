@@ -2,12 +2,14 @@ import InicializacaoClasses from "../inicializacaoClasses.js";
 import { configurarEventosUpgrade} from "../eventosTelaPrincipal/eventosUpgrades.js";
 
 class Upgrade {
-    constructor(id, quantidadeDesbloqueio, vinculo, valor, descricao, tipoBuff, status) {
+    constructor(id, quantidadeDesbloqueio, vinculo, valor, titulo, descricao, descricaoBuff, tipoBuff, status) {
         this.id = id;
         this.quantidadeDesbloqueio = quantidadeDesbloqueio;
         this.vinculo = vinculo;
         this.valor = valor;
+        this.titulo = titulo;
         this.descricao = descricao;
+        this.descricaoBuff = descricaoBuff;
         this.tipoBuff = tipoBuff; //Tipo1 2x //Tipo2 3% de cps //Tipo 3 10% cps
         this.status = status; //0 bloqueado // 1 desbloqueado// 2 ativado
     }
