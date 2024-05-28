@@ -1,5 +1,22 @@
 import Construcao from "../models/Construcao.js";
 class JogoService {
+  static setarConfiguracoesTela(){ 
+    const fullscreen = localStorage.getItem('fullscreen');
+    const isFullscreen = fullscreen === "true" ? true : false;
+    const fullscreenCheckbox = document.getElementById('fullscreen-checkbox');
+    if (isFullscreen ){
+      fullscreenCheckbox.checked = true;
+       window.setarTelaCheia(isFullscreen);
+       return
+    }
+    fullscreenCheckbox.checked = false;
+    const larguraSalva = parseInt(localStorage.getItem('larguraJanela'));
+    const alturaSalva = parseInt(localStorage.getItem('alturaJanela'));
+
+    if (larguraSalva > 1000) {
+      window.alterarTamanhoDaJanela(larguraSalva, alturaSalva);
+    }
+  }
   static atualizarHTMLElemento(construcaoElemento, valor, quantidade) {
     if (construcaoElemento) {
       construcaoElemento.querySelector(".valorConstrucao span").textContent =
@@ -24,9 +41,7 @@ class JogoService {
       );
     }
   }
-  static abrirConfiguracao(){
-    
-  }
+
   static atualizarHTML() {
     let construcoes = Construcao.carregarConstrucoesDoLocalStorage();
     construcoes.forEach((construcao) => {
