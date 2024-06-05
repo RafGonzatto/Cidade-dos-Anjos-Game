@@ -40,7 +40,7 @@ class Upgrade {
     static carregarUpgradeDesbloqueados(upgradesFiltrados) {
             let upgradesContainer = document.querySelector('.upgrades');
             upgradesFiltrados.forEach(upgrade => {
-                let upgradeElement = this.criarElementoUpgrade(upgrade);
+                let upgradeElement = InicializacaoClasses.criarElementoUpgrade(upgrade);
                 upgradesContainer.appendChild(upgradeElement);
                 configurarEventosUpgrade(upgradeElement, upgrade);
             });
@@ -50,27 +50,14 @@ class Upgrade {
         if (ordemCompra){
         let upgradesContainer = document.querySelector('.upgrades');
         ordemCompra.forEach(upgrade => {
-            let upgradeElement = this.criarElementoUpgrade(upgrade);
+            let upgradeElement = InicializacaoClasses.criarElementoUpgrade(upgrade);
             upgradesContainer.appendChild(upgradeElement);
             configurarEventosUpgrade(upgradeElement, upgrade);
         });
     }   
     }
 
-    static criarElementoUpgrade(upgrade) {
-        let upgradeElement = document.createElement('div');
-        upgradeElement.classList.add('upgrade');
-        upgradeElement.id = `upgrade-${upgrade.id}`;
-        let imgElement = document.createElement('img');
-        imgElement.src = InicializacaoClasses.getImagemUpgradePorId(upgrade.id);
-        imgElement.style.width = '100%';
-        imgElement.style.height = '100%';
-        imgElement.style.objectFit = 'cover';
-        imgElement.style.display = 'block';
-        imgElement.style.imageRendering = 'pixelated';
-        upgradeElement.appendChild(imgElement);
-        return upgradeElement;
-    }
+
     static salvarListaDeUpgrades(upgrades) {
         localStorage.setItem('upgrades', JSON.stringify(upgrades));
     }

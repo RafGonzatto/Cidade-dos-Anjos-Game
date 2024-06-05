@@ -52,7 +52,4 @@ export function configurarEventosCaraGrande() {
       trocarImagem(caraGrande);
     }
   }, 500);
-
-  
-
 }

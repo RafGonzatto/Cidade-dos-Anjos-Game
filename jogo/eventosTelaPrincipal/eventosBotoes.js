@@ -1,8 +1,11 @@
-import InicializacaoClasses from "../inicializacaoClasses.js";
+
 import JogoService from "../services/jogoService.js";
-import { configurarEventosConfiguracao } from "./eventosConfiguracao.js";
+import BotoesObserver from "../observadores/BotoesObserver.js";
+
 
 export function configurarEventosBotoesPagina() {
+  
+  const botoesObserver = new BotoesObserver();
   /////////////////////////SAVE
   const botaoSalvar = document.querySelector(".botao-salvar");
   botaoSalvar.addEventListener("mousedown", () => {
@@ -23,29 +26,7 @@ export function configurarEventosBotoesPagina() {
   ////////////////////////CONFIG
   const botaoConfig = document.querySelector(".botao-config");
   botaoConfig.addEventListener("mousedown", () => {
-  const areaConfig = document.querySelector(".areaConfig");
-  if (areaConfig.style.display === "block"){
-    areaConfig.style.display = "none";
-  }
-  else{
-    
-    const resolutionSelect = document.getElementById('resolution-select');
-    const resolutions = InicializacaoClasses.inicializarResolucoes();
-    const addedResolutions = new Set();
-  
-    resolutions.forEach(resolution => {
-        const key = `${resolution.width}x${resolution.height}`;
-        if (!addedResolutions.has(key)) {
-            const option = document.createElement('option');
-            option.text = `${resolution.width}x${resolution.height}`;
-            option.value = JSON.stringify(resolution);
-            resolutionSelect.add(option);
-            addedResolutions.add(key);
-        }
-    });
-    areaConfig.style.display = "block";
-  }
-    configurarEventosConfiguracao();
+  botoesObserver.updateAreaMeio('config');
     botaoConfig.style.backgroundImage = "url(jogo/css/imagens/botoes/config-botao-clicado.png)";
   });
   botaoConfig.addEventListener("mouseup", () => {
@@ -54,14 +35,20 @@ export function configurarEventosBotoesPagina() {
   ////////////////////////CONQUISTAS
   const botaoConquistas = document.querySelector(".botao-conquistas");
   botaoConquistas.addEventListener("mousedown", () => {
+    botoesObserver.updateAreaMeio('conquistas');
     botaoConquistas.style.backgroundImage = "url(jogo/css/imagens/botoes/trophy-botao-clicado.png)";
   });
   botaoConquistas.addEventListener("mouseup", () => {
     botaoConquistas.style.backgroundImage = "url(jogo/css/imagens/botoes/trophy-botao.png)";
   });
 
-
-
+  //////////VOLTAR
+  const botoesVoltar = document.querySelectorAll('.botao-voltar');
+  botoesVoltar.forEach(botao => {
+      botao.addEventListener("click", () => { 
+        botoesObserver.updateAreaMeio('voltar');
+      });
+  });
 
   ///////////////////////MODAL
   const modal = document.getElementById("modal-importar");

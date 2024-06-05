@@ -197,7 +197,23 @@
   padding: 20px;
   z-index: 2;
 }
-
+.areaConquistas {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 6;
+}
+.areaUpgrades {
+  margin-left: 16px;
+  height: auto; /* Altera a altura para automática para acomodar vários upgrades */
+  display: flex; /* Use flexbox para posicionar os upgrades */
+  flex-wrap: wrap; /* Permita que os upgrades quebrem para a linha seguinte */
+  justify-content: flex-start;
+  padding-top: 100px;
+}
 .areaDireita {
   position: absolute;
   overflow-y: auto;
@@ -219,10 +235,10 @@
 .separadorDireita {
   width: 16px;
   height: 100vh;
-  background: url(imagens/barra.png?v=2) repeat-y;
+  background: url(imagens/barra.png) repeat-y;
   background: url(imagens/panelGradientTop.png) no-repeat top left,
     url(imagens/panelGradientBottom.png) no-repeat bottom left,
-    url(imagens/barra.png?v=2) repeat-y;
+    url(imagens/barra.png) repeat-y;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -232,10 +248,10 @@
   margin-top: 212px;
   width: 100%;
   height: 16px;
-  background: url(imagens/panelHorizontal.png?v=2) repeat-x;
+  background: url(imagens/panelHorizontal.png) repeat-x;
   background: url(imagens/panelGradientLeft.png) no-repeat top left,
     url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png?v=2) repeat-x;
+    url(imagens/panelHorizontal.png) repeat-x;
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -265,7 +281,7 @@
   top: 10%;
   width: 100%;
   text-align: center;
-  z-index: 3;
+  z-index: 4;
   background: rgba(204, 202, 202, 0.4);
   padding: 2px 0px;
   pointer-events: none;
@@ -288,15 +304,86 @@
 .upgrades {
   margin-left: 16px;
   height: auto; /* Altera a altura para automática para acomodar vários upgrades */
-  display: flex; /* Use flexbox para posicionar os upgrades */
+  display: none; /* Use flexbox para posicionar os upgrades */
   flex-wrap: wrap; /* Permita que os upgrades quebrem para a linha seguinte */
   justify-content: flex-start;
-  background: url(imagens/panelHorizontal.png?v=2) repeat-x top;
+  background: url(imagens/panelHorizontal.png) repeat-x top;
   background: url(imagens/panelGradientLeft.png) no-repeat top left,
     url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png?v=2) repeat-x;
+    url(imagens/panelHorizontal.png) repeat-x,
+    url(imagens/vendedores/upgrades-background.png) repeat;
   padding-top: 16px;
 }
+.vendedores {
+  margin-left: 16px;
+  height: 180px; /* Altera a altura para automática para acomodar vários upgrades */
+  position: relative;
+  background: 
+    url(imagens/panelGradientLeft.png) no-repeat top left,
+    url(imagens/panelGradientRight.png) no-repeat top right,
+    url(imagens/panelHorizontal.png) repeat-x, 
+    url(imagens/vendedores/lojinha-background.png) repeat;
+}
+.vendedoresPorcoGrande {
+  top: -119px;
+  z-index: 24;
+  height: 120px; 
+  width: 187.12px;
+  position: relative;
+  image-rendering: pixelated;
+  background: url(imagens/vendedores/porco-1.png);
+  background-size: 100% 100%;
+}
+.vendedoresPig {
+  top: -239px;
+  right: -270px;
+  z-index: 25;
+  height: 120px; 
+  width: 187.12px;
+  position: relative;
+  image-rendering: pixelated;
+  background: url(imagens/vendedores/pig-1.png);
+  background-size: 100% 100%;
+}
+.vendedoresCerca {
+  top: -253px;
+  z-index: 26;
+  height: 14px; 
+  position: relative;
+  image-rendering: pixelated;
+  background: url(imagens/vendedores/cerca.png) repeat-x;
+  background-size: 136px auto;
+}
+.vendedoresLojinha {
+  z-index: 23;
+  top: 1px;
+  height: 179px; 
+  width: 315.5px;
+  position: relative;
+  image-rendering: pixelated;
+  background: url(imagens/vendedores/lojinha.png);
+  background-size: 100% 100%;
+}
+.vendedoresBotao {
+  z-index: 27;
+  opacity: 1;
+  top: -360px;
+  left: 200px;
+  height: 32px; 
+  width: 80px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vendedoresBotao span {  
+  color: rgb(225, 179, 29);
+} 
+.glow span {
+  text-shadow: 0 0 10px #fee660, 0 0 20px #fee660, 0 0 30px #fee660, 0 0 40px #fee660, 0 0 50px #fee660, 0 0 60px #fee660, 0 0 70px #fee660;
+}
+
 .upgrade {
   height: 60px;
   position: relative;
@@ -307,10 +394,10 @@
   cursor: pointer;
 }
 .loja {
-  background: url(imagens/panelHorizontal.png?v=2) repeat-x top;
+  background: url(imagens/panelHorizontal.png) repeat-x top;
   background: url(imagens/panelGradientLeft.png) no-repeat top left,
     url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png?v=2) repeat-x;
+    url(imagens/panelHorizontal.png) repeat-x;
   padding-top: 16px;
 }
 .configLoja {
@@ -822,8 +909,8 @@
 }
 .botao-voltar {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 5px;
+  left: 20px;
   width: 150px;
   height: 50px;
   z-index: 99999;

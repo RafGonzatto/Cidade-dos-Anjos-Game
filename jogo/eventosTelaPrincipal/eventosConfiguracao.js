@@ -10,13 +10,6 @@ export function configurarEventosConfiguracao() {
         console.log(selectedResolution.width, typeof selectedResolution.width)
         window.alterarTamanhoDaJanela(selectedResolution.width, selectedResolution.height);
     });
-
-    const botaoVoltar = document.querySelector('.botao-voltar');
-    botaoVoltar.addEventListener("click", () => { 
-        const areaConfig = document.querySelector(".areaConfig");
-        areaConfig.style.display = "none";
-    });
-
     const fullscreenCheckbox = document.getElementById('fullscreen-checkbox');
     fullscreenCheckbox.addEventListener("click", () => {  debugger
         const fullscreen = fullscreenCheckbox.checked

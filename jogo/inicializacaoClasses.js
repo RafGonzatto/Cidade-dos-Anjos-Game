@@ -164,6 +164,30 @@ class InicializacaoClasses {
         };
         return imagens[id] || 'jogo/css/imagens/upgrades/upgrade-clique.png';
     }
+
+    static imagensVendedorPorcoGrande() {
+        const imagensPorcoGrande = [
+            'jogo/css/imagens/vendedores/porco-1.png', 
+            'jogo/css/imagens/vendedores/porco-2.png',
+            'jogo/css/imagens/vendedores/porco-3.png',
+            'jogo/css/imagens/vendedores/porco-4.png', 
+            'jogo/css/imagens/vendedores/porco-5.png',
+            'jogo/css/imagens/vendedores/porco-6.png', 
+            'jogo/css/imagens/vendedores/porco-7.png',
+            'jogo/css/imagens/vendedores/porco-8.png',
+        ];
+        return imagensPorcoGrande;
+    }
+    static imagensVendedorPig() {
+        const imagensPig = [
+            'jogo/css/imagens/vendedores/pig-1.png', 
+            'jogo/css/imagens/vendedores/pig-2.png',
+            'jogo/css/imagens/vendedores/pig-3.png',
+            'jogo/css/imagens/vendedores/pig-4.png',
+            'jogo/css/imagens/vendedores/pig-5.png',
+        ];
+        return imagensPig;
+    }
     static imagensCara() {
         const imagensCara = [
             'jogo/css/imagens/cabeca-1.png', 
@@ -321,7 +345,7 @@ class InicializacaoClasses {
                     direcaoAtual = Math.random() < 0.5 ? 'vertical' : 'horizontal';
                     movimentosRestantes = Math.floor(Math.random() * 20) + 20;
                 }
-            }, 50);
+            }, 75);
     
             return interval;
         } catch (error) {
@@ -407,7 +431,41 @@ class InicializacaoClasses {
         }
         return;
     }
-    
+
+    static criarElementoUpgradeTelaUpgrade(upgrade) {
+        let upgradeElement = document.createElement('div');
+        upgradeElement.classList.add('upgrade');
+        upgradeElement.id = `upgrade-${upgrade.id}`;
+        let imgElement = document.createElement('img');
+        if (upgrade.status == 2) {
+            imgElement.src = InicializacaoClasses.getImagemUpgradePorId(upgrade.id);
+        }
+        else {
+            imgElement.src = 'jogo/css/imagens/upgrades/upgrade-bloqueado.png';
+        }
+        imgElement.style.width = '100%';
+        imgElement.style.height = '100%';
+        imgElement.style.objectFit = 'cover';
+        imgElement.style.display = 'block';
+        imgElement.style.imageRendering = 'pixelated';
+        upgradeElement.appendChild(imgElement);
+        return upgradeElement;
+    }
+    static criarElementoUpgrade(upgrade) {
+        let upgradeElement = document.createElement('div');
+        upgradeElement.classList.add('upgrade');
+        upgradeElement.id = `upgrade-${upgrade.id}`;
+        let imgElement = document.createElement('img');
+        imgElement.src = InicializacaoClasses.getImagemUpgradePorId(upgrade.id);
+        imgElement.style.width = '100%';
+        imgElement.style.height = '100%';
+        imgElement.style.objectFit = 'cover';
+        imgElement.style.display = 'block';
+        imgElement.style.imageRendering = 'pixelated';
+        upgradeElement.appendChild(imgElement);
+        return upgradeElement;
+    }
+
     static inicializarCidade(){ 
         let botao_cidade = document.querySelector(".botao-cidade");
         let acampamento = document.querySelector(".acampamento");
