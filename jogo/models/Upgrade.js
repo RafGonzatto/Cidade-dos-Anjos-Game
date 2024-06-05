@@ -1,5 +1,6 @@
 import InicializacaoClasses from "../inicializacaoClasses.js";
 import { configurarEventosUpgrade} from "../eventosTelaPrincipal/eventosUpgrades.js";
+import { ajusteNumeroVendedores } from "../eventosTelaPrincipal/eventosVendedores.js";
 
 class Upgrade {
     constructor(id, quantidadeDesbloqueio, vinculo, valor, titulo, descricao, descricaoBuff, tipoBuff, status) {
@@ -34,6 +35,7 @@ class Upgrade {
             let ordemCompra = this.carregarOrdemCompra();
             let listaOrdemCompra = ordemCompra.concat(upgradesFiltrados);
             localStorage.setItem('ordemCompra', JSON.stringify(listaOrdemCompra));
+            ajusteNumeroVendedores();
         }
     }
     

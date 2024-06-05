@@ -11,7 +11,7 @@ export function configurarEventosConfiguracao() {
         window.alterarTamanhoDaJanela(selectedResolution.width, selectedResolution.height);
     });
     const fullscreenCheckbox = document.getElementById('fullscreen-checkbox');
-    fullscreenCheckbox.addEventListener("click", () => {  debugger
+    fullscreenCheckbox.addEventListener("click", () => { 
         const fullscreen = fullscreenCheckbox.checked
         localStorage.setItem('fullscreen', fullscreen);
         window.setarTelaCheia(fullscreen);

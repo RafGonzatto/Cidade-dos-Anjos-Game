@@ -2,6 +2,7 @@ import Upgrade from "../models/Upgrade.js";
 import Construcao from "../models/Construcao.js";
 import InicializacaoClasses from "../inicializacaoClasses.js";
 import SoundEffectsService from "../services/soundEffectsService.js";
+import {ajusteNumeroVendedores} from "../eventosTelaPrincipal/eventosVendedores.js";
 export const configurarEventosUpgrade = (upgradeElement, upgrade) => {  
     const modal = document.querySelector('.upgrade-modal');
     const modalTitulo = document.querySelector('.upgrade-titulo');
@@ -48,6 +49,7 @@ export const configurarEventosUpgrade = (upgradeElement, upgrade) => {
         let ordemCompra = Upgrade.carregarOrdemCompra(); 
         let ordemCompraFiltrados = ordemCompra.filter(ordemCompra => ordemCompra.id !== upgrade.id);
         localStorage.setItem('ordemCompra',  JSON.stringify(ordemCompraFiltrados));
+        ajusteNumeroVendedores();
     });
 };
 
