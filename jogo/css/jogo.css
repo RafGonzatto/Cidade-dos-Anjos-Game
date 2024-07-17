@@ -192,8 +192,7 @@
   display: none;
   height: 100%;
   width: 100%;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background: url(imagens/vendedores/upgrades-background.png);
   padding: 20px;
   z-index: 2;
 }
@@ -201,8 +200,7 @@
   display: none;
   height: 100%;
   width: 100%;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background: url(imagens/vendedores/upgrades-background.png);
   padding: 20px;
   z-index: 6;
 }
@@ -321,11 +319,10 @@
   background: 
     url(imagens/panelGradientLeft.png) no-repeat top left,
     url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png) repeat-x, 
-    url(imagens/vendedores/lojinha-background.png) repeat;
+    url(imagens/panelHorizontal.png) repeat-x;
 }
 .vendedoresPorcoGrande {
-  top: -119px;
+  top: -604px;
   z-index: 24;
   height: 120px; 
   width: 187.12px;
@@ -335,7 +332,7 @@
   background-size: 100% 100%;
 }
 .vendedoresPig {
-  top: -239px;
+  top: -725px;
   right: -270px;
   z-index: 25;
   height: 120px; 
@@ -345,8 +342,43 @@
   background: url(imagens/vendedores/pig-1.png);
   background-size: 100% 100%;
 }
+
+.vendedoresCeu {
+  height: 163px; 
+  top: -163px;
+  position: relative;
+  image-rendering: pixelated;
+  background: url(imagens/vendedores/lojinha-background.png) repeat-x;
+  background-size: auto 100%;
+}
+.vendedoresNuvens {
+  height: 155px; 
+  top: -325px;
+  position: relative;
+  overflow: hidden;
+  image-rendering: pixelated;
+  background: url(imagens/vendedores/nuvens.png) repeat-x;
+  background-size: auto 100%;
+  animation: moveClouds 15s linear infinite;
+}
+@keyframes moveClouds {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 930px 0; 
+  }
+}
+.vendedoresMontanhas {
+  height: 163px; 
+  top: -480px;
+  position: relative;
+  image-rendering: pixelated;
+  background: url(imagens/vendedores/montanhas-background.png) repeat-x;
+  background-size: auto 100%;
+}
 .vendedoresCerca {
-  top: -253px;
+  top: -734px;
   z-index: 26;
   height: 14px; 
   position: relative;
@@ -367,7 +399,7 @@
 .vendedoresBotao {
   z-index: 27;
   opacity: 1;
-  top: -360px;
+  top: -840px;
   left: 200px;
   height: 32px; 
   width: 80px;
@@ -909,12 +941,13 @@
 }
 .botao-voltar {
   position: absolute;
-  top: 5px;
-  left: 20px;
-  width: 150px;
+  top: 0px;
+  left: 15px;
+  width: 120px;
   height: 50px;
   z-index: 99999;
-  background-color: rgb(47, 189, 255);
+  background: url(imagens/botoes/voltar-botao.png);
+  background-size: 100% 100%;;
   cursor: pointer;
 }
 body {
@@ -970,7 +1003,8 @@ html, body {
   height: 150px;
   display: none;
   position: fixed;
-  background-color: rgb(59, 46, 31);
+  background: url(imagens/botoes/upgrade-modal.png);
+  background-size: 100% 100%;
   margin: 20px;
   text-align: center;
   line-height: 100px;
@@ -982,31 +1016,34 @@ html, body {
   text-align: justify;
   font-size: 15px; 
   top: -40px;
-  margin-left: 61px;   
+  color: rgb(235, 212, 169);
+  margin-left: 70px;   
   
 }
 .upgrade-descricao {
   position: relative;
-  top: -145px;
+  top: -137px;
   margin-left: 10px;   
   height: 100px;
   width: 260px;
   font-size: 14px; 
   text-align: justify;
+  color: rgb(211, 178, 116);
   line-height: 1.5;
 }
 .upgrade-descricaoBuff {
   position: relative;
-  top: -255px;
+  top: -265px;
+  color: rgb(235, 212, 169);
   margin-left: 10px; 
   font-size: 12px; 
   text-align: justify;
 }
 .upgrade-valor {
   position: relative;
-  top: -305px;
+  top: -302px;
   text-align: center;
-  left: 145px;
+  left: 140px;
   width: 150px;
   height: 25px;
   font-size: 14px; 
@@ -1015,7 +1052,7 @@ html, body {
   color: rgb(225, 179, 29);
 }
 .upgrade-imagem {
-  top: -135px;
+  top: -130px;
   left: 3px;
   height: 50px;
   width: 50px;

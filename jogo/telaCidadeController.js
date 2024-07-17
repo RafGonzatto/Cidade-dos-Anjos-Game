@@ -3,8 +3,8 @@ import {configurarPredios} from "./eventosTelaCidade/eventosPredios.js"
 
 class TelaCidadeController {
   constructor() {
-    configurarCidade();
     this.configuraBotaoVoltar();
+    configurarCidade();
     const predioGangues = document.querySelector(".predio-gangues");
     const predioPolicia = document.querySelector(".predio-policia");
     const predioIgreja = document.querySelector(".predio-igreja");
@@ -15,6 +15,7 @@ class TelaCidadeController {
 
   configuraBotaoVoltar() {
     const botaoVoltar = document.querySelector(".botao-voltar");
+    botaoVoltar.style.left = "0px";
     botaoVoltar.addEventListener("click", (event) => {
       window.history.back();
     });

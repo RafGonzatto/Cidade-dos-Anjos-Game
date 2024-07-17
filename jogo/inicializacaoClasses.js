@@ -17,6 +17,12 @@ const imagemPortaoAberto = (() => {
   })();
   
     
+  const modal = document.querySelector('.upgrade-modal');
+  const modalTitulo = document.querySelector('.upgrade-titulo');
+  const modalDescricao = document.querySelector('.upgrade-descricao');
+  const modalDescricaoBuff = document.querySelector('.upgrade-descricaoBuff');
+  const modalValor = document.querySelector('.upgrade-valor');
+  const modalImagem = document.querySelector('.upgrade-imagem');
 class InicializacaoClasses {
     static inicializarResolucoes(){
         const resolutions = [
@@ -72,9 +78,9 @@ class InicializacaoClasses {
             new Upgrade(8, q3, 2, 10000, "Mane3", "Implementar","Implementar", 1, 0),
             new Upgrade(9, q4, 2, 25000, "Mane4"," Implementar","Implementar", 1, 0),
             new Upgrade(10, q5, 2, 70000, "Mane5", "Implementar","Implementar", 2, 0),
-            new Upgrade(11, q1, 3, 100, "Banho e tosa", "Rufus ficara limpo e charmoso para as cachorras","Seu cão é duas vezes mais resistente", 1, 0),
+            new Upgrade(11, q1, 3, 100, "Banho e tosa", "Rufus conquistará todas as cachorras","Seu cão é duas vezes mais resistente", 1, 0),
             new Upgrade(12, q2, 3, 1000, "Adestramento para combate", "Rufus virara o dono do canil","Seu cão é duas vezes mais resistente", 1, 0),
-            new Upgrade(13, q3, 3, 10000, "Vernifugo potente", "Rufus não tera mais problema com o Mané","Seu cão é duas vezes mais resistente", 1, 0),
+            new Upgrade(13, q3, 3, 10000, "Vernifugo potente", "Rufus não arrastará mais o bumbum","Seu cão é duas vezes mais resistente", 1, 0),
             new Upgrade(14, q4, 3, 25000, "Biscoitos de Qualidade", "Rufus não será mais bafento","Seu cão é duas vezes mais resistente", 1, 0),
             new Upgrade(15, q5, 3, 25000, "Cao-Brabo5", "Implementar","Seu cão é duas vezes mais resistente", 1, 0),
             new Upgrade(16, q1, 4, 100, "Maromba", "Implementar","Implementar", 1, 0),
@@ -435,7 +441,7 @@ class InicializacaoClasses {
     static criarElementoUpgradeTelaUpgrade(upgrade) {
         let upgradeElement = document.createElement('div');
         upgradeElement.classList.add('upgrade');
-        upgradeElement.id = `upgrade-${upgrade.id}`;
+        upgradeElement.id = `conquistas-upgrade-${upgrade.id}`;
         let imgElement = document.createElement('img');
         if (upgrade.status == 2) {
             imgElement.src = InicializacaoClasses.getImagemUpgradePorId(upgrade.id);
@@ -484,7 +490,38 @@ class InicializacaoClasses {
           });
 
     }
-    
+    static criarModalUpgradesBloqueados(upgradeElement) {
+        const upgradeRect = upgradeElement.getBoundingClientRect();
+        modal.style.top = `${(upgradeRect.top - 175)}px`;
+        modal.style.left = `${(upgradeRect.left - 20)}px`;
+        modalImagem.style.backgroundImage =  `url(jogo/css/imagens/upgrades/upgrade-bloqueado.png)`;
+        modalImagem.style.imageRendering = 'pixelated';
+        modalTitulo.textContent = "???????????";
+        modalDescricao.textContent = "???????????";
+        modalDescricaoBuff.textContent = "???????????";
+        modalValor.textContent = "???????????";
+        modal.style.display = 'block';
+    }
+    static criarModalUpgrades(upgradeElement, upgrade, local) {
+        const iconeCaminho = InicializacaoClasses.getImagemUpgradePorId(upgrade.id)
+        const upgradeRect = upgradeElement.getBoundingClientRect();
+        if(local == "vendedores"){
+            const ancora = document.querySelector('.separadorDireita').getBoundingClientRect();
+            modal.style.top = `${(upgradeRect.top - 20)}px`;
+            modal.style.left = `${ancora.left - 325}px`;
+        }
+            if (local == "conquistas") {
+            modal.style.top = `${(upgradeRect.top - 175)}px`;
+            modal.style.left = `${(upgradeRect.left - 20)}px`;
+        }
+        modalImagem.style.backgroundImage =  `url(${iconeCaminho})`;
+        modalImagem.style.imageRendering = 'pixelated';
+        modalTitulo.textContent = `${upgrade.titulo}`;
+        modalDescricao.textContent = `${upgrade.descricao}`;
+        modalDescricaoBuff.textContent = `${upgrade.descricaoBuff}`;
+        modalValor.textContent = `$${upgrade.valor}`;
+        modal.style.display = 'block';
+    }
 }
 
 
