@@ -1,0 +1,174 @@
+
+body{
+    image-rendering: pixelated;
+    user-select: none;
+    background-color: rgb(24, 24, 24);
+}
+.canvasContainer{
+    height: 98vh;
+    position: relative;
+    background: url(../../images/start-screen/background.png);
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.rightWall{
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../../images/start-screen/right-wall.png);
+    background-size: 100% 100%;
+}
+.leftWall{
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../../images/start-screen/left-wall.png);
+    background-size: 100% 100%;
+}
+.trashElements {
+    position: absolute;
+    bottom:-5px; 
+    left: 0; 
+    width: 50vw; 
+    height: calc(50vw * (117 / 244)); 
+    background: url('../../images/start-screen/trash.png') no-repeat;
+    background-size: contain; 
+}
+.seller {
+    position: absolute;
+    bottom: 0vh; 
+    right: 0vw; 
+    width: 30vw; 
+    height: calc(30vw * (280 / 272));
+    background: url('../../images/start-screen/seller-1.png') no-repeat;
+    background-size: contain; 
+} 
+.selectChampionTab {
+    position: absolute;
+    cursor: pointer;
+    top: 20vh; 
+    left: 5vw; 
+    width: 30vw; 
+    height: calc(2.59vw * (244 / 72)); /* Proporção baseada na imagem */
+    background: url('../../images/start-screen/select-champion-tab.png') no-repeat;
+    background-size: contain; 
+}
+
+.selectChampionTabIcon {
+    position: absolute;
+    top: calc(20vh + (30vw * (244 / 72) * 0.01)); /* Ajusta a partir da parte superior da aba */
+    left: calc(5vw + (30vw * 0.63)); /* Ajusta a partir da parte esquerda da aba */
+    width: calc(30vw * (7 / 30)); /* Proporcional ao .selectChampionTab */
+    height: calc(30vw * (7 / 30) * (244 / 72)); /* Mantendo a proporção */
+    background: url('../../images/champions/raf/player-raf-icon.png') no-repeat;
+    background-size: contain; 
+}
+
+ .trophyButton {
+    position: absolute; /* Fixa o botão na tela */
+    bottom: 18vh; /* Distância da parte inferior da viewport */
+    right: 18vw; 
+    width: calc(30vw * (9 / 30)); /* Proporcional ao .seller */
+    height: calc(30vw * (7 / 30) * (280 / 272)); /* Mantendo a proporção */
+    border-radius: 100px;
+} 
+.upgradeButton {
+    position: absolute; /* Fixa o botão na tela */
+    bottom: 10vh; /* Distância da parte inferior da viewport */
+    right: 17vw; 
+    width: calc(30vw * (9 / 30)); /* Proporcional ao .seller */
+    height: calc(30vw * (7 / 30) * (280 / 272)); /* Mantendo a proporção */
+    border-radius: 200px;
+}
+.goBackButton {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    width: 110px; 
+    height: 45px; 
+    z-index: 99999;
+    background: url(/game/css/imagens/botoes/voltar-botao.png);
+    background-size: 100% 100%;;
+    cursor: pointer;
+  }
+  .selectingChampionScreen {
+    position: fixed;
+    top: calc(20vh + (30vw * (244 / 72) * -0.04)); 
+    left: 39vw; 
+    width: 30vw; 
+    height: calc(30vw * (236 / 198)); /* Ajuste a altura de acordo com a proporção */
+    background-size: contain; 
+    display: flex;
+    flex-direction: column; /* Organiza as linhas em coluna */
+    gap: 2vw; /* Espaçamento entre as linhas */
+    padding: 1vw; /* Espaçamento interno do contêiner */
+    box-sizing: border-box; /* Inclui o padding na largura e altura total */
+}
+.selectingChampionScreenImage {
+    position: fixed;
+    top: calc(20vh + (30vw * (244 / 72) * -0.06)); 
+    left: 37vw; 
+    width: 35vw; 
+    height: calc(35vw * (236 / 198)); /* Ajuste a altura de acordo com a proporção */
+    background: url('../../images/start-screen/select-champion-screen.png') no-repeat;
+    background-size: contain; 
+    display: flex;
+    flex-direction: column; /* Organiza as linhas em coluna */
+    gap: 2vw; /* Espaçamento entre as linhas */
+    padding: 1vw; /* Espaçamento interno do contêiner */
+    box-sizing: border-box; /* Inclui o padding na largura e altura total */
+}
+
+
+.row {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones dentro da linha */
+    gap: 2vw; /* Espaçamento entre ícones na mesma linha */
+    margin-bottom: 2vw; /* Espaçamento entre as filas */
+    width: 100%; /* Garante que a linha ocupe toda a largura do contêiner */
+}
+
+.championIconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: url('../../images/start-screen/selec-champion-border.png') no-repeat center center; /* Fundo decorativo */
+    background-size: contain;
+    padding: 0.5vw; /* Adiciona algum espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding na largura e altura total */
+}
+
+.championIcon {
+    background-size: contain;
+    cursor: pointer;
+}
+.playButton{
+    position: absolute;
+    cursor: pointer;
+    bottom: 2vh; 
+    left: 45vw; 
+    width: 12.7vw; 
+    height: calc(5vw * (83 / 52)); /* Proporção baseada na imagem */
+    background: url('../../images/start-screen/start-button.png') no-repeat;
+    background-size: contain; 
+}
+
+.closeButton {
+    top: -2vw;
+    right: -1vw;
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 3vw;
+    cursor: pointer;
+}
+.disabled {
+    pointer-events: none; /* Desativa todos os eventos de ponteiro */
+    opacity: 0; /* Opcional: Visualmente indica que a área está desativada */
+}
+

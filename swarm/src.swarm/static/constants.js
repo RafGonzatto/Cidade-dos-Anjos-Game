@@ -1,0 +1,13 @@
+export const KEY_LEFT = 65;
+export const KEY_RIGHT = 68;
+export const KEY_UP = 87;
+export const KEY_ESC = 27;
+export const KEY_DOWN = 83;
+export const KEY_SKILLPOWER1 = 69; 
+export const FACE_LEFT = 0;
+export const FACE_RIGHT = 1;
+export const WORLD_WIDTH = 2000;
+export const WORLD_HEIGHT = 2000;
+export const MAX_OBJECTS = 25000;
+export const ENEMY_SPAWN_COUNT_PER_WAVE = 50;
+export const ENEMY_SPAWN_TIME_BETWEEN_WAVES = 5000;

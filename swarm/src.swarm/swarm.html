@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo HTML5</title>
+    <style>
+        #canvasContainer {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas, img, video, object {
+            image-rendering: pixelated; /* Para escala pixelada */
+        }
+        #canvas {
+            background-color: rgb(123, 168, 206);
+        }
+    </style>
+</head>
+<body>
+    <div id="canvasContainer">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script type="module" src="gameConfig/gameInit.js"></script>
+
+    <script type="module">
+        import { initGame } from './gameConfig/gameInit.js';
+        window.onload = function() {
+            initGame();
+        };
+    </script>
+</body>
+</html>
