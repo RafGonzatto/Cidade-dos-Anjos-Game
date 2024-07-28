@@ -40,7 +40,7 @@ export function configurarMovimentacaoVendedores() {
   
     function atualizarIntervaloPorcoGrande() {
       clearInterval(intervaloPorcoGrandeId);
-      intervaloPorcoGrande = imagensPorcoGrande[indiceImagemPorcoGrande].src.includes('jogo/css/imagens/vendedores/porco-1.png') ? 1000 : 110;
+      intervaloPorcoGrande = imagensPorcoGrande[indiceImagemPorcoGrande].src.includes('../static/images/vendedores/porco-1.png') ? 1000 : 110;
       intervaloPorcoGrandeId = setInterval(() => {
         trocarImagemPorcoGrande(porcoGrande);
         atualizarIntervaloPorcoGrande();

@@ -19,7 +19,7 @@ let indiceImagemFerido = 0;
 export function particulaCaraClicada(x, y, offsetConfig) {
   let caraClicada = document.querySelector(".areaEsquerda");
   let particle = document.createElement("img");
-  particle.setAttribute("src", "jogo/css/imagens/particula-sangue.png");
+  particle.setAttribute("src", "../static/images/particula-sangue.png");
   particle.setAttribute("class", "particula-sangue");
   particle.style.left = x + "px";
   particle.style.top = y + "px";

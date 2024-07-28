@@ -1,12 +1,12 @@
 
-# Cidade dos Anjos ![Image](jogo/css/imagens//ratos.png)
+# Cidade dos Anjos ![Image](game/static/images/ratos.png)
 Hello, my name is Rafael. This is a personal project inspired by a comic book I'm writing and illustrating. I plan to release it someday. The inspiration for this project came from the fascinating game Cookie Clicker 🍪, created by Orteil.
 
 At the age of 10, I was captivated by its mechanics and artwork, and I found myself thinking, what if I created my own "Cookie Clicker".
 
 Due to unexpected circumstances, I ended up becoming a computer science student at 18 and now at 20 I wanted to challenge myself to make that old idea come true. Obviously, I don't intend to simply copy Orteil's work with a new look.
 
-## How to Run the Project ![Image](jogo/css/imagens//eu.png)
+## How to Run the Project ![Image](game/static/images/eu.png)
 
 As it's a project made only with pure Javascript, HTML, and CSS, simply clone the repository and run the index.html file with Live Server extesion of Visual Studio Code for example.
 
@@ -31,7 +31,7 @@ To run the Electron.js version, you'll need to have Node.js installed. Then, fol
 
 **Also, I would greatly appreciate feedback on the project, and it would be great if you could leave some stars here on GitHub!**
 
-## Project Ideas ![Image](jogo/css/imagens//maromba.png)
+## Project Ideas ![Image](game/static/images/maromba.png)
 
  - [x] Implement city map navigation
  - [x] Implement interactions with city structures
@@ -41,4 +41,4 @@ To run the Electron.js version, you'll need to have Node.js installed. Then, fol
  - [ ] Implement encryption in the game save
 
 # Thanks to everyone who liked the project! If you could leave your star and follow the project, it would be great!
-![Image](jogo/css/imagens/cabeca-soco-3grande.png)
+![Image](game/static/images/cabeca-soco-3grande.png)

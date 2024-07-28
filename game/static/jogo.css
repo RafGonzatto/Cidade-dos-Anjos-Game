@@ -15,7 +15,7 @@
   height: 100vh;
   left: 0;
   width: 30%;
-  background: url(imagens/textura-roxa.png);
+  background: url(images/textura-roxa.png);
   background-size: 100% 100%;
   background-position: left;
   image-rendering: pixelated;
@@ -34,7 +34,7 @@
   height: 40vh;
   left: 0;
   width: 100%;
-  background-image: url(imagens/textura-amarela.png);
+  background-image: url(images/textura-amarela.png);
   background-size: auto 100%;
   background-position: left;
   image-rendering: pixelated;
@@ -43,7 +43,7 @@
   position: absolute;
   height: 60vh;
   width: 100%;
-  background-image: url(imagens/fundo-acampamento-inferior.png);
+  background-image: url(images/fundo-acampamento-inferior.png);
   bottom: 0;
   display: flex;
   align-items: flex-end;
@@ -64,7 +64,7 @@
   top: 0;
   left: 50%;
   transform: translate(-50%);
-  background-image: url(imagens/fundo-acampamento.png);
+  background-image: url(images/fundo-acampamento.png);
   background-size: contain;
   image-rendering: pixelated;
 }
@@ -92,7 +92,7 @@
 .protagonista {
   position: absolute;
   top: 19%;
-  background-image: url(imagens/eu.png);
+  background-image: url(images/eu.png);
   left: 26%;
   width: 38px;
   height: 50px;
@@ -101,7 +101,7 @@
 .maromba {
   position: absolute;
   top: 30%;
-  background-image: url(imagens/maromba.png);
+  background-image: url(images/maromba.png);
   left: 8%;
   width: 50px;
   opacity: 0;
@@ -111,7 +111,7 @@
 .ratos {
   position: absolute;
   top: 42%;
-  background-image: url(imagens/ratos.png);
+  background-image: url(images/ratos.png);
   left: 17%;
   width: 62px;
   height: 64px;
@@ -121,7 +121,7 @@
 .quadrado {
   position: absolute;
   top: 45%;
-  background-image: url(imagens/quadrado.png);
+  background-image: url(images/quadrado.png);
   left: 60%;
   width: 38px;
   opacity: 0;
@@ -131,7 +131,7 @@
 .mane {
   position: absolute;
   top: 77%;
-  background-image: url(imagens/mane.png);
+  background-image: url(images/mane.png);
   left: 66%;
   width: 30px;
   opacity: 0;
@@ -141,7 +141,7 @@
 .policial {
   position: absolute;
   top: 19%;
-  background-image: url(imagens/policial.png);
+  background-image: url(images/policial.png);
   left: 65%;
   opacity: 0;
   width: 28px;
@@ -152,7 +152,7 @@
   position: absolute;
   opacity: 0;
   top: 24%;
-  background-image: url(imagens/luvas.png);
+  background-image: url(images/luvas.png);
   left: 62%;
   width: 180px;
   height: 125px;
@@ -161,7 +161,7 @@
 .carro {
   position: absolute;
   top: 52%;
-  background-image: url(imagens/carro.png);
+  background-image: url(images/carro.png);
   left: 2%;
   width: 140px;
   opacity: 0;
@@ -178,12 +178,12 @@
 .predioDireita {
   width: calc(50% - 265px);
   right: 0;
-  background-image: url(imagens/fundo-acampamento-predios-direita.png);
+  background-image: url(images/fundo-acampamento-predios-direita.png);
   background-size: 100% 100%;
 }
 
 .predioEsquerda {
-  background-image: url(imagens/fundo-acampamento-predios-esquerda.png);
+  background-image: url(images/fundo-acampamento-predios-esquerda.png);
   left: 0;
   width: calc(50% - 265px);
   background-size: 100% 100%;
@@ -192,7 +192,7 @@
   display: none;
   height: 100%;
   width: 100%;
-  background: url(imagens/vendedores/upgrades-background.png);
+  background: url(images/vendedores/upgrades-background.png);
   padding: 20px;
   z-index: 2;
 }
@@ -200,7 +200,7 @@
   display: none;
   height: 100%;
   width: 100%;
-  background: url(imagens/vendedores/upgrades-background.png);
+  background: url(images/vendedores/upgrades-background.png);
   padding: 20px;
   z-index: 6;
 }
@@ -219,7 +219,7 @@
   margin-left: 60%;
   right: 0;
   width: 35%;
-  background-image: url(imagens/fundo-vermelho2.png);
+  background-image: url(images/fundo-vermelho2.png);
 }
 
 
@@ -233,10 +233,10 @@
 .separadorDireita {
   width: 16px;
   height: 100vh;
-  background: url(imagens/barra.png) repeat-y;
-  background: url(imagens/panelGradientTop.png) no-repeat top left,
-    url(imagens/panelGradientBottom.png) no-repeat bottom left,
-    url(imagens/barra.png) repeat-y;
+  background: url(images/barra.png) repeat-y;
+  background: url(images/panelGradientTop.png) no-repeat top left,
+    url(images/panelGradientBottom.png) no-repeat bottom left,
+    url(images/barra.png) repeat-y;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -246,10 +246,10 @@
   margin-top: 212px;
   width: 100%;
   height: 16px;
-  background: url(imagens/panelHorizontal.png) repeat-x;
-  background: url(imagens/panelGradientLeft.png) no-repeat top left,
-    url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png) repeat-x;
+  background: url(images/panelHorizontal.png) repeat-x;
+  background: url(images/panelGradientLeft.png) no-repeat top left,
+    url(images/panelGradientRight.png) no-repeat top right,
+    url(images/panelHorizontal.png) repeat-x;
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -287,10 +287,10 @@
 .caraGrande {
   width: 290px;
   height: 256px;
-  background: url(imagens/cabeca-1.png);
+  background: url(images/cabeca-1.png);
   background-size: cover;
   image-rendering: pixelated;
-  cursor: url(imagens/icone-luva.png), auto;
+  cursor: url(images/icone-luva.png), auto;
   z-index: 10000;
 }
 .tituloLoja {
@@ -305,11 +305,11 @@
   display: none; /* Use flexbox para posicionar os upgrades */
   flex-wrap: wrap; /* Permita que os upgrades quebrem para a linha seguinte */
   justify-content: flex-start;
-  background: url(imagens/panelHorizontal.png) repeat-x top;
-  background: url(imagens/panelGradientLeft.png) no-repeat top left,
-    url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png) repeat-x,
-    url(imagens/vendedores/upgrades-background.png) repeat;
+  background: url(images/panelHorizontal.png) repeat-x top;
+  background: url(images/panelGradientLeft.png) no-repeat top left,
+    url(images/panelGradientRight.png) no-repeat top right,
+    url(images/panelHorizontal.png) repeat-x,
+    url(images/vendedores/upgrades-background.png) repeat;
   padding-top: 16px;
 }
 .vendedores {
@@ -317,9 +317,9 @@
   height: 180px; /* Altera a altura para automática para acomodar vários upgrades */
   position: relative;
   background: 
-    url(imagens/panelGradientLeft.png) no-repeat top left,
-    url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png) repeat-x;
+    url(images/panelGradientLeft.png) no-repeat top left,
+    url(images/panelGradientRight.png) no-repeat top right,
+    url(images/panelHorizontal.png) repeat-x;
 }
 .vendedoresPorcoGrande {
   top: -604px;
@@ -328,7 +328,7 @@
   width: 187.12px;
   position: relative;
   image-rendering: pixelated;
-  background: url(imagens/vendedores/porco-1.png);
+  background: url(images/vendedores/porco-1.png);
   background-size: 100% 100%;
 }
 .vendedoresPig {
@@ -339,7 +339,7 @@
   width: 187.12px;
   position: relative;
   image-rendering: pixelated;
-  background: url(imagens/vendedores/pig-1.png);
+  background: url(images/vendedores/pig-1.png);
   background-size: 100% 100%;
 }
 
@@ -348,7 +348,7 @@
   top: -163px;
   position: relative;
   image-rendering: pixelated;
-  background: url(imagens/vendedores/lojinha-background.png) repeat-x;
+  background: url(images/vendedores/lojinha-background.png) repeat-x;
   background-size: auto 100%;
 }
 .vendedoresNuvens {
@@ -357,7 +357,7 @@
   position: relative;
   overflow: hidden;
   image-rendering: pixelated;
-  background: url(imagens/vendedores/nuvens.png) repeat-x;
+  background: url(images/vendedores/nuvens.png) repeat-x;
   background-size: auto 100%;
   animation: moveClouds 15s linear infinite;
 }
@@ -374,7 +374,7 @@
   top: -480px;
   position: relative;
   image-rendering: pixelated;
-  background: url(imagens/vendedores/montanhas-background.png) repeat-x;
+  background: url(images/vendedores/montanhas-background.png) repeat-x;
   background-size: auto 100%;
 }
 .vendedoresCerca {
@@ -383,7 +383,7 @@
   height: 14px; 
   position: relative;
   image-rendering: pixelated;
-  background: url(imagens/vendedores/cerca.png) repeat-x;
+  background: url(images/vendedores/cerca.png) repeat-x;
   background-size: 136px auto;
 }
 .vendedoresLojinha {
@@ -393,7 +393,7 @@
   width: 315.5px;
   position: relative;
   image-rendering: pixelated;
-  background: url(imagens/vendedores/lojinha.png);
+  background: url(images/vendedores/lojinha.png);
   background-size: 100% 100%;
 }
 .vendedoresBotao {
@@ -426,10 +426,10 @@
   cursor: pointer;
 }
 .loja {
-  background: url(imagens/panelHorizontal.png) repeat-x top;
-  background: url(imagens/panelGradientLeft.png) no-repeat top left,
-    url(imagens/panelGradientRight.png) no-repeat top right,
-    url(imagens/panelHorizontal.png) repeat-x;
+  background: url(images/panelHorizontal.png) repeat-x top;
+  background: url(images/panelGradientLeft.png) no-repeat top left,
+    url(images/panelGradientRight.png) no-repeat top right,
+    url(images/panelHorizontal.png) repeat-x;
   padding-top: 16px;
 }
 .configLoja {
@@ -446,8 +446,8 @@
   margin-left: 16px;
   height: 100px;
   background-size: 30px 30px;
-  background: url(imagens/barra-compra.png) no-repeat left,
-    url(imagens/barra-compra2.png) repeat right;
+  background: url(images/barra-compra.png) no-repeat left,
+    url(images/barra-compra2.png) repeat right;
   position: relative;
   cursor: pointer;
 }
@@ -503,14 +503,14 @@
   animation: particula-sangue 3s infinite alternate ease-in-out; 
 }
 .bloqueadorConstrucao {
-  background: url(imagens/barra-desbloqueio.png) no-repeat left,
-    url(imagens/barra-desbloqueio3.png) no-repeat right,
-    url(imagens/barra-desbloqueio2.png) repeat right;
+  background: url(images/barra-desbloqueio.png) no-repeat left,
+    url(images/barra-desbloqueio3.png) no-repeat right,
+    url(images/barra-desbloqueio2.png) repeat right;
 }
 .bloqueadorConstrucao2 {
-  background: url(imagens/barra-desbloqueio.png) no-repeat left,
-    url(imagens/barra-desbloqueio4.png) no-repeat right,
-    url(imagens/barra-desbloqueio2.png) no-repeat center;
+  background: url(images/barra-desbloqueio.png) no-repeat left,
+    url(images/barra-desbloqueio4.png) no-repeat right,
+    url(images/barra-desbloqueio2.png) no-repeat center;
   background-size: 33% 100%, 20% 100%, 60% 100%;
   image-rendering: pixelated;
   z-index: 999;
@@ -519,7 +519,7 @@
   position: absolute;
   width: 149px;
   height: 64.34px;
-  background: url(imagens/valor-desbloqueio.png);
+  background: url(images/valor-desbloqueio.png);
   background-size: cover;
   image-rendering: pixelated;
   top: 50%;
@@ -536,19 +536,19 @@
 }
 
 .correntesBloqueador {
-  background: url(imagens/correntes-desbloqueio.png) repeat right;
+  background: url(images/correntes-desbloqueio.png) repeat right;
   width: 100%;
   height: 100%;
 }
 .correntesBloqueador2 {
-  background: url(imagens/correntes-desbloqueio2.png) repeat right;
+  background: url(images/correntes-desbloqueio2.png) repeat right;
   width: 100%;
   height: 100%;
 }
 .correntesBloqueadorParticulas {
   width: 100px;
   height: 100px;
-  background: url(imagens/correntes-desbloqueio-particulas2.png) top;
+  background: url(images/correntes-desbloqueio-particulas2.png) top;
   background-size: cover;
   position: absolute;
   border-radius: 50%;
@@ -595,12 +595,12 @@
 
 .unlockFrente {
   margin-top: -240px;
-  background: url(imagens/unlocked.png);
+  background: url(images/unlocked.png);
   background-size: cover;
 }
 
 .unlockTras {
-  background: url(imagens/unlocked2.png);
+  background: url(images/unlocked2.png);
   background-size: cover;
 }
 
@@ -674,7 +674,7 @@
 }
 @font-face {
   font-family: myFont;
-  src: url(imagens/fontes/Merriweather-Bold.ttf);
+  src: url(images/fontes/Merriweather-Bold.ttf);
 }
 
 * {
@@ -710,31 +710,31 @@
 
 .botao-salvar {
   bottom: 18px;
-  background: url(imagens/botoes/save-botao.png);
+  background: url(images/botoes/save-botao.png);
   background-size: 100% 100%;
 }
 
 .botao-seguidores {
   bottom: 111px;
-  background: url(imagens/botoes/follower-botao.png);
+  background: url(images/botoes/follower-botao.png);
   background-size: 100% 100%;
 }
 
 .botao-conquistas {
   bottom: 204px;
-  background: url(imagens/botoes/trophy-botao.png);
+  background: url(images/botoes/trophy-botao.png);
   background-size: 100% 100%;
 }
 
 .botao-config {
   bottom: 111px;
-  background: url(imagens/botoes/config-botao.png);
+  background: url(images/botoes/config-botao.png);
   background-size: 100% 100%;
 }
 
 .botao-importar {
   bottom: 18px;
-  background: url(imagens/botoes/import-botao.png);
+  background: url(images/botoes/import-botao.png);
   background-size: 100% 100%;
 }
 
@@ -744,7 +744,7 @@
   top: 140px;
   height: 40px;
   width: 92%;
-  background: url(imagens/botoes/input-botao.png);
+  background: url(images/botoes/input-botao.png);
   background-size: 100% 100%;
   cursor: pointer;
   border-radius: 4px;
@@ -773,7 +773,7 @@
 }
 .modal-importar {
   position: absolute;
-  background: url(imagens/botoes/import-tab.png);
+  background: url(images/botoes/import-tab.png);
   image-rendering: pixelated;
   background-size: 100% 100%;
   top: 50%;
@@ -793,20 +793,20 @@
 }
 .botao-aceitar {
   margin-top: 190px;
-  background: url(imagens/botoes/ok-botao.png);
+  background: url(images/botoes/ok-botao.png);
   background-size: 100% 100%;
   margin-right: auto;
 }
 .botao-cancelar {
   margin-top: -140px;
-  background: url(imagens/botoes/cancel-botao.png);
+  background: url(images/botoes/cancel-botao.png);
   background-size: 100% 100%;
   margin-left: auto;
 }
 .fechar-modal {
   position: absolute;
   right: 35px;
-  background: url(imagens/botoes/close-botao.png);
+  background: url(images/botoes/close-botao.png);
   height: 25px;
   width: 23px;
   background-size: 100% 100%;
@@ -820,7 +820,7 @@
   image-rendering: pixelated;
   height: 283.38px;
   width: 1000px;
-  background: url(imagens/botoes/predio-tab.png);
+  background: url(images/botoes/predio-tab.png);
   background-size: 100% 100%;
 }
 
@@ -843,7 +843,7 @@
 
 .imagem-predio {
   position: absolute;
-  background: url(imagens/predio-arquebispo.png);
+  background: url(images/predio-arquebispo.png);
   image-rendering: pixelated;
   height: 231.07px;
   width: 350px;
@@ -868,7 +868,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  background: url(imagens/botoes/predio-tab-aba.png);
+  background: url(images/botoes/predio-tab-aba.png);
   background-size: 100% 100%;
 }
 
@@ -898,13 +898,13 @@
   position: absolute;
   height: 2000px;
   width: 4000px;
-  background: url(imagens/cidade.png);
+  background: url(images/cidade.png);
   image-rendering: pixelated;
   background-size: 100% 100%;;
 }
 .regiao {
   position: absolute;
-  background: url(imagens/regiao.png);
+  background: url(images/regiao.png);
 }
 .predio-igreja {
   position: absolute;
@@ -912,7 +912,7 @@
   left: 924px;
   height: 296px;
   width: 338px;
-  background: url(imagens/predio-igreja.png);
+  background: url(images/predio-igreja.png);
   opacity: 0;
   image-rendering: pixelated;
   background-size: 100% 100%;;
@@ -923,7 +923,7 @@
   left: 48px;
   height: 201px;
   width: 385px;
-  background: url(imagens/predio-gangues.png);
+  background: url(images/predio-gangues.png);
   opacity: 0;
   image-rendering: pixelated;
   background-size: 100% 100%;;
@@ -935,7 +935,7 @@
   height: 352px;
   width: 401px;
   opacity: 0;
-  background: url(imagens/predio-policia.png);
+  background: url(images/predio-policia.png);
   image-rendering: pixelated;
   background-size: 100% 100%;;
 }
@@ -946,7 +946,7 @@
   width: 120px;
   height: 50px;
   z-index: 99999;
-  background: url(imagens/botoes/voltar-botao.png);
+  background: url(images/botoes/voltar-botao.png);
   background-size: 100% 100%;;
   cursor: pointer;
 }
@@ -1003,7 +1003,7 @@ html, body {
   height: 150px;
   display: none;
   position: fixed;
-  background: url(imagens/botoes/upgrade-modal.png);
+  background: url(images/botoes/upgrade-modal.png);
   background-size: 100% 100%;
   margin: 20px;
   text-align: center;

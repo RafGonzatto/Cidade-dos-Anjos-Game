@@ -7,7 +7,6 @@ export function configurarEventosConfiguracao() {
         localStorage.setItem('alturaJanela', selectedResolution.height);
         window.setarTelaCheia(false);
         localStorage.setItem('fullscreen', false);
-        console.log(selectedResolution.width, typeof selectedResolution.width)
         window.alterarTamanhoDaJanela(selectedResolution.width, selectedResolution.height);
     });
     const fullscreenCheckbox = document.getElementById('fullscreen-checkbox');

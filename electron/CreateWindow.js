@@ -7,7 +7,7 @@ function createWindow() {
         width: width,
         height: height,
         frame: false,
-        icon: './jogo/css/imagens/icone.ico',
+        icon: './game/static/images/icone.ico',
         webPreferences: {
             preload:  path.join(__dirname, 'preload.js'),
             nodeIntegration: false,

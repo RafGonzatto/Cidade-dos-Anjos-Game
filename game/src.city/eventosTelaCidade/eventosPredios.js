@@ -37,13 +37,13 @@ export function configurarPredios(elemento) {
       let target = elemento.currentTarget;
       let imagem = document.querySelector('.imagem-predio');
       if (target.classList.contains('predio-policia')) {
-        imagem.style.backgroundImage = 'url(jogo/css/imagens/predio-capitao.png'
+        imagem.style.backgroundImage = 'url(../static/images/predio-capitao.png'
       }
       if (target.classList.contains('predio-igreja')) {
-        imagem.style.backgroundImage = 'url(jogo/css/imagens/predio-arquebispo.png'
+        imagem.style.backgroundImage = 'url(../static/images/predio-arquebispo.png'
       } 
       if (target.classList.contains('predio-gangues')) {
-        imagem.style.backgroundImage = 'url(jogo/css/imagens/predio-gangster.png'
+        imagem.style.backgroundImage = 'url(../static/images/predio-gangster.png'
       }
      
       modal.style.display = "block";

@@ -4,15 +4,17 @@ import Upgrade from "./models/Upgrade.js";
 import JogoService from "./services/jogoService.js";
 import { configurarEventosDesbloqueio } from "./eventosTelaPrincipal/eventosDesbloqueio.js";
 
+const caminhoImagens = "../static/images/";
+
 const imagemPortaoAberto = (() => {
     const img = new Image();
-    img.src = "jogo/css/imagens/fundo-acampamento-aberto.png";
+    img.src = `${caminhoImagens}fundo-acampamento-aberto.png`;	
     return img;
   })();
   
   const imagemPortaoFechado = (() => {
     const img = new Image();
-    img.src = "jogo/css/imagens/fundo-acampamento.png";
+    img.src = `${caminhoImagens}fundo-acampamento.png`;
     return img;
   })();
   
@@ -113,112 +115,112 @@ class InicializacaoClasses {
     }
     static getImagemUpgradePorId(id) {
         const imagens = {
-            1 : 'jogo/css/imagens/upgrades/upgrade-luva.png',
-            2 :  'jogo/css/imagens/upgrades/upgrade-luva2.png',
-            3 :  'jogo/css/imagens/upgrades/upgrade-luva3.png',
-            4 :  'jogo/css/imagens/upgrades/upgrade-luva4.png',
-            5 :  'jogo/css/imagens/upgrades/upgrade-luva5.png',
-            6 :  'jogo/css/imagens/upgrades/upgrade-clique.png',
-            7 :  'jogo/css/imagens/upgrades/upgrade-clique2.png',
-            8 :  'jogo/css/imagens/upgrades/upgrade-clique3.png',
-            9 :  'jogo/css/imagens/upgrades/upgrade-clique4.png',
-            10 :  'jogo/css/imagens/upgrades/upgrade-clique5.png',
-            11 :  'jogo/css/imagens/upgrades/upgrade-cao-brabo.png',
-            12 :  'jogo/css/imagens/upgrades/upgrade-cao-brabo2.png',
-            13 :  'jogo/css/imagens/upgrades/upgrade-cao-brabo3.png',
-            14 :  'jogo/css/imagens/upgrades/upgrade-cao-brabo4.png',
-            15 :  'jogo/css/imagens/upgrades/upgrade-cao-brabo5.png',
-            16 :  'jogo/css/imagens/upgrades/upgrade-maromba.png',
-            17 :  'jogo/css/imagens/upgrades/upgrade-maromba2.png',
-            18 :  'jogo/css/imagens/upgrades/upgrade-maromba3.png',
-            19 :  'jogo/css/imagens/upgrades/upgrade-maromba4.png',
-            20 :  'jogo/css/imagens/upgrades/upgrade-maromba5.png',
-            21 :  'jogo/css/imagens/upgrades/upgrade-carro.png',
-            22 :  'jogo/css/imagens/upgrades/upgrade-carro2.png',
-            23 :  'jogo/css/imagens/upgrades/upgrade-carro3.png',
-            24 :  'jogo/css/imagens/upgrades/upgrade-carro4.png',
-            25 :  'jogo/css/imagens/upgrades/upgrade-carro5.png',
-            26 :  'jogo/css/imagens/upgrades/upgrade-rato.png',
-            27 :  'jogo/css/imagens/upgrades/upgrade-rato2.png',
-            28 :  'jogo/css/imagens/upgrades/upgrade-rato3.png',
-            29 :  'jogo/css/imagens/upgrades/upgrade-rato4.png',
-            30 :  'jogo/css/imagens/upgrades/upgrade-rato5.png',
-            31 :  'jogo/css/imagens/upgrades/upgrade-policial.png',
-            32 :  'jogo/css/imagens/upgrades/upgrade-policial2.png',
-            33 :  'jogo/css/imagens/upgrades/upgrade-policial3.png',
-            34 :  'jogo/css/imagens/upgrades/upgrade-policial4.png',
-            35 :  'jogo/css/imagens/upgrades/upgrade-policial5.png',
-            36 :  'jogo/css/imagens/upgrades/upgrade-quadrado.png',
-            37 :  'jogo/css/imagens/upgrades/upgrade-quadrado2.png',
-            38 :  'jogo/css/imagens/upgrades/upgrade-quadrado3.png',
-            39 :  'jogo/css/imagens/upgrades/upgrade-quadrado4.png',
-            40 :  'jogo/css/imagens/upgrades/upgrade-quadrado5.png',
+            1 : `${caminhoImagens}upgrades/upgrade-luva.png`,
+            2 :  `${caminhoImagens}upgrades/upgrade-luva2.png`,
+            3 :  `${caminhoImagens}upgrades/upgrade-luva3.png`,
+            4 :  `${caminhoImagens}upgrades/upgrade-luva4.png`,
+            5 :  `${caminhoImagens}upgrades/upgrade-luva5.png`,
+            6 :  `${caminhoImagens}upgrades/upgrade-clique.png`,
+            7 :  `${caminhoImagens}upgrades/upgrade-clique2.png`,
+            8 :  `${caminhoImagens}upgrades/upgrade-clique3.png`,
+            9 :  `${caminhoImagens}upgrades/upgrade-clique4.png`,
+            10 :  `${caminhoImagens}upgrades/upgrade-clique5.png`,
+            11 :  `${caminhoImagens}upgrades/upgrade-cao-brabo.png`,
+            12 :  `${caminhoImagens}upgrades/upgrade-cao-brabo2.png`,
+            13 :  `${caminhoImagens}upgrades/upgrade-cao-brabo3.png`,
+            14 :  `${caminhoImagens}upgrades/upgrade-cao-brabo4.png`,
+            15 :  `${caminhoImagens}upgrades/upgrade-cao-brabo5.png`,
+            16 :  `${caminhoImagens}upgrades/upgrade-maromba.png`,
+            17 :  `${caminhoImagens}upgrades/upgrade-maromba2.png`,
+            18 :  `${caminhoImagens}upgrades/upgrade-maromba3.png`,
+            19 :  `${caminhoImagens}upgrades/upgrade-maromba4.png`,
+            20 :  `${caminhoImagens}upgrades/upgrade-maromba5.png`,
+            21 :  `${caminhoImagens}upgrades/upgrade-carro.png`,
+            22 :  `${caminhoImagens}upgrades/upgrade-carro2.png`,
+            23 :  `${caminhoImagens}upgrades/upgrade-carro3.png`,
+            24 :  `${caminhoImagens}upgrades/upgrade-carro4.png`,
+            25 :  `${caminhoImagens}upgrades/upgrade-carro5.png`,
+            26 :  `${caminhoImagens}upgrades/upgrade-rato.png`,
+            27 :  `${caminhoImagens}upgrades/upgrade-rato2.png`,
+            28 :  `${caminhoImagens}upgrades/upgrade-rato3.png`,
+            29 :  `${caminhoImagens}upgrades/upgrade-rato4.png`,
+            30 :  `${caminhoImagens}upgrades/upgrade-rato5.png`,
+            31 :  `${caminhoImagens}upgrades/upgrade-policial.png`,
+            32 :  `${caminhoImagens}upgrades/upgrade-policial2.png`,
+            33 :  `${caminhoImagens}upgrades/upgrade-policial3.png`,
+            34 :  `${caminhoImagens}upgrades/upgrade-policial4.png`,
+            35 :  `${caminhoImagens}upgrades/upgrade-policial5.png`,
+            36 :  `${caminhoImagens}upgrades/upgrade-quadrado.png`,
+            37 :  `${caminhoImagens}upgrades/upgrade-quadrado2.png`,
+            38 :  `${caminhoImagens}upgrades/upgrade-quadrado3.png`,
+            39 :  `${caminhoImagens}upgrades/upgrade-quadrado4.png`,
+            40 :  `${caminhoImagens}upgrades/upgrade-quadrado5.png`,
         };
-        return imagens[id] || 'jogo/css/imagens/upgrades/upgrade-clique.png';
+        return imagens[id] || `${caminhoImagens}upgrades/upgrade-clique.png`;
     }
     
     static getImagemConstrucaoPorId(id) {
         const imagens = { 
-            1 : 'jogo/css/imagens/construcao-luva.png',
-            2 : 'jogo/css/imagens/construcao-mane.png',
-            3 : 'jogo/css/imagens/construcao-cao-brabo.png',
-            4 : 'jogo/css/imagens/construcao-maromba.png',
-            5 : 'jogo/css/imagens/construcao-carro.png',
-            6 : 'jogo/css/imagens/construcao-rato.png',
-            7 : 'jogo/css/imagens/construcao-policial.png',
-            8 : 'jogo/css/imagens/construcao-quadrado.png',
+            1 : `${caminhoImagens}construcao-luva.png`,
+            2 : `${caminhoImagens}construcao-mane.png`,
+            3 : `${caminhoImagens}construcao-cao-brabo.png`,
+            4 : `${caminhoImagens}construcao-maromba.png`,
+            5 : `${caminhoImagens}construcao-carro.png`,
+            6 : `${caminhoImagens}construcao-rato.png`,
+            7 : `${caminhoImagens}construcao-policial.png`,
+            8 : `${caminhoImagens}construcao-quadrado.png`,
         };
-        return imagens[id] || 'jogo/css/imagens/upgrades/upgrade-clique.png';
+        return imagens[id] || `${caminhoImagens}upgrades/upgrade-clique.png`;
     }
 
     static imagensVendedorPorcoGrande() {
         const imagensPorcoGrande = [
-            'jogo/css/imagens/vendedores/porco-1.png', 
-            'jogo/css/imagens/vendedores/porco-2.png',
-            'jogo/css/imagens/vendedores/porco-3.png',
-            'jogo/css/imagens/vendedores/porco-4.png', 
-            'jogo/css/imagens/vendedores/porco-5.png',
-            'jogo/css/imagens/vendedores/porco-6.png', 
-            'jogo/css/imagens/vendedores/porco-7.png',
-            'jogo/css/imagens/vendedores/porco-8.png',
+            `${caminhoImagens}vendedores/porco-1.png`, 
+            `${caminhoImagens}vendedores/porco-2.png`,
+            `${caminhoImagens}vendedores/porco-3.png`,
+            `${caminhoImagens}vendedores/porco-4.png`, 
+            `${caminhoImagens}vendedores/porco-5.png`,
+            `${caminhoImagens}vendedores/porco-6.png`, 
+            `${caminhoImagens}vendedores/porco-7.png`,
+            `${caminhoImagens}vendedores/porco-8.png`,
         ];
         return imagensPorcoGrande;
     }
     static imagensVendedorPig() {
         const imagensPig = [
-            'jogo/css/imagens/vendedores/pig-1.png', 
-            'jogo/css/imagens/vendedores/pig-2.png',
-            'jogo/css/imagens/vendedores/pig-3.png',
-            'jogo/css/imagens/vendedores/pig-4.png',
-            'jogo/css/imagens/vendedores/pig-5.png',
+            `${caminhoImagens}vendedores/pig-1.png`, 
+            `${caminhoImagens}vendedores/pig-2.png`,
+            `${caminhoImagens}vendedores/pig-3.png`,
+            `${caminhoImagens}vendedores/pig-4.png`,
+            `${caminhoImagens}vendedores/pig-5.png`,
         ];
         return imagensPig;
     }
     static imagensCara() {
         const imagensCara = [
-            'jogo/css/imagens/cabeca-1.png', 
-            'jogo/css/imagens/cabeca-2.png',
-            'jogo/css/imagens/cabeca-32.png',
-            'jogo/css/imagens/cabeca-virada1.png', 
-            'jogo/css/imagens/cabeca-virada2.png', 
-            'jogo/css/imagens/cabeca-virada3.png',
-            'jogo/css/imagens/cabeca-virada4.png',
-            'jogo/css/imagens/cabeca-virada12.png', 
-            'jogo/css/imagens/cabeca-virada22.png', 
-            'jogo/css/imagens/cabeca-virada32.png',
-            'jogo/css/imagens/cabeca-virada42.png'
+            `${caminhoImagens}cabeca-1.png`, 
+            `${caminhoImagens}cabeca-2.png`,
+            `${caminhoImagens}cabeca-32.png`,
+            `${caminhoImagens}cabeca-virada1.png`, 
+            `${caminhoImagens}cabeca-virada2.png`, 
+            `${caminhoImagens}cabeca-virada3.png`,
+            `${caminhoImagens}cabeca-virada4.png`,
+            `${caminhoImagens}cabeca-virada12.png`, 
+            `${caminhoImagens}cabeca-virada22.png`, 
+            `${caminhoImagens}cabeca-virada32.png`,
+            `${caminhoImagens}cabeca-virada42.png`
         ];
         return imagensCara;
     }
     static imagensCaraFerido(){
         const imagensFerido = [
-        'jogo/css/imagens/cabeca-soco-1.png',
-        'jogo/css/imagens/cabeca-soco-2.png', 
-        'jogo/css/imagens/cabeca-soco-3.png', 
-        'jogo/css/imagens/cabeca-soco-4.png', 
-        'jogo/css/imagens/cabeca-soco-5.png',
-        'jogo/css/imagens/cabeca-soco-12.png',
-        'jogo/css/imagens/cabeca-soco-42.png' 
+        `${caminhoImagens}cabeca-soco-1.png`,
+        `${caminhoImagens}cabeca-soco-2.png`, 
+        `${caminhoImagens}cabeca-soco-3.png`, 
+        `${caminhoImagens}cabeca-soco-4.png`, 
+        `${caminhoImagens}cabeca-soco-5.png`,
+        `${caminhoImagens}cabeca-soco-12.png`,
+        `${caminhoImagens}cabeca-soco-42.png` 
         ];
         return imagensFerido;
     }
@@ -306,8 +308,8 @@ class InicializacaoClasses {
     }
 
     static async iniciarMovimento() {
-        const personagem = document.querySelector('.cachorro');
-        let direcaoAtual = Math.random() < 0.5 ? 'vertical' : 'horizontal';
+        const personagem = document.querySelector(`.cachorro`);
+        let direcaoAtual = Math.random() < 0.5 ? `vertical` : `horizontal`;
         let movimentosRestantes = 10;
         let incremento = 1;
         let indicePasso = 1;
@@ -323,16 +325,16 @@ class InicializacaoClasses {
             return await Promise.all(promises);
         }
         const imageUrls = [
-            'jogo/css/imagens/dog-walk-up.png',
-            'jogo/css/imagens/dog-walk-down.png',
-            'jogo/css/imagens/dog-walk-left1.png',
-            'jogo/css/imagens/dog-walk-left2.png',
-            'jogo/css/imagens/dog-walk-left3.png',
-            'jogo/css/imagens/dog-walk-left4.png',
-            'jogo/css/imagens/dog-walk-right1.png',
-            'jogo/css/imagens/dog-walk-right2.png',
-            'jogo/css/imagens/dog-walk-right3.png',
-            'jogo/css/imagens/dog-walk-right4.png'
+            `${caminhoImagens}dog-walk-up.png`,
+            `${caminhoImagens}dog-walk-down.png`,
+            `${caminhoImagens}dog-walk-left1.png`,
+            `${caminhoImagens}dog-walk-left2.png`,
+            `${caminhoImagens}dog-walk-left3.png`,
+            `${caminhoImagens}dog-walk-left4.png`,
+            `${caminhoImagens}dog-walk-right1.png`,
+            `${caminhoImagens}dog-walk-right2.png`,
+            `${caminhoImagens}dog-walk-right3.png`,
+            `${caminhoImagens}dog-walk-right4.png`
         ];
     
         try {
@@ -368,9 +370,9 @@ class InicializacaoClasses {
         personagem.style.width = "20px";
         personagem.style.height = "44px";
         if (incremento < 0) {
-            personagem.style.backgroundImage = "url(jogo/css/imagens/dog-walk-up.png)";
+            personagem.style.backgroundImage = `url(${caminhoImagens}dog-walk-up.png)`;
         } else {
-            personagem.style.backgroundImage = "url(jogo/css/imagens/dog-walk-down.png)";
+            personagem.style.backgroundImage = `url(${caminhoImagens}dog-walk-down.png)`;
         }
         if (((novoTop + incremento) === 26 || (novoTop + incremento) === 89) ||
             ((novoTop + incremento) >= 52 && (novoTop + incremento) <= 72)) {
@@ -387,9 +389,9 @@ class InicializacaoClasses {
         personagem.style.width = "50px";
         personagem.style.height = "40px";
         if (incremento < 0) {
-            personagem.style.backgroundImage = `url(jogo/css/imagens/dog-walk-left${indicePasso}.png)`;
+            personagem.style.backgroundImage = `url(${caminhoImagens}dog-walk-left${indicePasso}.png)`;
         } else {
-            personagem.style.backgroundImage = `url(jogo/css/imagens/dog-walk-right${indicePasso}.png)`;
+            personagem.style.backgroundImage = `url(${caminhoImagens}dog-walk-right${indicePasso}.png)`;
         }
         if (((novoLeft + incremento) === 3 || (novoLeft + incremento) === 90) ||
             ((novoLeft + incremento) >= 0 && (novoLeft + incremento) <= 27) ||
@@ -447,7 +449,7 @@ class InicializacaoClasses {
             imgElement.src = InicializacaoClasses.getImagemUpgradePorId(upgrade.id);
         }
         else {
-            imgElement.src = 'jogo/css/imagens/upgrades/upgrade-bloqueado.png';
+            imgElement.src = `${caminhoImagens}upgrades/upgrade-bloqueado.png`;
         }
         imgElement.style.width = '100%';
         imgElement.style.height = '100%';
@@ -494,7 +496,7 @@ class InicializacaoClasses {
         const upgradeRect = upgradeElement.getBoundingClientRect();
         modal.style.top = `${(upgradeRect.top - 175)}px`;
         modal.style.left = `${(upgradeRect.left - 20)}px`;
-        modalImagem.style.backgroundImage =  `url(jogo/css/imagens/upgrades/upgrade-bloqueado.png)`;
+        modalImagem.style.backgroundImage =  `url(${caminhoImagens}upgrades/upgrade-bloqueado.png)`;
         modalImagem.style.imageRendering = 'pixelated';
         modalTitulo.textContent = "???????????";
         modalDescricao.textContent = "???????????";

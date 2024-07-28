@@ -1,7 +1,7 @@
 
 import JogoService from "../services/jogoService.js";
 import BotoesObserver from "../observadores/BotoesObserver.js";
-
+const caminhoImagens = "../static/images/";
 
 export function configurarEventosBotoesPagina() {
   
@@ -9,37 +9,37 @@ export function configurarEventosBotoesPagina() {
   /////////////////////////SAVE
   const botaoSalvar = document.querySelector(".botao-salvar");
   botaoSalvar.addEventListener("mousedown", () => {
-    botaoSalvar.style.backgroundImage = "url(jogo/css/imagens/botoes/save-botao-clicado.png)";
+    botaoSalvar.style.backgroundImage = `url(${caminhoImagens}botoes/save-botao-clicado.png)`;
   });
   botaoSalvar.addEventListener("mouseup", () => {
-    botaoSalvar.style.backgroundImage = "url(jogo/css/imagens/botoes/save-botao.png)";
+    botaoSalvar.style.backgroundImage = `url(${caminhoImagens}botoes/save-botao.png)`;
       JogoService.salvarBackupJogo();
   });
   ////////////////////////SEGUIDORES
   const botaoSeguidores = document.querySelector(".botao-seguidores");
   botaoSeguidores.addEventListener("mousedown", () => {
-    botaoSeguidores.style.backgroundImage = "url(jogo/css/imagens/botoes/follower-botao-clicado.png)";
+    botaoSeguidores.style.backgroundImage = `url(${caminhoImagens}botoes/follower-botao-clicado.png)`;
   });
   botaoSeguidores.addEventListener("mouseup", () => {
-    botaoSeguidores.style.backgroundImage = "url(jogo/css/imagens/botoes/follower-botao.png)";
+    botaoSeguidores.style.backgroundImage = `url(${caminhoImagens}botoes/follower-botao.png)`;
   });
   ////////////////////////CONFIG
   const botaoConfig = document.querySelector(".botao-config");
   botaoConfig.addEventListener("mousedown", () => {
   botoesObserver.updateAreaMeio('config');
-    botaoConfig.style.backgroundImage = "url(jogo/css/imagens/botoes/config-botao-clicado.png)";
+    botaoConfig.style.backgroundImage = `url(${caminhoImagens}botoes/config-botao-clicado.png)`;
   });
   botaoConfig.addEventListener("mouseup", () => {
-    botaoConfig.style.backgroundImage = "url(jogo/css/imagens/botoes/config-botao.png)";
+    botaoConfig.style.backgroundImage = `url(${caminhoImagens}botoes/config-botao.png)`;
   });
   ////////////////////////CONQUISTAS
   const botaoConquistas = document.querySelector(".botao-conquistas");
   botaoConquistas.addEventListener("mousedown", () => {
     botoesObserver.updateAreaMeio('conquistas');
-    botaoConquistas.style.backgroundImage = "url(jogo/css/imagens/botoes/trophy-botao-clicado.png)";
+    botaoConquistas.style.backgroundImage = `url(${caminhoImagens}botoes/trophy-botao-clicado.png)`;
   });
   botaoConquistas.addEventListener("mouseup", () => {
-    botaoConquistas.style.backgroundImage = "url(jogo/css/imagens/botoes/trophy-botao.png)";
+    botaoConquistas.style.backgroundImage = `url(${caminhoImagens}botoes/trophy-botao.png)`;
   });
 
   //////////VOLTAR
@@ -54,10 +54,10 @@ export function configurarEventosBotoesPagina() {
   const modal = document.getElementById("modal-importar");
   const botaoImportar = document.querySelector(".botao-importar");
   botaoImportar.addEventListener("mousedown", () => {
-    botaoImportar.style.backgroundImage = "url(jogo/css/imagens/botoes/import-botao-clicado.png)";
+    botaoImportar.style.backgroundImage = `url(${caminhoImagens}botoes/import-botao-clicado.png)`;
   });
   botaoImportar.addEventListener("mouseup", () => {
-    botaoImportar.style.backgroundImage = "url(jogo/css/imagens/botoes/import-botao.png)";
+    botaoImportar.style.backgroundImage = `url(${caminhoImagens}botoes/import-botao.png)`;
     modal.style.display = "block";
   });
   const inputFile = document.getElementById("arquivo-backup");
@@ -77,18 +77,18 @@ export function configurarEventosBotoesPagina() {
   });
   const botaoAceitar = document.querySelector(".botao-aceitar");
   botaoAceitar.addEventListener("mousedown", () => {
-    botaoAceitar.style.backgroundImage = "url(jogo/css/imagens/botoes/ok-botao-clicado.png)";
+    botaoAceitar.style.backgroundImage = `url(${caminhoImagens}botoes/ok-botao-clicado.png)`;
   });
   botaoAceitar.addEventListener("mouseup", () => {
-    botaoAceitar.style.backgroundImage = "url(jogo/css/imagens/botoes/ok-botao.png)";
+    botaoAceitar.style.backgroundImage = `url(${caminhoImagens}botoes/ok-botao.png)`;
     JogoService.carregarBackupJogo();
   });
   const botaoCancelar = document.querySelector(".botao-cancelar");
   botaoCancelar.addEventListener("mousedown", () => {
-    botaoCancelar.style.backgroundImage = "url(jogo/css/imagens/botoes/cancel-botao-clicado.png)";
+    botaoCancelar.style.backgroundImage = `url(${caminhoImagens}botoes/cancel-botao-clicado.png)`;
   });
   botaoCancelar.addEventListener("mouseup", () => {
-      botaoCancelar.style.backgroundImage = "url(jogo/css/imagens/botoes/cancel-botao.png)";
+      botaoCancelar.style.backgroundImage = `url(${caminhoImagens}botoes/cancel-botao.png)`;
       modal.style.display = "none";
   });
   

@@ -1,7 +1,7 @@
 const {Tray} = require('electron');
 const {resolve} = require('path');
 
-const iconPath = resolve(__dirname, '../','jogo','css','imagens','icone-rosto.png');
+const iconPath = resolve(__dirname, '../','game','static','images','icone-rosto.png');
 
 function createTray(){
     const tray = new Tray(iconPath);
