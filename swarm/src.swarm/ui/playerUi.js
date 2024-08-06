@@ -1,14 +1,15 @@
-import { baseUiPlayer, baseUiHealth, baseUiMana, baseUiRafFace, baseUiSkill1Raf } from "../static/images.js";
+import { baseUiPlayer, baseUiHealth, baseUiXP, baseUiRafFace, baseUiSkill1Raf } from "../static/images.js";
 import { context, canvas, camera } from "../gameConfig/gameConfig.js";
 
 export default class PlayerInterface {
     constructor(champion) {
         this.base = baseUiPlayer;
         this.health = baseUiHealth;
-        this.mana = baseUiMana;
+        this.xp = baseUiXP; // XP necessário para o próximo nível
+        this.displayedXp = 0;
         this.champion = champion
         this.championSelect = this.choseChampion(champion.champion);
-        this.championSkill1 = this.choseSChampionSkill1(champion.champion);
+        this.championSkill1 = this.choseChampionSkill1(champion.champion);
         this.x = 0;
         this.y = 0;
         this.healthPercentage = 1; 
@@ -45,13 +46,13 @@ export default class PlayerInterface {
     }
 
     draw() {
-        context.imageSmoothingEnabled = false;
         this.drawChampionSelect();
         this.drawBase();
         this.drawHealthBar();
         this.drawSkill();
         this.drawSkillCooldown();
-        this.drawMana();
+        this.drawPlayerXP();
+        this.drawLevel();
     }
     drawChampionSelect() {
         const radius = 28.5 * this.scale; // Raio da imagem circular aumentado em 1 px
@@ -113,13 +114,16 @@ export default class PlayerInterface {
         context.fillText(healthText, textX, textY);
     }
     drawSkill() {
-        context.drawImage(this.championSkill1, this.x, this.y, this.base.width * this.scale, this.base.height * this.scale);
+        context.drawImage(this.championSkill1, this.x + 166, this.y + 56, 28 * this.scale, 28 * this.scale);
     }
-    drawSkillCooldown() {
-        if (!this.champion.Skill1Cooldown) {
-            const elapsed = (Date.now() - this.champion.Skill1CooldownStartTime) / 1000;
-            const remainingTime = Math.max(0, 3 - elapsed); // Tempo restante do cooldown
-        
+    drawSkillCooldown() { 
+        if (!this.champion.skill1Cooldown) {
+            // Calcula o tempo decorrido desde o início do cooldown
+            const elapsed = (Date.now() - this.champion.skill1CooldownStartTime) / 1000;
+    
+            // Calcula o tempo restante com base no cooldown atual
+            const remainingTime = Math.max(0, this.champion.currentCooldownSkill1 - elapsed); 
+    
             // Posições ajustadas para o cronômetro
             const rectX = this.x + 165;
             const rectY = this.y + 56;
@@ -142,27 +146,40 @@ export default class PlayerInterface {
             context.fillText(remainingTime.toFixed(1), textX, textY);
         }
     }
+   drawPlayerXP() {
+        const targetXpPercentage = Math.min(this.champion.xp / this.champion.nextLevelXp, 1); 
+        const smoothingFactor = 0.1; 
+        this.displayedXp += (targetXpPercentage - this.displayedXp) * smoothingFactor;
 
-    drawMana() {
-        context.drawImage(
-            this.mana, 
-            this.x, 
-            this.y, 
-            this.base.width * this.scale, 
-            this.base.height * this.scale
-        );
+        const xpBarWidth = this.base.width * this.scale; 
+        const xpHeight = this.xp.height * this.scale; 
+        const xpWidth = xpBarWidth * this.displayedXp; 
+
+        if (this.displayedXp > 0) { 
+            context.drawImage(
+                this.xp, 
+                0, 0, xpWidth / this.scale, this.xp.height, 
+                this.x, this.y, xpWidth, xpHeight 
+            );
+        }
     }
-
+    drawLevel(){
+        context.fillStyle = 'white';
+        context.font = '16px Arial';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillText(this.champion.level, this.x + 119.5, this.y + 70);
+    }
     choseChampion(champion) {
         let championIcon = null;
-        if (champion === 1) {
+        if (champion === 0) {
             championIcon = baseUiRafFace;
         }
         return championIcon;
     }
-    choseSChampionSkill1(champion) {
+    choseChampionSkill1(champion) {
         let championIcon = null;
-        if (champion === 1) {
+        if (champion === 0) {
             championIcon = baseUiSkill1Raf;
         }
         return championIcon;

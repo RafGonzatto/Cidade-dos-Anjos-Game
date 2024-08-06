@@ -1,4 +1,4 @@
-import { makeImage } from "/swarm/src.swarm/game/utils.js";
+import { makeImage } from "/swarm/src.swarm/utils/utils.js";
 
 export const seller1 = makeImage('/swarm/images/start-screen/seller-1.png');
 export const seller2 = makeImage('/swarm/images/start-screen/seller-2.png');

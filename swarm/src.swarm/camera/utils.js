@@ -1,4 +1,4 @@
-import { camera, canvas, canvasContainer } from "../gameConfig/gameConfig.js";
+import { camera, canvas, canvasContainer, context } from "../gameConfig/gameConfig.js";
 import { playerUi }from "../gameConfig/gameConfig.js";
 export function onResize() {
     canvas.width = window.innerWidth;
@@ -12,4 +12,12 @@ export function focusCameraOn(targetX, targetY) {
     playerUi.updatePosition();
     camera.x = targetX;
     camera.y = targetY;
+    updateBackgroundPosition(targetX, targetY);
+}
+function updateBackgroundPosition(targetX, targetY) {
+    const offsetX = -targetX;
+    const offsetY = -targetY;
+    canvas.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
+    
+    context.imageSmoothingEnabled = false;
 }

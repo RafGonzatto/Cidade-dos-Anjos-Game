@@ -45,18 +45,8 @@ function renderChampionIcons() {
 
 function getChampionData() {
     return [
-        { src: '../images/champions/raf/player-raf-icon.png' },
-        { src: '../images/champions/marombasmatic/player-marombasmatic-icon.png' },
-        { src: '../images/champions/raf/player-raf-icon.png' },
-        { src: '../images/champions/marombasmatic/player-marombasmatic-icon.png' },
-        { src: '../images/champions/raf/player-raf-icon.png' },
-        { src: '../images/champions/marombasmatic/player-marombasmatic-icon.png' },
-        { src: '../images/champions/raf/player-raf-icon.png' },
-        { src: '../images/champions/marombasmatic/player-marombasmatic-icon.png' },
-        { src: '../images/champions/raf/player-raf-icon.png' },
-        { src: '../images/champions/marombasmatic/player-marombasmatic-icon.png' },
-        { src: '../images/champions/raf/player-raf-icon.png' },
-        { src: '../images/champions/marombasmatic/player-marombasmatic-icon.png' },
+        { src: '../images/champions/raf/player-raf-icon.png' }, //RAF 0
+        { src: '../images/champions/marombasmatic/player-marombasmatic-icon.png' }, //MAROMBASMATIC 1
     ];
 }
 

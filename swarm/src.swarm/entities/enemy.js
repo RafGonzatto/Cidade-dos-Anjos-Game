@@ -1,20 +1,21 @@
-import { player, objects, context } from "../gameConfig/gameConfig.js";
+import { player, objects, context, mapObjects, xpDropped } from "../gameConfig/gameConfig.js";
 import Animation from "../utils/animation.js";
-import Candy from "./candy.js";
+import XP from "./xp.js";
 import { FACE_LEFT, FACE_RIGHT } from "../static/constants.js";
-import { skeletonImageLeft, skeletonImageLeft2, skeletonImageRight, skeletonImageRight2 } from "../static/images.js";
+import { ememieImageLeft, ememieImageRight } from "../static/images.js";
 import { pointInCircle } from "../utils/utils.js";
 import { incrementEnemiesDestroyed } from "../gameConfig/gameConfig.js";
 import DamageTakenText from "../utils/damageTakenText.js";
+import {checkAABBCollision, resolveAABBCollision} from '../utils/utils.js';
 
 export default class Enemy {
     constructor(x, y) {
-        this.leftAnimation = new Animation([{ time: 200, image: skeletonImageLeft }, { time: 200, image: skeletonImageLeft2 }]);
-        this.rightAnimation = new Animation([{ time: 200, image: skeletonImageRight }, { time: 200, image: skeletonImageRight2 }]);
+        this.leftAnimation = new Animation([{ time: 200, image: ememieImageLeft }]);
+        this.rightAnimation = new Animation([{ time: 200, image: ememieImageRight }]);
         this.x = x;
         this.y = y;
-        this.width = 50;
-        this.height = 50;
+        this.width = 40;
+        this.height = 61;
         this.speed = 1;
         this.health = 10;
         this.attackStrength = 0.1;
@@ -32,6 +33,7 @@ export default class Enemy {
             this.destroy();
             return;
         }
+        this.checkMapObjectCollisions();
         var dx = player.x - this.x;
         var dy = player.y - this.y;
         var angle = Math.atan2(dy, dx);
@@ -62,12 +64,18 @@ export default class Enemy {
         this.health -= strength;
         objects.push(new DamageTakenText(strength, this.x, this.y));
     }
-
+    checkMapObjectCollisions() {
+        mapObjects.forEach(object => {
+            if (object.massive && checkAABBCollision(this, object)) {
+                resolveAABBCollision(this, object);
+            }
+        });
+    }
     destroy() {
         if (this.destroyed) return;
         this.destroyed = true;
         incrementEnemiesDestroyed();
-        objects.push(new Candy(this.x, this.y));
+        xpDropped.push(new XP(this.x, this.y));
     }
 }
 
