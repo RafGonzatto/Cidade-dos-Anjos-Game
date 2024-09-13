@@ -15,17 +15,17 @@ export default class XP {
     }
 
     update() {
-        if (this.destroyed) return;
+        // if (this.destroyed) return;
 
-        if (pointInCircle(this.x, this.y, player.x, player.y, this.pickupRadius)) {
-            this.pickup();
-            return;
-        }
+        // if (pointInCircle(this.x, this.y, player.x, player.y, this.pickupRadius)) {
+        //     this.pickup();
+        //     return;
+        // }
 
-        if (pointInCircle(this.x, this.y, player.x, player.y, this.attractRadius)) {
-            this.x = lerp(this.x, player.x, 0.1);
-            this.y = lerp(this.y, player.y, 0.1);
-        }
+        // if (pointInCircle(this.x, this.y, player.x, player.y, this.attractRadius)) {
+        //     this.x = lerp(this.x, player.x, 0.1);
+        //     this.y = lerp(this.y, player.y, 0.1);
+        // }
     }
     draw() { 
         context.drawImage(

@@ -10,6 +10,9 @@ export default class MapObject {
         this.width = width; 
         this.massive = massive
     }
+    update(){
+        
+    }
 
     draw() {
         const image = this.image

@@ -7,10 +7,7 @@ export function configurePlayButton() {
 }
 function addClickListener() {
     playButton.addEventListener("click", () => {
-        if (!selectedChampion){
-            selectedChampion = 1;
-        }
-        localStorage.setItem("selectedChampion", selectedChampion);
+        localStorage.setItem("selectedChampion","0");
         window.location.href = "../src.swarm/swarm.html"
     });
 }

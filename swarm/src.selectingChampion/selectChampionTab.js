@@ -10,7 +10,7 @@ export function configureSelectChampionTab() {
     toggleSelectiongScreen();
     addClickListener();
     renderChampionIcons();
-    addCloseButtonListener();   
+   // addCloseButtonListener();   
 }
 
 function addClickListener() {
@@ -22,12 +22,12 @@ function addClickListener() {
 function toggleSelectiongScreen(){
     selectingChampionScreenImage.classList.toggle("disabled");
 }
-function addCloseButtonListener() {
-    closeButton.addEventListener("click", () => {
-        disablePlayButton();
-        toggleSelectiongScreen();
-    });
-}
+// function addCloseButtonListener() {
+//     closeButton.addEventListener("click", () => {
+//         disablePlayButton();
+//         toggleSelectiongScreen();
+//     });
+// }
 function renderChampionIcons() {
     selectingChampionScreen.style.maxHeight = '25.2vw'; // Define a altura máxima do contêiner
     selectingChampionScreen.style.overflowY = 'auto'; // Adiciona barra de rolagem vertical

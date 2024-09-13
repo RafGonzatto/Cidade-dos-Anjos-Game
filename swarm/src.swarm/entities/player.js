@@ -1,13 +1,15 @@
 import { FACE_LEFT, FACE_RIGHT } from '../static/constants.js';
 import Animation from '../utils/animation.js';
-import { objects, input, context, mapObjects }from "../gameConfig/gameConfig.js";
+import { input, context, quadtree }from "../gameConfig/gameConfig.js";
 import { pointInCircle } from '../utils/utils.js';
 import { focusCameraOn } from '../camera/utils.js';
 // import MicWeapon from '../weapons/micWeapon.js';
 // import DiscoBallWeapon from '../weapons/DiscoBallWeapon.js';
 import {checkAABBCollision, resolveAABBCollision} from '../utils/utils.js';
 import Enemy from './enemy.js';
-
+import { Rectangle } from '../utils/quadtree.js';
+import { lerp } from "../utils/utils.js";
+import XP from './xp.js';
 export default class Player {
     constructor(x, y, championConfig) {   
         this.x = x;
@@ -46,6 +48,7 @@ export default class Player {
         this.idleRightAnimation = new Animation(animations.idleRight);
         this.animation = new Animation(animations.idleLeft);
     }
+    
     update() { 
         if (input.attackPower1 && this.skill1Cooldown) {
             this.isAttacking = true;
@@ -58,6 +61,18 @@ export default class Player {
                 this.skill1Cooldown = true;
             }
         }
+        this.handleMovement();
+        focusCameraOn(this.x, this.y);    
+        
+        this.items.forEach(item => item.update());
+
+        this.checkCollisions();
+
+        this.updateAnimation();
+
+        this.animation.update(); 
+    }
+    handleMovement(){
         if (input.right) {
             this.x += this.speed;
             this.setDirection(FACE_RIGHT);
@@ -69,12 +84,8 @@ export default class Player {
         if (input.up) this.y -= this.speed;
         if (input.down) this.y += this.speed;
 
-        focusCameraOn(this.x, this.y);    
-        
-        this.items.forEach(item => item.update());
-        this.checkEnemyCollisions(); 
-        this.checkMapObjectCollisions();
-
+    }
+    updateAnimation() {
         if (!this.isAttacking) {
             const isMoving = input.left || input.right || input.up || input.down;
             this.idle = !isMoving && (!input.attackPower1 || (input.attackPower1 && !this.skill1Cooldown));
@@ -85,9 +96,7 @@ export default class Player {
                 this.animation = this.direction === FACE_LEFT ? this.leftAnimation : this.rightAnimation;
             }
         }
-        this.animation.update(); 
     }
-
     draw() {
         this.items.forEach(item => item.draw());
         const image = this.animation.image();
@@ -107,23 +116,61 @@ export default class Player {
         }
         this.animation.reset();
     }
-    checkMapObjectCollisions() {
-        mapObjects.forEach(object => {
+    async checkCollisions() {
+        const range = new Rectangle(
+            this.x - this.width / 2 - 19, // Adiciona uma margem extra de 25 pixels
+            this.y - this.height / 2 - 25, // Adiciona uma margem extra de 20 pixels
+            this.width + 50, // Largura aumentada pela margem extra
+            this.height + 50 // Altura aumentada pela margem extra
+        );
+        this.drawCollisionRectangle(context, range);
+    
+        const allVisibleObjects = quadtree.query(range);
+        const visibleMapObjects = allVisibleObjects.filter(obj => obj.massive);
+        console.log(visibleMapObjects)
+        const visibleEnemies = allVisibleObjects.filter(obj => obj instanceof Enemy);
+        const visibleXp = allVisibleObjects.filter(obj => obj instanceof XP);
+    
+        // Promessas para cada forEach
+        const mapObjectsPromise = Promise.all(visibleMapObjects.map(async object => {
             if (object.massive && checkAABBCollision(this, object)) {
+                this.drawCollisionOutline(context, object);
                 resolveAABBCollision(this, object);
             }
-        });
-    }
+        }));
     
-
-    checkEnemyCollisions() {
-        objects.forEach(object => {
-            if (object instanceof Enemy && pointInCircle(this.x, this.y, object.x, object.y, object.width / 2)) {
-                this.takeDamage(object.attackStrength);
+        const enemiesPromise = Promise.all(visibleEnemies.map(async enemy => {
+            if (pointInCircle(this.x, this.y, enemy.x, enemy.y, enemy.width / 2)) {
+                this.takeDamage(enemy.attackStrength);
             }
-        });
+        }));
+    
+        const xpPromise = Promise.all(visibleXp.map(async xp => {
+            if (xp.destroyed) return;
+    
+            if (pointInCircle(xp.x, xp.y, this.x, this.y, xp.pickupRadius)) {
+                xp.pickup();
+                return;
+            }
+    
+            if (pointInCircle(xp.x, xp.y, this.x, this.y, xp.attractRadius)) {
+                xp.x = lerp(xp.x, this.x, 0.1);
+                xp.y = lerp(xp.y, this.y, 0.1);
+            }
+        }));
+        // Executa todos os forEach ao mesmo tempo
+        await Promise.all([mapObjectsPromise, enemiesPromise, xpPromise]);
     }
-
+     drawCollisionOutline(context, object) {
+        context.strokeStyle = 'blue'; // Cor do contorno
+        context.lineWidth = 10; // Largura do contorno
+        context.strokeRect(object.x, object.y, object.width, object.height);
+    }
+     drawCollisionRectangle(context, range) {
+        context.strokeStyle = 'red'; // Cor da linha
+        context.lineWidth = 2; // Largura da linha
+        context.strokeRect(range.x, range.y, range.w, range.h  );
+    }
     takeDamage(amount) {
         this.health = Math.max(this.health - amount, 0);
         if (this.health <= 0) {

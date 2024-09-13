@@ -3,7 +3,7 @@ import { onKeyDown, onKeyUp, onKeyEsc } from '../utils/utils.js';
 import {rafConfig} from '../entities/champions/raf.js';
 import Player from '../entities/player.js';
 import { configDirtyMap } from '../map/dirtyMap.js';
-import Quadtree  from '../utils/quadtree.js';
+import {Quadtree,  Rectangle }  from '../utils/quadtree.js';
 
 export let targetFps = 60;
 export let player;
@@ -21,14 +21,14 @@ export let enemiesDestroyed = 0;
 export let playerUi;
 export let nextEnemyId = 0;
 export let timeSinceLastEnemySpawn = Date.now();
-const capacity = 4; 
-let boundary;
+export const capacity = 4; 
 export let quadtree 
+export const enemyGroups = new Map();
 
 export const gameState = {
     isPaused: false
 };
-function setQuadtree(){
+export function setQuadtree(boundary){
     quadtree = new Quadtree(boundary, capacity);
 }
 export function setPlayer(value) {
@@ -71,8 +71,13 @@ export function configCanvas(){
     canvas.width = canvasContainer.offsetWidth;
     canvas.height = canvasContainer.offsetHeight;
     camera = { x: canvas.width / 2, y: canvas.height / 2 };
-    boundary = { x: 0, y: 0, width: canvas.width, height: canvas.height };
-    setQuadtree()
+    let boundary = new Rectangle(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+    setQuadtree(boundary)
 }
 
 export function configMap() {

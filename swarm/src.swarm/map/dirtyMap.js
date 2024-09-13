@@ -1,8 +1,9 @@
 // configDirtyMap.js
-import { context, canvas, mapObjects, player } from '../gameConfig/gameConfig.js';
+import { context, canvas, mapObjects, player, quadtree, setMapObjects } from '../gameConfig/gameConfig.js';
 import MapObject from '../entities/mapObject.js';
 import { Collectable } from '../entities/collectables.js';
 import { objectExistsAt, isFarEnoughFromOtherObjects, isInPlayerView } from '../utils/utils.js';
+import {insertObjectsIntoQuadtree} from '../gameConfig/gameLoop.js';
 
 const MARGIN = 200; // Margem de 200px
 const MIN_DISTANCE = 150; // Distância mínima de 150px entre objetos
@@ -27,6 +28,7 @@ const elements = [
 ];
 
 export function configDirtyMap() {
+    console.log("configDirtyMap");
     const startX = player.x - canvas.width / 2 - MARGIN;
     const startY = player.y - canvas.height / 2 - MARGIN;
     const endX = player.x + canvas.width / 2 + MARGIN;
@@ -41,13 +43,17 @@ export function configDirtyMap() {
                     !objectExistsAt(x, y, width, height, mapObjects) &&
                     isFarEnoughFromOtherObjects(x, y, MIN_DISTANCE, mapObjects) &&
                     !isInPlayerView(x, y, width, height, player, canvas)) {
-                        if (probability === 0.005) {
-                            mapObjects.push(new Collectable(url, x, y, width, height, massive, destroy));
-                        } else {
-                            mapObjects.push(new MapObject(url, x, y, width, height, massive));
-                        }
+                        const newObject = probability === 0.005
+                            ? new Collectable(url, x, y, width, height, massive, destroy)
+                            : new MapObject(url, x, y, width, height, massive);
+
+                        mapObjects.push(newObject);
+                        console.log(mapObjects)
                 }
             }
         }
     });
+
+    // Update visible map objects if needed
+    setMapObjects(mapObjects.filter(mapObject => !mapObject.destroyed));
 }

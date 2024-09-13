@@ -11,7 +11,10 @@ export function initGame() {
     configEvents();
     
     const selectedChampion = localStorage.getItem('selectedChampion');
-    let localPlayer = choseChampion(selectedChampion);
+    if(!selectedChampion){
+        localStorage.setItem('selectedChampion', "0");
+    } 
+    let localPlayer = choseChampion("0");
     let localPlayerUi = new PlayerInterface(localPlayer);
 
     setPlayerUi(localPlayerUi);
